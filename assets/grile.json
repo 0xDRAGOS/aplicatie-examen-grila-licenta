@@ -1,0 +1,4134 @@
+{
+  "subjects": [
+    {
+      "name": "Algoritmi si programare",
+      "questions": [
+        {
+          "id": 1,
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n#include <stdio.h>\nvoid main(){\n int a,b = 0;\n int i;\n for (i=0;i<10;i++){\n  b = a;\n  a = i;\n }\n printf(\"%d\", b);\n}",
+          "options": {
+            "A": "8",
+            "B": "9",
+            "C": "10",
+            "D": "0123456789"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 2,
+          "text": "Care din urmatoarele expresii sunt echivalente cu a[i]?",
+          "options": {
+            "A": "*(a+i)",
+            "B": "i[a]",
+            "C": "&a[i]",
+            "D": "*(a+a)",
+            "E": "*(a+i*sizeof(a[i]))"
+          },
+          "correct_answer": ["A", "B"]
+        },
+        {
+          "id": 3,
+          "text": "Instructiunea k++ este echivalenta cu:",
+          "options": {
+            "A": "k = k + 1",
+            "B": "k += 1",
+            "C": "++k",
+            "D": "k = k + k",
+            "E": "k += k",
+            "F": "k = k + sizeof(k)"
+          },
+          "correct_answer": ["A", "B", "C"]
+        },
+        {
+          "id": 4,
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program? \n\n#include <stdio.h>\nint a,b;\nvoid f1 (int *r, int *s){\n int temp;\n temp = *r;\n *r = *s;\n *s = temp;\n}\nvoid f2 (int *x, int *y){\nif (*x > *y) f1(x,y);\n}\nmain(){\n a = 64;\n b = 42;\n f2(&a,&b);\n printf(\"%d,%d\\n\",a,b);\n}",
+          "options": {
+            "A": "42,64",
+            "B": "64,42",
+            "C": "64,64",
+            "D": "42,42",
+            "E": "eroare de compilare pentru ca lipseste void la declararea functiei main"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 5,
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program? \n\n#include <stdio.h>\nint a,b;\nvoid f1 (int r, int s){\n int temp;\n temp = r;\n r = s;\n s = temp;\n}\nvoid f2 (int x, int y){\nif (x > y) f1(x,y);\n}\nvoid main(){\n a = 064;\n b = 042;\n f2(a,b);\n printf(\"%d,%d\\n\",a,b);\n}",
+          "options": {
+            "A": "52,34",
+            "B": "64,42",
+            "C": "42,62",
+            "D": "34,52",
+            "E": "0,0",
+            "F": "rezultatul nu poate fi determinat avand in vedere valorile variabilelor a si b"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 6,
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program? \n\n#include <stdio.h>\nvoid main(){\n int k[ ] = {100,200,300,400,500,600,700};\n int *t=k+2;\n printf(\"%d \",*t);\n printf(\"%d \",*(t+2) + *t);\n *t = *t + 10;\n printf(\"%d \",*t);\n t = t+3;\n printf(\"%d \",*t);\n *t = *t + *(t-2);\n printf(\"%d \",*t);\n}",
+          "options": {
+            "A": "300 800 310 600 1000",
+            "B": "200 300 110 600 1100",
+            "C": "300 900 320 600 1000",
+            "D": "300 800 310 600 900",
+            "E": "100 900 310 600 1000",
+            "F": "nici una din variante nu este corecta"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 7,
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <stdio.h>\nvoid main(){\nint p[] = {50,60,70,80,90,100};\nint *q[6],i;\nfor(i =0;i<6;i++)\nq[i] = &p[i];\nfor(i=5;i>=1;i--){\nq[i] = q[i-1];\n*q[i] = *q[i] + *p * 2;\n}\nfor(i=0;i<6;i++)\nprintf(\"%d \",p[i]);\n}",
+          "options": {
+            "A": "150 160 170 180 190 100",
+            "B": "160 160 170 180 190 100",
+            "C": "150 150 150 150 150 150",
+            "D": "150 160 170 180 190 190",
+            "E": "150 160 170 180 190 200",
+            "F": "nici una din variante nu este corecta"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 8,
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <stdio.h>\n#include <stdlib.h>\nvoid f(int *x){\nx=(int *) malloc(sizeof(int));\n*x=12;\n}\nvoid main(){\nint v=15/10;\nf(&v);\nprintf(\"%d\",v);\n}",
+          "options": {
+            "A": "1",
+            "B": "12",
+            "C": "15",
+            "D": "1.5",
+            "E": "adresa variabilei v",
+            "F": "adresa variabilei x"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 9,
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <stdio.h>\nvoid main(){\nint i, p=0x10;\nfor(i=1;;i+=2){\nif (i=5)\nbreak;\np+=i;\n}\nprintf(\"%d\",p);\n}",
+          "options": {
+            "A": "16",
+            "B": "10",
+            "C": "26",
+            "D": "25",
+            "E": "14",
+            "F": "programul cicleaza la infinit"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 10,
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <stdio.h>\nint a = 10, b = 5;\nvoid f (int a, int t[]){\nb = a;\nt[2] = a % 2;\na = (t[0]+t[1])/2;\nt[0]^=t[1];\nt[1]^=t[0];\nt[0]^=t[1];\n}\nvoid main(){\nint t[]={4,3,1};\nf(t[2],t);\nprintf(\"%d %d %d %d %d\",a,b,t[0],t[1],t[2]);\n}",
+          "options": {
+            "A": "10 1 3 4 1",
+            "B": "10 5 4 3 1",
+            "C": "1 5 3 4 1",
+            "D": "7 5 3 4 1",
+            "E": "5 5 10 4 0",
+            "F": "nici una din variante nu este corecta"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 11,
+          "text": "Consideram urmatoarea secventa de program?\n\nfloat x = 10;\nint y = 7;\nfloat t[]={3,4,1};\nfloat *q = &x;\nint *r = &y;\nvoid *p;\n\nCare din urmatoarele atribuiri sunt corecte?",
+          "options": {
+            "A": "q = t;",
+            "B": "p = t;",
+            "C": "p = &y;",
+            "D": "p = r;",
+            "E": "x = &t[2];",
+            "F": "t = q;",
+            "G": "q = r;",
+            "H": "r = q;",
+            "I": "r = p;"
+          },
+          "correct_answer": ["A", "B", "C", "D"]
+        },
+        {
+          "id": 12,
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <stdio.h>\nvoid main(){\nchar s[]=\"abcdef\";\nchar *p,*q,c;\np=s;\nq=p+4;\nwhile(p < q){\nc=*p;\n*p=*q;\n*q=++c;\np++;q--;\n}\nprintf(\"%s\",s);\n}",
+          "options": {
+            "A": "edccbf",
+            "B": "fedcba",
+            "C": "feddca",
+            "D": "edcbaf",
+            "E": "bcdefg",
+            "F": "nici una din variante nu este corecta"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 13,
+          "text": "Care din urmatoarele linii vor genera eroare la compilare?\n\n1: void main() {\n2: int a[2] = {1,2};\n3: int b[3] = {3};\n4: int* x = a;\n5: int* const y = a;\n6: b = x;\n7: b = y;\n8:}",
+          "options": {
+            "A": "6, 7",
+            "B": "3, 5, 6, 7",
+            "C": "3, 4, 6, 7",
+            "D": "3, 5",
+            "E": "5, 6, 7",
+            "F": "5",
+            "G": "nici una"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 14,
+          "text": "Consideram urmatorul program:\n\n1: #include <stdio.h>\n2: void main(){\n3: int t[10];\n4: printf(\"sizeof(int)=%d\\n\",sizeof(int));\n5: printf(\"%p\\n\",t);\n6: printf(\"%p\\n\",t+3);\n7:}\n\nDaca inurmaexecutieiliniilor4si5seafiseaza2respectiv0xF004, cesevaafisa inurmaexecutiei liniei 6?",
+          "options": {
+            "A": "0xF00A",
+            "B": "0xF010",
+            "C": "0xF007",
+            "D": "0xF006",
+            "E": "0xF003"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 15,
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <stdio.h>\nvoid main(){\nint x=7;\nx = 1,2,3;\nprintf(\"%d\",x);\n}\n\n Solution: Operatorul virgula se evalueaza de la stanga la dreapta. Rezultatul este dat de \nultima valoare a expresiei. Insa, deoarce operatorul = are prioritatea mai mare decat a \noperatorului virgula mai intai se atribuie lui x valoarea 1 si apoi se evalueaza expresia x,2,3, \nrezultat care nu este memorat in nicio variabila.",
+          "options": {
+            "A": "1",
+            "B": "7",
+            "C": "2",
+            "D": "3",
+            "E": "6",
+            "F": "nimic (programul nu se compileaza)"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 16,
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <stdio.h>\nvoid main() {\nint array[3][] = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}};\nint s = 0, i ,j;\nfor (i = 0; i < 3 ; ++i){\nfor (j = 2; j < 3 ; j++){\ns += array[i][j];\n}\n}\nprintf(\"%d\",s);\n}\n\nSolution: La declararea tablourilor multidimensionale numai prima dimensiune poate fi omisa.\nIn acest caz, se genereaza eroare de compilare deoarece nu este specificat numarul de coloane.",
+          "options": {
+            "A": "nimic (programul nu se compileaza)",
+            "B": "15",
+            "C": "0",
+            "D": "27",
+            "E": "36"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 17,
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <stdio.h>\nint f(int y);\nvoid main(){\nint x = 3;\nint y = 6;\nprintf(\"%d\", f(x));\n}\nint f(int x){\nreturn x+1;\n}",
+          "options": {
+            "A": "4",
+            "B": "7",
+            "C": "3",
+            "D": "6",
+            "E": "nimic (eroare de compilare deoarce functia f a fost apelata inainte de a fi definita)",
+            "F": "nimic (eroare de compilare deoarce numele argumentului functiei f este y la declarare si x la definire)"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 18,
+          "text": "Cate elemente ale vectorului a vor avea valoarea 9 dupa executia programului de mai jos?:\n\nvoid main(){\nint a[] = {0, 1, 2, 3, 0, 4, 5, 6};\nint i = 0, x = 9;\ndo{\na[i++] = x;\n}while(i<6&&a[i]);\n}",
+          "options": {
+            "A": "nici unul",
+            "B": "unu",
+            "C": "doua",
+            "D": "patru",
+            "E": "toate"
+          },
+          "correct_answer": ["D"]
+        },
+        {
+          "id": 19,
+          "text": "Fie urmatorul program:\n\nvoid main (){\nint v[20], i, n, D;\nscanf(\"%d\", &n);\nfor(i=0;i<n;i++)\nv[i]=i%2?i:-i;\nfor(D=1,i=0;i<n;D*=v[i++]);\nD++;\nprintf(\"%d\",D);\n}\n\nIn urma executiei sale sunt posibile urmatoarele situatii:",
+          "options": {
+            "A": "Expresia conditionala din primul ciclu for este eronata din punct de vedere sintactic.",
+            "B": "Daca variabila n primeste la citire valoarea 6, atunci elementele vectorului v vor fi, in ordine (0,1,-2,3,-4,5).",
+            "C": "Prezenta caracterului ” ; ” dupa al doilea ciclu for constituie o eroare",
+            "D": "Daca variabila n primeste la citire valoarea 5, atunci programul afiseaza 1",
+            "E": "Programul functioneaza corect pentru orice valoare intreaga a lui n mai mica sau egala cu MAXINT."
+          },
+          "correct_answer": ["B", "D"]
+        },
+        {
+          "id": 20,
+          "text": "Fie programul :\n\nvoid main(){\nint v[]={0, 1, 2, 3, 4, 5, 0};\nint i=0, n=0;\ndo{\nif (i == v[i])\nn++;\n}while(i<6 && v[i++]);\n}\n\nIn urma executiei programului sunt posibile urmatoarele situatii:",
+          "options": {
+            "A": "variabila n va avea valoarea 0",
+            "B": "variabila n va avea valoarea 1",
+            "C": "programul va intra intr-un ciclu infinit",
+            "D": "variabila n va avea valoarea 5",
+            "E": "variabila n va avea valoarea 2"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 21,
+          "text": "Se considera secventa urmatoare, in care valorile lui n si x se presupun cunoscute, v este un\nvector cu elementele(v[0],v[1],...,v[n-1])\n\np=n;\nfor(i=0;i<n;i++)\nif (v[i]==x)\np=i;\nfor(i=p+1; i<n; i++)\nv[i-1]=v[i];\nfor(i=0; i<n-1; i++)\nprintf(\"%3d\",v[i])\n\nPrecizati care dintre urmatoarele afirmatii sunt adevarate:",
+          "options": {
+            "A": "Pentru n=5, x=3 si v=(5,6,2,7,1), se afiseaza ultimele patru elemente nemodificate ale vectorului:6 2 7 1.",
+            "B": "Pentru n=5, x=1 si v=(2,1,3,1,4), se afiseaza: 2 3 1 4;",
+            "C": "Secventa contine erori de sintaxa",
+            "D": "Algoritmul sterge din vector elementul cu valoarea x, prin mutarea cu o pozitie mai la dreapta a elementelor aflate inaintea lui.",
+            "E": "Algoritmul sterge din vector elementul cu valoarea x, prin mutarea cu o pozitie mai la stanga a elementelor a(cid:13)ate dupa el."
+          },
+          "correct_answer": ["E"]
+        },
+        {
+          "id": 22,
+          "text": "In programul urmator, care dintre secventele de instructiuni (I), (II), (III) realizeaza corect \ncitirea unui sir de caractere de la tastatura si afisarea acestuia?\n\nvoid main(){\nchar s1[10],s2[10],s3[10];\nscanf(\"%s\", &s3[3]);\nprintf(\"%s\", s3[3]); //(I)\nscanf(\"%s\", s2);\nprintf(\"s2=%s\", s2); //(II)\nscanf(\"%s\",&s1);\nprintf(\"%s\", s1[10]); //(III)\n}",
+          "options": {
+            "A": "numai (I)",
+            "B": "toate",
+            "C": "(I) si (II)",
+            "D": "(I) si (III)",
+            "E": "numai (II)"
+          },
+          "correct_answer": ["E"]
+        },
+        {
+          "id": 23,
+          "text": "Pentru programul urmator, analizati corectitudinea afirmatiilor de mai jos:\n\n#include <stdlib.h>\n#include <string.h>\n#include <stdio.h>\nvoid main(){\nchar s1[4], s2[4];\nlong x;\nscanf(\"%s %s\", s1, s2) ;\nif (strcmp(s1, s2)>0)\nx=atol(s1);\nelse\nif(strcmp(s1, s2)==0)\nx = 0;\nelse x = atol(s2);\nprintf(\"%d\", x);\n}",
+          "options": {
+            "A": "Conditiile din cele doua linii if sunt gresite.",
+            "B": "Apelurile functiei atol sunt corecte",
+            "C": "Daca de la tastatura se introduc sirurile \"98\" si \"123\" atunci se va afisa 98.",
+            "D": "Daca de la tastatura se introduc sirurile \"123\" si \"121\", atunci programul va afisa sirul \"123\".",
+            "E": ""
+          },
+          "correct_answer": ["B", "C", "D"]
+        },
+        {
+          "id": 24,
+          "text": "In conformitate cu standardul ASCII, codurile literelor mari sunt succesive incepand cu 65, ce va \nafisa programul de mai jos?\n\n#include <stdlib.h>\n#include <string.h>\n#include <stdio.h>\nvoid main(){\nint x = 20, e;\nchar s[15] =\"ABC\", t[15], u[15];\ne = s[1] + s[2];\nitoa(e, t, 10);\nstrcpy(u, t);\nstrcat(s, u);\nprintf(\"%s \", s);\n}",
+          "options": {
+            "A": "Nimic, sirul s fiind vid",
+            "B": "ABC13",
+            "C": "AB13",
+            "D": "ABC133",
+            "E": "ABC131"
+          },
+          "correct_answer": ["D"]
+        },
+        {
+          "id": 25,
+          "text": "Care dintre specificatorii modului de acces al fisierelor binare sau text, pentru functia fopen, sunt corecti:",
+          "options": {
+            "A": "ab",
+            "B": "rb",
+            "C": "ap",
+            "D": "wt",
+            "E": "at",
+            "F": "ba",
+            "G": "toate variantele sunt corecte"
+          },
+          "correct_answer": ["A", "B", "D", "E"]
+        },
+        {
+          "id": 26,
+          "text": "Stiind ca fisierul f1.txt exista in directorul curent iar f2.txt nu este creat, care dintre urmatoarele secvente de instructiuni este gresita?",
+          "options": {
+            "A": "f1=fopen(”f1.txt”,”w”);",
+            "B": "f1=fopen(”f1.txt”,”r+”);",
+            "C": "f2=fopen(\"f2.txt\",\"r+\");",
+            "D": "f2=fopen(”f2.txt”,”’w+”);",
+            "E": "toate variantele anterioare sunt gresite"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 27,
+          "text": "Care este efectul subprogramului alaturat?\n\nvoid X(char *a, char *b){\nFILE *f,*g;\nchar s[255];\nf=fopen(a,\"a\");\ng=fopen(b,\"r\");\nwhile(!feof(g)){\nfgets(s,255,g);\nfputs(s,f);\n}\nfclose(f);\nfclose(g);\n}",
+          "options": {
+            "A": "copiaza continutul fisierului g peste continutul fisierului f",
+            "B": "citeste informatiile din cele doua fisiere ale caror nume se transmit ca parametri",
+            "C": "concateneaza doua fisiere, rezultatul concatenarii fiind pus in fisierul f",
+            "D": "concateneaza doua fisiere, rezultatul concatenarii fiind pus in fisierul g",
+            "E": "toate variantele anterioare sunt gresite"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 28,
+          "text": "Care dintre urmatoarele afirmatii sunt adevarate?",
+          "options": {
+            "A": "Pentru a inchide un fisier se foloseste functia unlink;",
+            "B": "Pentru redenumirea unui fisier in cadrul programului se foloseste functia remove",
+            "C": "Pentru a deschide un fisier se foloseste functia fopen",
+            "D": "Nu pot fi adaugate informatii intr-un fisier",
+            "E": "Toate celelalte variante sunt eronate"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 29,
+          "text": "Ce valori se vor gasi in fisierul numere.txt dupa executia urmatorului program?\n\n#include <conio.h>\n#include <stdio.h>\nFILE *f;\nint i=0, a[10]={20,11,17,4,5,10,14,34,23,11};\nvoid main(){\nf=fopen(\"c:\\\\numere.txt\",\"w\");\nfor(i=0; i<5; i++){\nif(a[i]%2!=0)\nfprintf(f,\"%d \\n\",a[i]);\n}\nfclose(f);\n}",
+          "options": {
+            "A": "11 17 5 23 11",
+            "B": "20 4 10 14 34",
+            "C": "11\n17\n5",
+            "D": "11\n17\n5\n23\n11"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 30,
+          "text": "Ce se intampla in urma executiei urmatorului program daca fisierul nr.txt contine\nvalorile 7 14 6 3 8 10 ?FILE *f, *g;\nint x;\nvoid main(){\nf=fopen(\"nr.txt\",\"r+\");\ng=fopen(\"nr2.txt\",\"w+\");\nwhile(!feof(f)){\nfscanf(f,\"%d\", &x);\nif(x%2==0)\nfprintf(g,\"%d \\n\",x);\n}\nfclose(f);\nfclose(g);\n}",
+          "options": {
+            "A": "Fisierul nr2.txt va contine valorile 14 6 8 10",
+            "B": "Fisierul nr2.txt va contine valorile 14 6 8 10, fiecare pe alta linie",
+            "C": "Fisierul nr.txt va contine valorile 7 14 6 8 10",
+            "D": "Fisierul nr.txt va contine valorile 7 14 6 8 10, fiecare pe alta linie"
+          },
+          "correct_answer": ["B"]
+        }
+      ]
+    },
+    {
+      "name": "Structuri de date si tehnici de elaborare a algoritmilor",
+      "questions": [
+        {
+          "id": 1,
+          "text": "Se da urmatorul algoritm:\nCare vor fi valorile vectorului a dupa terminarea pasului i=5, a=(8;6;4;2;3;5;7)?",
+          "image": "structuri_1.png",
+          "options": {
+            "A": "(2;3;4;5;6;8;7)",
+            "B": "(2;3;4;5;8;7;6)",
+            "C": "(2;3;4;8;7;6;5)",
+            "D": "(8;7;6;5;4;2;3)",
+            "E": "(2;3;4;5;6;7;8)"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 2,
+          "text": "O procedura ce parcurge urmatorul arbore in inordine va afisa:",
+          "image": "structuri_2.png",
+          "options": {
+            "A": "3,5,6,7,10,12,13,15,16,18,20,23",
+            "B": "15,5,3,12,10,6,7,13,16,20,18,23",
+            "C": "3,7,6,10,13,12,5,18,23,20,16,15",
+            "D": "3,6,5,7,10,12,13,15,16,18,20,23",
+            "E": "3,5,6,7,10,12,13,16,15,18,20,23"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 3,
+          "text": "O procedura ce parcurge urmatorul arbore in postordine va afisa:",
+          "image": "structuri_3.png",
+          "options": {
+            "A": "3,5,6,7,10,12,13,15,16,18,20,23",
+            "B": "15,5,3,12,10,6,7,13,16,20,18,23",
+            "C": "3,7,6,10,13,12,5,18,23,20,16,15",
+            "D": "3,6,5,7,10,12,13,15,16,18,20,23",
+            "E": "3,5,6,7,10,12,13,16,15,18,20,23"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 4,
+          "text": "O procedura ce parcurge urmatorul arbore in preordine va afisa:",
+          "image": "structuri_4.png",
+          "options": {
+            "A": "3,5,6,7,10,12,13,15,16,18,20,23",
+            "B": "15,5,3,12,10,6,7,13,16,20,18,23",
+            "C": "3,7,6,10,13,12,5,18,23,20,16,15",
+            "D": "3,6,5,7,10,12,13,15,16,18,20,23",
+            "E": "3,5,6,7,10,12,13,16,15,18,20,23"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 5,
+          "text": "Care dintre urmatoarele conditii nu este conditia necesara pentru un algoritm de cautare binara:",
+          "options": {
+            "A": "lista trebuie sa fie sortata",
+            "B": "ar trebui sa existe acces direct catre elementul din mijlocul fiecarei subliste",
+            "C": "ar trebui sa existe un mecanism de stergere sau/si de inserare a elementelor  in lista",
+            "D": "niciuna de mai sus"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 6,
+          "text": "Care dintre urmatoarele nu este afirmatii nu este adevarata in cazul unui algoritm de cautare binara?",
+          "options": {
+            "A": "trebuie folosit un array sortat",
+            "B": "cerintadeaaveaunarraysortatnecesitamultamemoriesitimpatuncicandsuntnecesare multe stergeri si inserari",
+            "C": "trebuie sa existe un mecanism care sa permita accesul direct la elementul din mijloc",
+            "D": "algoritmul de cautare binar nu este eficient atunci cand avem mai mult de 1000 de elemente"
+          },
+          "correct_answer": ["D"]
+        },
+        {
+          "id": 7,
+          "text": "Ce va afisa urmatorul program?\n\nString name;\nint i;\nboolean startWord;\nname = \"Franklin D. Roosevelt\";\nstartword = true;\nfor (i = 0; i < name.length(); i++) {\nif (startWord)\nSystem.out.println(name.charAt(i));\nif (name.charAt(i) == ’ ’)\nstartWord = true;}\nelse\nstartWord = false;\n}",
+          "options": {
+            "A": "FDR",
+            "B": "Franklin",
+            "C": "D",
+            "D": "Roosevelt",
+            "E": "Franklin D. Roosevelt"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 8,
+          "text": "O procedura ce parcurge urmatorul arbore in inordine va afisa:",
+          "image": "structuri_8.png",
+          "options": {
+            "A": "3,5,6,23,10,12,13,15,16,18,20,7",
+            "B": "15,5,3,12,10,6,7,13,16,20,18,23",
+            "C": "3,7,6,10,13,12,5,18,23,20,16,15",
+            "D": "3,6,5,7,10,12,13,15,16,18,20,23",
+            "E": "3,5,6,7,10,12,13,16,15,18,20,23"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 9,
+          "text": "O procedura ce parcurge urmatorul arbore in postordine va afisa:",
+          "image": "structuri_9.png",
+          "options": {
+            "A": "3,5,6,7,10,12,13,15,16,18,20,23",
+            "B": "15,5,3,12,10,6,7,13,16,20,18,23",
+            "C": "3,23,6,10,13,12,5,18,7,20,16,15",
+            "D": "i3,6,5,7,10,12,13,15,16,18,20,23",
+            "E": "3,5,6,7,10,12,13,16,15,18,20,23"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 10,
+          "text": "O procedura ce parcurge urmatorul arbore in preordine va afisa:",
+          "image": "structuri_10.png",
+          "options": {
+            "A": "3,5,6,7,10,12,13,15,16,18,20,23",
+            "B": "15,5,3,12,10,6,23,13,16,20,18,7",
+            "C": "3,7,6,10,13,12,5,18,23,20,16,15",
+            "D": "3,6,5,7,10,12,13,15,16,18,20,23",
+            "E": "3,5,6,7,10,12,13,16,15,18,20,23"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 11,
+          "text": "Ce metoda de sortare este descrisa in pseudo-codul urmator:\n\nprocedure sort(A)\nn = length(A)\nrepeat\nswapped = false\nfor i = 1 to n-1 do\nif (A[i-1]>A[i] then\nswap (A[i-1],A[i])\nswapped = true\nend if\nend for\nuntil not swapped\nend procedure\n",
+          "options": {
+            "A": "HeapSort",
+            "B": "MergeSort",
+            "C": "BubbleSort",
+            "D": "SwapSort"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 12,
+          "text": "Coloana din stanga reprezinta un input de stringuri ce trebuie sortate; coloana din dreapta reprezinta strigurile sortate; celelalte coloane reprezinta un pas intermediar al unuia dintre algoritmii:\nquicksort, mergesort top-down, merge sort botton-up, heapsort. Care este ordinea algoritmilor\ntinand cont de coloanele afisate?\nnavy wine mist blue blue bark\nplum teal coal gray coal blue\ncoal silk jade rose gray cafe\njade plum blue mint jade coal\nblue sage cafe lime lime corn\npink pink herb navy mint dusk\nrose rose gray jade navy gray\ngray jade leaf teal pink herb\nteal navy dusk coal plum jade\nruby ruby mint ruby rose leaf\nmint pine lime plum ruby lime\nlime palm bark pink teal mint\nsilk coal corn silk bark mist\ncorn corn navy corn corn navy\nbark bark wine bark dusk palm\nwine gray silk wine leaf pine\ndusk dusk ruby dusk silk pink\nleaf leaf teal leaf wine plum\nherb herb sage herb cafe rose\nsage blue rose sage herb ruby\ncafe cafe pink cafe mist sage\nmist mist pine mist palm silk\npine mint palm pine pine teal\npalm lime plum palm sage wine\n0 - - - - 1",
+          "options": {
+            "A": "Input, quicksort, heapsort, merge bottom-up, merge top-down, output",
+            "B": "Input, heapsort, merge top-down, merge bottom-up, quicksort, output",
+            "C": "Input, quicksort, heapsort, merge top-down, merge bottom-up, output",
+            "D": "Input, merge top-down, merge bottom-up, quicksort, heapsort, output",
+            "E": "Input, merge top-down, quicksort, heapsort, merge bottom-up, output"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 13,
+          "text": "Analizand algoritmul de mai jos precizati ce timp de executie are.\n\npublic static int f1(int N){\nint x = 0;\nfor (int i = 0; i < N, i++)\nx++;\nreturn x;\n}",
+          "options": {
+            "A": "logN",
+            "B": "N",
+            "C": "NlogN",
+            "D": "N²",
+            "E": "2^N",
+            "F": "N!"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 14,
+          "text": "Analizand algoritmul de mai jos precizati ce timp de executie are.\n\npublic static int f2(int N){\nint x = 0;\nfor (int i = 0; i < N, i++)\nfor (int j = 0; j < i; j++)\nx++;\nreturn x;\n}",
+          "options": {
+            "A": "logN",
+            "B": "N",
+            "C": "NlogN",
+            "D": "N²",
+            "E": "2^N",
+            "F": "N!"
+          },
+          "correct_answer": ["D"]
+        },
+        {
+          "id": 15,
+          "text": "Analizand algoritmul de mai jos precizati ce timp de executie are.\n\npublic static int f3(int N){\nif (N==0) return 1;\nint x=0;\nfor (int i = 0; i < N; i++)\nx+=f3(N-1);\nreturn x;\n}",
+          "options": {
+            "A": "logN",
+            "B": "N",
+            "C": "NlogN",
+            "D": "N²",
+            "E": "2^N",
+            "F": "N!"
+          },
+          "correct_answer": ["F"]
+        },
+        {
+          "id": 16,
+          "text": "Analizand algoritmul de mai jos precizati ce timp de executie are.\n\npublic static int f1(int N){\nint x = 0;\nfor (int i = 0; i < N, i++)\nx++;\nreturn x;\n}\npublic static int f4(int N){\nif (N==0) return 0;\nreturn f4(N/2) + f1(N) + f4(N/2);\n}",
+          "options": {
+            "A": "logN",
+            "B": "N",
+            "C": "NlogN",
+            "D": "N²",
+            "E": "2^N",
+            "F": "N!"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 17,
+          "text": "Analizand algoritmul de mai jos precizati ce timp de executie are.\n\npublic static int f1(int N){\nint x = 0;\nfor (int i = 0; i < N, i++)\nx++;\nreturn x;\n}\npublic static int f5(int N){\nint x = 0;\nfor (int i = N; i > 0; i = i/2)\nx+=f1(i);\nreturn x;\n}",
+          "options": {
+            "A": "logN",
+            "B": "N",
+            "C": "NlogN",
+            "D": "N²",
+            "E": "2^N",
+            "F": "N!"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 18,
+          "text": "Analizand algoritmul de mai jos precizati ce timp de executie are.\n\npublic static int f6(int N){\nif (N==0) return 1;\nreturn f6(N-1) + f6(N-1);\n}",
+          "options": {
+            "A": "logN",
+            "B": "N",
+            "C": "NlogN",
+            "D": "N²",
+            "E": "2^N",
+            "F": "N!"
+          },
+          "correct_answer": ["E"]
+        },
+        {
+          "id": 19,
+          "text": "Analizand algoritmul de mai jos precizati ce timp de executie are.\n\npublic static int f7(int N){\nif (N==1) return 0;\nreturn 1+f7(N/2);\n}",
+          "options": {
+            "A": "logN",
+            "B": "N",
+            "C": "NlogN",
+            "D": "N²",
+            "E": "2^N",
+            "F": "N!"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 20,
+          "text": "Algoritmul Quiksort este cel mai potrivit pentru",
+          "options": {
+            "A": "Sortarea unui liste mari de chei care sunt in ordine aleatoare",
+            "B": "Sortarea unei liste de chei care sunt aproape ordonate",
+            "C": "Gasirea celui mai scurt drum",
+            "D": "Sortarea unei liste scurte de chei"
+          },
+          "correct_answer": ["A"]
+        }
+      ]
+    },
+    {
+      "name": "Programare orientata obiect",
+      "questions": [
+        {
+          "id": 1,
+          "text": "Un program orientat obiect reprezinta:",
+          "options": {
+            "A": "o colectie de obiecte care coopereaza prin intermediul mesajelor  in vederea realizarii unui obiectiv comun",
+            "B": "o varianta de program procedural",
+            "C": "un program care poate fi considerat un obiect de catre alte programe",
+            "D": "un program specific mediului de programare Windows",
+            "E": "un program format din mai multe fisiere sursa si header"
+          },
+          "correct_answer": [
+            "A"
+          ]
+        },
+        {
+          "id": 2,
+          "text": "O clasa in modelul de programare orientat obiect reprezinta:",
+          "options": {
+            "A": "o colectie de obiecte cu aceleasi caracteristici si cu un comportament comun",
+            "B": "o colectie de caracteristici",
+            "C": "un obiect din program",
+            "D": "o interfata",
+            "E": "un grup de comportamente specific unui obiect"
+          },
+          "correct_answer": [
+            "A"
+          ]
+        },
+        {
+          "id": 3,
+          "text": "Obiectele apartinand unei aceleiasi clase se diferentiaza prin:",
+          "options": {
+            "A": "starea lor",
+            "B": "valorile datelor membru declarate in cadrul clasei",
+            "C": "valorile caracteristicilor clasei",
+            "D": "caracteristicile diferite specifice fiecarui obiect",
+            "E": "comportamentul diferit specific fiecarui obiect"
+          },
+          "correct_answer": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        {
+          "id": 4,
+          "text": "Consideram urmatorul program C++ \n\n#include <iostream>\nusing namespace std;\nclass C\n{\nprivate:\nint _i;\npublic:\nC(int i):_i(i){}\nC():_i(3){}\n~C(){cout<<_i<<endl;}\n};\nvoid main()\n{\nC c1(4);\nC c2;\n}\n\nCare din urmatoarele afirmatii sunt adevarate:",
+          "options": {
+            "A": "programul nu contine erori de sintaxa",
+            "B": "exista erori de sintaxa in definitiile metodelor constructor",
+            "C": "destructorul nu poate contine instructiuni de afisare",
+            "D": "in cadrul programului principal sunt create doua instante ale clasei C",
+            "E": "programul afiseaza la consola numerele 3 si 4"
+          },
+          "correct_answer": [
+            "A",
+            "D",
+            "E"
+          ]
+        },
+        {
+          "id": 5,
+          "text": "Care din urmatoarele afirmatii referitoare la mostenire sunt adevarate relativ la limbajul de pro- gramare C++:",
+          "options": {
+            "A": "Relatia de mostenire in care clasa de baza si clasa derivata au aceeasi interfata se numeste mostenire pura",
+            "B": "Dintr-o clasa de baza se poate obtine prin intermediul mostenirii cel mult o clasa derivata",
+            "C": "O clasa derivata are exact o clasa de baza",
+            "D": "Obiectele apartinand unei clase derivate pot fi convertite la tipul unei clase de baza din care clasa derivata provine",
+            "E": "Specificatorul protected este folosit pentru a arata ca elementele care il urmeaza pot fi accesate si din cadrul claselor derivate"
+          },
+          "correct_answer": [
+            "A",
+            "D",
+            "E"
+          ]
+        },
+        {
+          "id": 6,
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program: \n\n#include <iostream.h>\nclass Test {\nint n;\npublic:\nTest(int x):n(x){}\nint f(int n, int &x, int *p){\nn=this->n;\nx=n++;\n*p=this->n + n;\nreturn n;\n}\n};\nvoid main(){\nTest t(2);\nint n=6,x=0x10,p=1;\ncout<<t.f(n,x,&p)<<\" \";\ncout<<n<<\" \"<<x<<\" \"<<p;\n}",
+          "options": {
+            "A": "3 6 2 5",
+            "B": "3 6 16 1",
+            "C": "6 6 10 1",
+            "D": "3 7 10 1",
+            "E": "Eroare de compilare deoarce constructorul nu contine nici o intructiune"
+          },
+          "correct_answer": [
+            "A"
+          ]
+        },
+        {
+          "id": 7,
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program: \n\n#include <iostream.h>\nclass B1 {\npublic:\nB1(){cout<<\"B1 \";}\n~B1(){cout<<\"DB1 \";}\n};\nclass B2 {\npublic:\nB2(){cout<<\"B2 \";}\n~B2(){cout<<\"DB2 \";}\n};\nclass D: public B1, public B2{\npublic:\nD():B2(),B1(){cout<<\"D \";}\n~D(){cout<<\"DD \";}\n};\nvoid main(){\nD d1;\nD d2=d1;\n}",
+          "options": {
+            "A": "B1 B2 D DD DB2 DB1 DD DB2 DB1",
+            "B": "B2 B1 D DD DB2 DB1 DD DB2 DB1",
+            "C": "B1 B2 D B1 B2 D DD DB2 DB1 DD DB2 DB1",
+            "D": "B1 B2 D DD DB1 DB2 DD DB1 DB2",
+            "E": "D DD"
+          },
+          "correct_answer": [
+            "A"
+          ]
+        },
+        {
+          "id": 8,
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program:\n\n#include <iostream.h>\nclass B1 {\npublic:\nB1(){cout<<\"B1 \";}\n~B1(){cout<<\"DB1 \";}\n};\nclass B2 {\npublic:\nB2(){cout<<\"B2 \";}\n~B2(){cout<<\"DB2 \";}\n};\nclass D: public B1, public B2{\nstatic int idGen;\nint id;\npublic:\nD():B2(),B1(){id=idGen++;cout<<\"D(\"<<id<<\") \";}\nD(const D &o){id=idGen++;cout<<\"CD(\"<<id<<\") \";}\n~D(){cout<<\"DD \";}\n};\nint D::idGen = 0;\nvoid main(){\ncout<<endl;\nD d1;\nD d2=d1;\n}",
+          "options": {
+            "A": "B1 B2 D(0) B1 B2 CD(1) DD DB2 DB1 DD DB2 DB1",
+            "B": "B1 B2 D(0) DD DB2 DB1 DD DB2 DB1",
+            "C": "B1 B2 D(0) DD DB2 DB1",
+            "D": "B2 B1 D(0) B1 B2 CD(1) DD DB2 DB1 DD DB2 DB1",
+            "E": "B1 B2 D(0) B2 B1 CD(1) DD DB2 DB1 DD DB2 DB1",
+            "F": "rezultatul executiei nu poate fi determinat deoarce depinde de continul memoriei"
+          },
+          "correct_answer": [
+            "A"
+          ]
+        },
+        {
+          "id": 9,
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program:\n\n#include <iostream.h>\nclass B1 {\npublic:\nB1(){cout<<\"B1 \";}\n~B1(){cout<<\"DB1 \";}\n};\nclass B2 {\npublic:\nB2(){cout<<\"B2 \";}\n~B2(){cout<<\"DB2 \";}\n};\nclass D: public B1, public B2{\npublic:\nD():B2(),B1(){cout<<\"D \";}\nD(const D &o){cout<<\"CD \";}\n~D(){cout<<\"DD \";}\n};\nvoid main(){\nD *d1 = new D;\nD *d2 = d1;\ndelete d1;\n}",
+          "options": {
+            "A": "B1 B2 D DD DB2 DB1",
+            "B": "B1 B2 D DD DB2 DB1 DD DB2 DB1",
+            "C": "B2 B1 D DD DB2 DB1",
+            "D": "B2 B1 D DD DB2 DB1 DD DB2 DB1",
+            "E": "B1 B2 D B1 B2 D DD DB2 DB1 DD DB2 DB1",
+            "F": "B1 B2 D B1 B2 D DD DB2 DB1"
+          },
+          "correct_answer": [
+            "A"
+          ]
+        },
+        {
+          "id": 10,
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program:\n\n#include <iostream.h>\nclass A {\npublic:\nA(){cout<<\"A()\";}\nA(int n,int m=0){cout<<\"A(int,int)\";}\nA(const A &o){cout<<\"A(const A&)\";}\n~A(){cout<<\"~A\";}\n};\nvoid main(){\ncout<<endl;\nA a1;\nA a2=a1;\nA a3=1;\nA a4(1);\nA a5(1,1);\n}",
+          "options": {
+            "A": "A()A(const A&)A(int,int)A(int,int)A(int,int)~A~A~A~A~A",
+            "B": "A(const A&)A(const A&)A(int)A(int,int)A(int,int)~A~A~A~A~A",
+            "C": "A()A(const A&)A(int,int)A(int,int)A(int,int)~A~A~A~A",
+            "D": "A()A(const A&)A(int)A(int)A(int,int)~A~A~A~A~A",
+            "E": "A()A()A(int,int)A(int)A(int,int)~A~A~A~A~A",
+            "F": "Eroare de compilare la declararea obiectului a2 deoarece nu e supra incarcat operatorul =."
+          },
+          "correct_answer": [
+            "A"
+          ]
+        },
+        {
+          "id": 11,
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program:\n\n#include <iostream.h>\nclass B {\npublic:\nvirtual void f() { cout<<\"B::f() \";}\nvoid g() { cout<<\"B::g() \";}\n};\nclass D1: public B{\npublic:\nvoid f() { cout<<\"D1::f() \";}\nvoid g() { cout<<\"D1::g() \";}\n};\nclass D2: public B{\npublic:\nvoid g() { cout<<\"D2::g() \";}\n};\nvoid main(){\nint i;\nB *b[] = {new B(), new D1(), new D2()};\nfor (i=2;i>=0;i--) {b[i]->f();}\nfor (i=0;i<=2;i++) {b[i]->g();}\n}",
+          "options": {
+            "A": "B::f() D1::f() B::f() B::g() B::g() B::g()",
+            "B": "D2::f() D1::f() B::f() B::g() B::g() B::g()",
+            "C": "B::f() D1::f() D::f() B::g() D1::g() D2::g()",
+            "D": "B::f() D1::f() B::f() B::g() D1::g() D2::g()",
+            "E": "B::f() B::f() D2::f() B::g() B::g() D2::g()"
+          },
+          "correct_answer": [
+            "A"
+          ]
+        },
+        {
+          "id": 12,
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program:\n\n#include <iostream.h>\nclass B {\npublic:\nvirtual void f() { cout<<\"B::f() \";}\n};\nclass D1: public B{\npublic:\nvoid f() { cout<<\"D1::f() \";}\n};\nclass D2: public B{\npublic:\nvoid f() { cout<<\"D2::f() \";}\n};\nvoid main(){\nint i;\nB b[] = { B(), D1(), D2()};\nfor (i=2;i>=0;i--) {b[i].f();}\n}",
+          "options": {
+            "A": "B::f() B::f() B::f()",
+            "B": "D2::f() D1::f() B::f()",
+            "C": "B::f() D1::f() D2::f()",
+            "D": "B::f() D1::f() D2::f()"
+          },
+          "correct_answer": [
+            "A"
+          ]
+        },
+        {
+          "id": 13,
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program:\n\n#include <iostream.h>\nclass B {\nprotected:\nint x;\npublic:\nB(int x=0){this->x=x;}\nvirtual void f() {x=x+1;}\nvoid print(){cout<<x<<\" \";}\n};\nclass D1: public B{\npublic:\nvoid f() {x=x+5;}\n};\nclass D2: public B{\npublic:\nvoid f() {x=x+2;}\n};\nvoid main(){\nint i;\nB *b[] = { new B(2), new D1(), new D2(), new B};\nfor (i=3;i>0;i--) (*b[i]).f();\nfor (i=0;i<=3;i++) b[i]->print();\n}",
+          "options": {
+            "A": "2 5 2 1",
+            "B": "2 0 0 0",
+            "C": "3 5 2 1",
+            "D": "2 1 1 1",
+            "E": "2 5 2 0",
+            "F": "2 5 2",
+            "G": "Eroare de compilare"
+          },
+          "correct_answer": [
+            "A"
+          ]
+        },
+        {
+          "id": 14,
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program:\n\n#include <iostream.h>\nclass B {\nint x;\npublic:\nB(int x=0){this->x=x;}\nvirtual void f() {x=x+1;}\nvoid print(){cout<<x<<\" \";}\n};\nclass D1: public B{\npublic:\nvoid f() {x=x+5;}\n};\nclass D2: public B{\npublic:\nvoid f() {x=x+2;}\n};\nvoid main(){\nint i;\nB *b[] = { new B(2), new D1(), new D2(), new B};\nfor (i=3;i>0;i--) (*b[i]).f();\nfor (i=0;i<=3;i++) b[i]->print();\n}",
+          "options": {
+            "A": "2 5 2 1",
+            "B": "2 0 0 0",
+            "C": "3 5 2 1",
+            "D": "2 1 1 1",
+            "E": "2 5 2 0",
+            "F": "2 5 2",
+            "G": "Eroare de compilare"
+          },
+          "correct_answer": [
+            "A"
+          ]
+        },
+        {
+          "id": 15,
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program:\n\n#include <iostream.h>\nclass B {\nint x;\nstatic int y;\npublic:\nB(int x=0){this->x=x;}\nvoid setX(int vx) {x=vx;}\nvoid setY(int vy) {y=vy;}\nvoid print(){cout<<x<<\" \"<<y<<\" \";}\n};\nint B::y=0;\nvoid main(){\nB b1=3;\nB b2(4);\nb1.print(); b2.print();\nb1.setX(5); b2.setY(2);\nb1.print(); b2.print();\n}",
+          "options": {
+            "A": "3 0 4 0 5 2 4 2",
+            "B": "3 0 4 0 5 0 4 2",
+            "C": "3 4 5 2 4 2",
+            "D": "3 3 4 4 5 2 4 2",
+            "E": "3 0 4 0 5 2 5 2",
+            "F": "3 0 4 0 5 0 2 0"
+          },
+          "correct_answer": [
+            "A"
+          ]
+        },
+        {
+          "id": 16,
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <iostream.h>\nstruct A{\nint x;\noperator double() {\nreturn 21.4;\n}\n};\nvoid main(){\nA a;\na.x = 11;\ncout << (0?3:a);\n}",
+          "options": {
+            "A": "21",
+            "B": "21.4",
+            "C": "3",
+            "D": "11",
+            "E": "programul nu se compileaza"
+          },
+          "correct_answer": [
+            "A"
+          ]
+        },
+        {
+          "id": 17,
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <iostream.h>\nstruct A {\nA(int d) : x(d) {}\nint x;\n};\nvoid main(){\ndouble x = 3.14;\nA f( int(x) );\ncout << f.x << endl;\n}",
+          "options": {
+            "A": "nimic (eroare de compilare)",
+            "B": "0",
+            "C": "3",
+            "D": "3.14",
+            "E": "depinde de implementarea compilatorului"
+          },
+          "correct_answer": [
+            "A"
+          ]
+        },
+        {
+          "id": 18,
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <iostream.h>\nint f(int x, int y = x) {\nreturn x+y+1;\n}\nvoid main(){\ncout << f(2);\n}",
+          "options": {
+            "A": "nimic (eroare de compilare)",
+            "B": "1",
+            "C": "3",
+            "D": "5",
+            "E": "depinde de implementarea compilatorului"
+          },
+          "correct_answer": [
+            "A"
+          ]
+        },
+        {
+          "id": 19,
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <iostream.h>\nstruct A {\nvirtual int f(int x = 5){\nreturn x * 2;\n}\n};\nstruct B : public A{\nint f(int x = 10) {\nreturn x * 3;\n}\n};\nvoid main(){\nA* a = new B;\ncout << a->f();\n}",
+          "options": {
+            "A": "15",
+            "B": "10",
+            "C": "20",
+            "D": "3",
+            "E": "nimic (eroare de compilare)"
+          },
+          "correct_answer": [
+            "A"
+          ]
+        },
+        {
+          "id": 20,
+          "text": "Fie secventa de program:\n\nclass A {\nprivate:\nint x,y;\npublic:\nA(){x=0;y=0; }\nA(int xi,int yi){\nx=xi;y=yi;\n}\nvoid afis(){\ncout <<x ” ” << y;\n}\n};\nvoid main(){\nA A1,A2(10,20);\nA1.afis();\nA2.afis();\n}\nCare din urmatoarele afirmatii sunt adevarate:",
+          "options": {
+            "A": "Metoda afis() este incorect definita",
+            "B": "Constructorul este incorect definit",
+            "C": "Declaratie incorecta pentru obiectul A1",
+            "D": "Programul afiseaza valorile (10 20 0 0 )",
+            "E": "Programul afiseaza valorile (0 0 10 20 )"
+          },
+          "correct_answer": [
+            "E"
+          ]
+        },
+        {
+          "id": 21,
+          "text": "Fie secventa de program:\n\nclass C{\npublic:\nC(){n++;}\nstatic int index(){return n;}\nprivate:\nstatic int n;\n};\nint C :: n = 0;\nclass A{\nprivate:\nC c;\nint a;\n};\nclass B{\npublic:\nB(int i = 0) :b(i)\n{cout <<C :: index() <<” ”;}\nprivate:\nA a;\nC c;\nint b;\n};\nvoid main(){\nA a1;\ncout <<C :: index() <<’ ’;\nB b1[3];\n}\nRezultatul executiei programului este:",
+          "options": {
+            "A": "1 2 3 4",
+            "B": "1 3 4 5",
+            "C": "1 7 3 4",
+            "D": "1 3 5 7",
+            "E": "0 1 2 3"
+          },
+          "correct_answer": [
+            "D"
+          ]
+        },
+        {
+          "id": 22,
+          "text": "Se considera secventa de program:\n\nclass C {\nprivate:\nint x,y;\npublic:\nC(int xi,int yi){ x=xi;y=yi; }\nC(const C &a){\nx=a.x;y=a.y;\n}\n};\nIn care din urmatoarele situatii se realizeaza copierea unui obiect in altul:",
+          "options": {
+            "A": "C c1(4,5)",
+            "B": "C c2(0.0, 0,0)",
+            "C": "C c3=c1",
+            "D": "C c4(1)",
+            "E": "C c5(c1)"
+          },
+          "correct_answer": [
+            "C",
+            "E"
+          ]
+        },
+        {
+          "id": 23,
+          "text": "Se considera secventa de program:\n\nclass Punct {\nprivate:\ndouble x,y;\npublic:\nPunct(double xi,double yi){\nx=xi;y=yi;\n}\n};\nIn care din urmatoarele situatii se realizeaza copierea unui obiect:",
+          "options": {
+            "A": "Punct P1(10,20)",
+            "B": "Punct P2(P1(3))",
+            "C": "Punct P3",
+            "D": "Punct P4=P1",
+            "E": "Punct P5(P1)"
+          },
+          "correct_answer": [
+            "D",
+            "E"
+          ]
+        },
+        {
+          "id": 24,
+          "text": "Se da programul :\n\nclass P {\ndouble x,y;\npublic:\nP(double x1 = 0,double y1 = 0){\nx=x1;y=y1;\n}\nvoid afis(){\ncout <<x <<” ” << y;\n}\nP operator++ (){\n++x;++y;\nreturn *this;\n}\n};\nvoid main(){\nP p1(1,2),p2;\np2=++p1;\np2.afis();\n}\nCare din afirmatiile urmatoare sunt corecte:",
+          "options": {
+            "A": "Obiectul p2 nu poate fi instantiat",
+            "B": "Asignarea p2=++p1 este incorecta",
+            "C": "In program se realizeaza supraancarcarea operatorului prefix de incrementare",
+            "D": "Programul va afisa valorile: 23",
+            "E": "Programul afiseaza valorile lui p1"
+          },
+          "correct_answer": [
+            "C",
+            "D"
+          ]
+        },
+        {
+          "id": 25,
+          "text": "Se da programul :\n\nclass A {\nint x,y;\npublic:\nA(int xi = 0, int yi=0){\nx=xi;y=yi;\n}\nvoid afis(){\ncout <<” x” << y;\n}\nA operator+ (A o2);\nfriend A operator++ (A &a);\n};\nA A::operator+ (A o2){\nA temp;\ntemp.x=x+o2.x;\ntemp.y=y+o2.y;\nreturn temp;\n}\nA operator++ (A &a){\n++a.x;++a.y;\nreturn a;\n}\nvoid main(){\nA a1(20,30),a2(2,2),a3;\na3=++a1+a2;\na3.afis();\n}\nCare din afirmatiile urmatoare sunt corecte: ",
+          "options": {
+            "A": "Utilizarea cuvantului predefinit ” friend ” nu este permisa in acest context",
+            "B": "Functia operatorului ++ nu este definita corect",
+            "C": "Programul va afisa valorile: 23 33",
+            "D": "Atribuirea a3=++a1+a2 este incorecta",
+            "E": "programul va afisa valorile: 22 32"
+          },
+          "correct_answer": [
+            "C"
+          ]
+        },
+        {
+          "id": 26,
+          "text": "Supra incarcarea unor operatori se poate realiza prin functii operator sau functii friend. Diferenta consta in:",
+          "options": {
+            "A": "Precedenta operatorilor",
+            "B": "Asociativitatea operatorilor",
+            "C": "Obiectul returnat",
+            "D": "Lista de parametri",
+            "E": "Numarul parametrilor din lista functiei"
+          },
+          "correct_answer": [
+            "D",
+            "E"
+          ]
+        },
+        {
+          "id": 27,
+          "text": "Se considera secventa:\n\nclass A {\nint a[3];\npublic:\nA(int xi, int yi, int zi ){\na[0]=xi;a[1]=yi;a[2]=zi;\n}\nint &operator[](int i){\nreturn a[i];\n}\n};\nvoid main() {\nA o(1, 2, 3);\ncout<<o[0];\no[1]=10;\ncout<<o[1];\n}\nCe se poate afirma despre operator[]()?",
+          "options": {
+            "A": "Supraincarca operatorul()",
+            "B": "Supraincarca un operator unar",
+            "C": "Este o metoda oarecare a clasei care nu produce supra incarcarea unor operatori",
+            "D": "Este un constructor",
+            "E": "Supraincarca operatorul[]"
+          },
+          "correct_answer": [
+            "E"
+          ]
+        },
+        {
+          "id": 28,
+          "text": "Se considera secventa:\n\nclass B{\nint a;\nprotected:\nint b;\npublic:\nint c;\nvoid set a(int x){a = x;}\nvoid set b(int y){b = y;}\nvoid set c(int z){c = z;}\n};\nclass D : public B{ int d;\npublic:\nvoid set b(int y) {b = y;}\nvoid set c(int z) {c = z;}\n};\nvoid main(){\nD o;\no.a = 1; //(1)\no.B::set a(2); //(2)\no.b = 3; //(3)\no.B::set b(4); //(4)\no.c = 5; //(5)\n}\nCare din instructiunile (1)-(5) acceseaza corect membrii claselor:",
+          "options": {
+            "A": "Toate",
+            "B": "(1), (2) si (5)",
+            "C": "(1), (3) si(4)",
+            "D": "(1), (2), (3), (4)",
+            "E": "(2), (4) si (5)"
+          },
+          "correct_answer": [
+            "E"
+          ]
+        },
+        {
+          "id": 29,
+          "text": "In programul urmator, care din instructiunile (1)-(5) acceseaza corect membrii claselor:\n\nclass B{\nint a;\nprotected:\nint b;\npublic:\nint c;\nvoid set a(int x){a = x;}\nvoid set b(int y){b = y;}\nvoid set c(int z){c = z;}\n};\nclass D : protected B{\nint d;\npublic:\nvoid set b(int y) {b = y;}\nvoid set c(int z) {c = z;}\n};\nvoid main(){\nD o;\no.a = 1; //(1)\no.B::set a(2); //(2)\no.b = 3; //(3)\no.B::set b(4); //(4)\no.c = 5; //(5)\n}",
+          "options": {
+            "A": "Toate",
+            "B": "Nici una",
+            "C": "Numai (5)",
+            "D": "(2), (4) si (5)"
+          },
+          "correct_answer": [
+            "B"
+          ]
+        },
+        {
+          "id": 30,
+          "text": "In programul urmator, care din instructiunile (1)-(6) acceseaza corect membrii claselor:\n\nclass B{\nint a;\nprotected:\nint b;\npublic:\nint c;\nvoid set a(int x){a = x;}\nvoid set b(int y){b = y;}\nvoid set c(int z){c = z;}\n};\nclass D : private B{\nint d;\npublic:\nvoid set b(int y) {b = y;}\nvoid set c(int z) {c = z;}\n};\nvoid main(){\nD o;\no.a = 1; //(1)\no.B::set a(2); //(2)\no.b = 3; //(3)\no.B::set b(4); //(4)\no.c = 5; //(5)\no.set c(6); //(6)\n}",
+          "options": {
+            "A": "(1) si (4)",
+            "B": "(2), (3), (4)",
+            "C": "Toate",
+            "D": "(6)"
+          },
+          "correct_answer": ["D"]
+        }
+      ]
+    },
+      {
+      "name": "Tehnologii Java",
+      "questions": [
+        {
+          "id": 1,
+          "text": "Fie urmatoarea declaratie Java:\n\npublic private int h;\n\nCare afirmatii sunt adevarate:",
+          "options": {
+            "A": "Variabila h va fi accesata in mod public, deoarece se ia in considerare primul modificator de acces;",
+            "B": "Variabila h va fi accesata in mod private,deoarece se ia in considerare ultimul modificator de acces;",
+            "C": "Va fi eroare la compilare deoarece o variabila nu poate fi  in acelasi timp accesata public si private;",
+            "D": "Nici una din variantele de mai sus;"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 2,
+          "text": "Fie urmatorul cod Java:\n\nint x=0;\nif (Double.isInfinite(2/x))\nSystem.out.println(\"Infinit\");\nelse\nSystem.out.println(\"2/0\");\n\nCe puteti spune despre acest cod, daca este integrat in cadrul unui program Java?",
+          "options": {
+            "A": "Va produce eroare la compilare din cauza impartirii la 0;",
+            "B": "Va produce eroare la executie din cauza impartirii la 0 (se arunca o exceptie: \"ArithmeticExpetion\");",
+            "C": "Codul este corect si va afisa Infinit;",
+            "D": "Codul este corect si va afisa NaN;"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 3,
+          "text": "Fie urmatorul program Java:\n\npublic class Program{\nstatic void f(int k){\nswitch(k){\ndefault: System.out.print(\"i \"); break;\ncase 1: System.out.print(\"1 \"); break;\ncase 2: case 3: System.out.print(\"23 \"); break;\ncase 4: case 5: System.out.print(\"45 \");\n}\n}\npublic static void main(String []args){\nfor(int i=0;i<6;i++)\nf(i);\n}\n}\n\nCare afirmatii sunt adevarate?",
+          "options": {
+            "A": "Programul produce eroare la compilare;",
+            "B": "Programul se compileaza si la executie afiseaza\ni 1 23 23 45 45 ;",
+            "C": "Programul se compileaza si la executie afiseaza\ni 1 23 45 ;",
+            "D": "Programul se compileaza si la executie afiseaza\ni 1 23 23 45 45 i;"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 4,
+          "text": "Fie urmatorul cod Java:\n\nbyte b=-7 >>> 1;\nSystem.out.println(b);\n\nCe se poate spune despre acest cod, daca este integrat intr-un program Java?",
+          "options": {
+            "A": "Va produce eroare la compilare;",
+            "B": "Va produce eroare la executie;",
+            "C": "Programul se compileaza si la executie afiseaza -3;",
+            "D": "Programul se compileaza si la executie afiseaza -4;"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 5,
+          "text": "Ce puteti afirma despre urmatorul program Java?\n\npublic class Static1{\npublic static void main(String []args){\nStatic2 a=new Static2();\nStatic2 b=new Static2();\nSystem.out.print(\"a.x= \"+ a.x);\na.x=100; b.x=200;\nSystem.out.print(\"a.x= \"+a.x);\n}\n}\nclass Static2{\nstatic int x=0;\nStatic2()\n{\nx++;\n};\n}",
+          "options": {
+            "A": "Afiseaza: a.x=2 a.x=200;",
+            "B": "Afiseaza: a.x=0 a.x=100;",
+            "C": "Afiseaza: a.x=1 a.x=100;",
+            "D": "Programul nu este corect deoarece asignarea lui x, conform obiectului b, este ilegala in Java;"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 6,
+          "text": "Ce se va afisa la executia urmatorului program Java?\n\ninterface I1{\nfloat x=2.3f;\n}\npublic class Test implements I1{\npublic static void main(String [] args){\nSystem.out.print(x+\" \");\nx=6.7f;\nSystem.out.print(x);\n}\n}",
+          "options": {
+            "A": "Va aparea eroare la compilare deoarece valoarea variabilei x nu se mai poate modifica;",
+            "B": "La executie se va afisa:\n2.3f 6.7f;",
+            "C": "La executie se va afisa:\n2.3f 2.3f;",
+            "D": "La executie se va afisa:\n2.3 6.7;"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 7,
+          "text": "Ce puteti spune despre urmatorul program Java?\n\nclass C1{\nint x=1;\nvoid f(int x){\nthis.x=x;\n}\nint getX_C1(){\nreturn x;\n}\n}\nclass C2 extends C1{\nfloat x=5.0f;\nint f(int x){\nsuper.f((int)x);\n}\nfloat getX_C2(){\nreturn x;\n}\n}\npublic class Subiect9{\npublic static void main(String []args){\nC2 obiect = new C2();\nobiect.f(4);\nSystem.out.print(obiect.getX_C2() + \" \");\nSystem.out.println(obiect.getX_C1());\n}\n}",
+          "options": {
+            "A": "Programul este corect si va afisa la executie 5 4;",
+            "B": "Programul este corect si va afisa la executie 4.0 4;",
+            "C": "Va aparea eroare la compilare deoarece in clasa C2 s-a suprascris gresit atributul x din clasa C1;",
+            "D": "Va aparea eroare la compilare deoarece metoda suprascrisa f() din clasa C2  intoarce un tip diferit de void;"
+          },
+          "correct_answer": ["D"]
+        },
+        {
+          "id": 8,
+          "text": "Ce puteti spune despre urmatorul program Java?\n\npublic class Test{\npublic static void main(String []args){\nC1 obiect =new C1();\nobiect.f(4,3);\n}\n}\nclass C1{\npublic void f(int xx, final int yy){\nint a=xx+yy;\nfinal int b=xx-yy;\nclass C2{\npublic void g(){\nSystem.out.print(\"a= \"+a);\nSystem.out.print(\", b= \"+b);\n}\n}\nC2 obiect2 = new C2();\nobiect2.g();\n}\n}",
+          "options": {
+            "A": "Programul este corect si va afisa la executie a=4, b=3;",
+            "B": "Va aparea eroare la compilare, deoarece clasa C2 nu poate fi definita in metoda f() din clasa C1;",
+            "C": "Va aparea eroare la compilare deoarece in metoda g() nu putem accesa vari- abila locala a din metoda f();",
+            "D": "Va aparea eroare la compilare deoarece nu se creeaza in clasa Test un obiect de tip C1.C2;"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 9,
+          "text": "Un fir de executie poate intra in starea ”blocat” (blocked) astfel?",
+          "options": {
+            "A": "Prin apelul metodei sleep();",
+            "B": "Automat de catre sistemul de operare;",
+            "C": "Prin apelul metodei block();",
+            "D": "Prin apelul metodei wait();"
+          },
+          "correct_answer": ["A", "D"]
+        },
+        {
+          "id": 10,
+          "text": "Care dintre urmatoarele propozitii referitoare la metodele unui applet sunt adevarate?",
+          "options": {
+            "A": "Trebuie sa redefinim macar o metoda altfel obtinem eroare la compilare;",
+            "B": "Sunt apelate automat de navigatorul Web;",
+            "C": "Pot fi apelate direct de catre utilizator;",
+            "D": "Nu se pot declara noi metode;"
+          },
+          "correct_answer": ["B", "C"]
+        },
+        {
+          "id": 11,
+          "text": "Care dintre gestionarii de pozitionare (Layout Managers) de mai jos pot fi utilizati pentru applet- uri?",
+          "options": {
+            "A": "GridBagLayout;",
+            "B": "TableLayout;",
+            "C": "DefaultLayout;",
+            "D": "FlowLayout;"
+          },
+          "correct_answer": ["A", "D"]
+        },
+        {
+          "id": 12,
+          "text": "Ce metode trebuie definite pentru a putea desena pe suprafata applet-ului?",
+          "options": {
+            "A": "Nu trebuie definita nici o metoda;",
+            "B": "update();",
+            "C": "paint();",
+            "D": "repaint();"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 13,
+          "text": "Care sunt deosebirile dintre Swing si AWT?",
+          "options": {
+            "A": "Componentele Swing sunt scrise in totalitate in Java, pe cand in AWT, com- ponentele sunt scrise folosind cod nativ;",
+            "B": "Componentele AWT au vizualizarea dependenta de sistemul de operare, iar  in Swing componentele pot avea o aceeasi vizualizare, indiferent de sistemul de operare;",
+            "C": "In sistemele de operare Unix componentele AWT nu sunt vizibile, pe cand cele din Swing da;",
+            "D": "Fiecare componenta AWT are o componenta corespondenta in Swing;"
+          },
+          "correct_answer": ["A", "B"]
+        },
+        {
+          "id": 14,
+          "text": "Care din fragmentele de cod Java de mai jos dauga un buton unui container de baza JFrame?",
+          "options": {
+            "A": "JFrame f= new JFrame();\nJPanel p = (JPanel)f.getContentPane();\np.add(new JButton(\"Buton\")) ;",
+            "B": "JFrame f= new JFrame();\nf.getContentPane().add(new JButton(\"Buton\"));",
+            "C": "JFrame f= new JFrame();\nf. add(new JButton(\"Buton\"));",
+            "D": "JFrame f=new JFrame();\nJButton b=new JButton(\"Buton\");\nf.add(b);"
+          },
+          "correct_answer": ["A", "B"]
+        },
+        {
+          "id": 15,
+          "text": "Fie urmatoarea secventa de cod:\n\nJPanel p =new JPanel();\nJlabel e = new JLabel(\"Eticheta:\");\ne.setDisplayedMnemonic(’E’);\np.add(e, BorderLayout.EAST);\nJTextField t = new JTextField(7);\ne.setLabelFor(t);\np.add(t, BorderLayout.WEST);\n\nCe se va intampla la apasarea combinatiei de taste: Alt + E?",
+          "options": {
+            "A": "Eticheta e va detine focusul;",
+            "B": "Campul t va detine focusul;",
+            "C": "Nici o componenta nu va detine focusul;",
+            "D": "Panoul p va detine focusul;"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 16,
+          "text": "Care dintre urmatoarele afirmatii referitoare la componenta grafica JTable sunt adevarate?",
+          "options": {
+            "A": "Intotdeauna o componenta JTable are asociata un model de date, chiar daca nu specificam explicit acest lucru;",
+            "B": "Prin modificarile efectuate asupra datelor unui model, se va actualiza automat si vizualizarea tabelului;",
+            "C": "Pentru a crea o tabela folosind modelul AbstractModelTable, este indeajuns sa suprascriem metodele getRowCount() si getColumnCount();",
+            "D": "Modelul de date AbstractTableModel tine datele intotdeauna intr-un Vector avand ele- mente Vector;"
+          },
+          "correct_answer": ["A", "B"]
+        },
+        {
+          "id": 17,
+          "text": "JDesktopPane este un exemplu de:",
+          "options": {
+            "A": "Container pentru JInternalFrame;",
+            "B": "Subclasa pentru JLayeredPane;",
+            "C": "Subclasa pentru JInternalFrame;",
+            "D": "Componenta atomica simpla;"
+          },
+          "correct_answer": ["A", "B"]
+        },
+        {
+          "id": 18,
+          "text": "Fie urmatorul program Java:\n\npublic class Afisare {\npublic static void main (String[] args) {\nfor (int i = 0; i < args.length; i++)\nSystem.out.println(args[i]);\n}\n}\n\nUn apel de genul java Afisare \"Hello Java\"; va produce urmatorul rezultat:",
+          "options": {
+            "A": "Hello Java;",
+            "B": "Hello\nJava;",
+            "C": "Programul este incorect, deoarece nu sunt prezente argumentele;",
+            "D": "NaN;"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 19,
+          "text": "Fie urmatorul program Java:\n\npublic class Program{\nstatic void f(int k){\nswitch(k){\ndefault: System.out.print(\"i \"); break;\ncase 1: System.out.print(\"1 \"); break;\ncase 2: case 3: System.out.print(\"21 \"); break;\ncase 4: case 5: System.out.print(\"26 \");\n}\n}\npublic static void main(String []args){\nfor(int i=0;i<6;i++)\nf(i);\n}\n}\n\nCare afirmatii sunt false?",
+          "options": {
+            "A": "Eroare la compilare;",
+            "B": "Programul se compileaza si la executie afiseaza\ni 1 21 21 26 26 ;",
+            "C": "Programul se compileaza si la executie afiseaza\ni 1 21 26 ;",
+            "D": "Programul se compileaza si la executie afiseaza\ni 1 21 21 26 26 i;"
+          },
+          "correct_answer": ["A", "C", "D"]
+        },
+        {
+          "id": 20,
+          "text": "Se utilizeaza protected  in Java pentru date si metode la care nu este necesar:",
+          "options": {
+            "A": "Sa facem o initializare;",
+            "B": "Sa le accesam in subclase;",
+            "C": "Ca utilizatorul sa aiba acces;",
+            "D": "Accesul direct atunci cand clasa este utilizata dar care prezinta interes atunci\ncand cineva creeaza o subclasa a acesteia ca parte a unui pachet diferit, in\nvederea extinderii ei;"
+          },
+          "correct_answer": ["D"]
+        },
+        {
+          "id": 21,
+          "text": "O subclasa a unei clase abstracte poate fi instantiata numai daca:",
+          "options": {
+            "A": "Se foloseste cuvantul cheie abstract;",
+            "B": "Suprascrie fiecare metoda declarata abstracta in superclasa sa, si furnizeaza implementari pentru toate acestea;",
+            "C": "Se foloseste mostenirea multipla;",
+            "D": "O subclasa abstracta nu poate fi instantiata;"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 22,
+          "text": "Prin modalitatea sa de tratare a exceptiilor, Java are urmatoarele avantaje fata de mecanismul traditional de tratare a erorilor:",
+          "options": {
+            "A": "Exista o metoda care se ocupa cu acest lucru;",
+            "B": "Separarea codului pentru tratarea unei erori de codul  in care ea poate sa apara;",
+            "C": "Propagarea unei erori pana la un analizor de exceptii corespunzator;",
+            "D": "Gruparea erorilor dupa tipul lor;"
+          },
+          "correct_answer": ["B", "C", "D"]
+        },
+        {
+          "id": 23,
+          "text": "Metodele care sunt apelate uzual pentru un obiect de tip exceptie sunt definite in clasa Throwable si sunt:",
+          "options": {
+            "A": "Declarate cu modificatorul de acces private;",
+            "B": "dinamice;",
+            "C": "publice;",
+            "D": "exceptii;"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 24,
+          "text": "Un fir de executie poate intra in starea de ready astfel:",
+          "options": {
+            "A": "Prin apelul metodei sleep();",
+            "B": "Automat de catre sistemul de operare;",
+            "C": "Prin apelul metodei join();",
+            "D": "Niciodata;"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 25,
+          "text": "Cand browser-ul intalneste tag-ul < APPLET >, rezerva o zona pentru afisare cu dimensiunile\nspecificate de paramterii WIDTH, HEIGHT si:",
+          "options": {
+            "A": "Se instaleaza un manager de securitate, adica un obiect de tip SecurityManager care va monitoriza activitatea metodelor appletului, aruncand exceptii de tip SecurityException;",
+            "B": "Incarca codul compilat al applet-ului cu numele specificat de parametrul CODE;",
+            "C": "Creaza o instanta a clasei Applet dupa care apeleaza metodele init() si start();",
+            "D": "Se deschid mai multe procese pe masina client;"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 26,
+          "text": "Care dintre urmatoarele coduri nu reprezinta arhivarea fisierelor unui applet?",
+          "options": {
+            "A": "jar cvf arhiva.jar ClasaPrincipala.java imagine.jpg;",
+            "B": "jar cvf arhiva.jar *.class *.jpg *.au;",
+            "C": "jar cfv arhiva.jar *.class *.jpg *.au;",
+            "D": "jar cvf arhiva.jar ClasaPrincipala.class AltaClasa.class imagine.jpg sunet.au"
+          },
+          "correct_answer": ["A", "C"]
+        },
+        {
+          "id": 27,
+          "text": "In care din exemplele de mai jos se foloseste corect variabila iLocation?",
+          "options": {
+            "A": "tabbedPanel.insertTab( \"Inserted Page\", new ImageIcon( \"image.gif\" ), pagePanel,\"My tooltip text\",iLocation );",
+            "B": "JFrame f= new JFrame(); f.getContentPane().add(new JButton(\"Buton\", iLocation));",
+            "C": "tabbedPanel.removeTabAt( iLocation );",
+            "D": "JFrame f=new JFrame(); JButton b=new JButton(\"Buton\"); f.add(b, iLocation);"
+          },
+          "correct_answer": ["A", "C"]
+        },
+        {
+          "id": 28,
+          "text": "Ce rezulta din urmatorul fragment de cod Java?\n\nint x=1;\nString []names={\"Fred\",\"Jim\",\"Sheila\"};\nnames[--x]+=\".\";\nfor(int i=0;i<names.length;i++)\n   System.out.println(names[i]);",
+          "options": {
+            "A": "Output-ul include Sheila.;",
+            "B": "Output-ul include Fred.;",
+            "C": "Output-ul include Jim.;",
+            "D": "Nimic din cele de mai sus;"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 29,
+          "text": "Applet-urile se diferentiaza de aplicatiile Java standard prin:",
+          "options": {
+            "A": "Restrictiile impuse de necesitatea asigurarii unui anumit nivel de securitate si faptul ca nu au o metoda main();",
+            "B": "Faptul ca trebuie sa suprascrie toate metodele: init(), start(), stop(), pause() si destroy();",
+            "C": "Faptul ca detin un instrument cu ajutorul caruia se creaza relatii de mostenire;",
+            "D": "Faptul ca detin un instrument care desemneaza meniurile din cadrul unei forme;"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 30,
+          "text": "Declararea constructorilor trebuie sa tina cont de:",
+          "options": {
+            "A": "relatia de mostenire dintre clase;",
+            "B": "numele constructorului, care trebuie sa fie identic cu numele clasei;",
+            "C": "comportamentul obiectelor pe care le instantiaza;",
+            "D": "o metoda prin care poate fi accesat de toate tipurile din Java sau de tipuri mostenite din tipul care contine membrul in discutie; 5 Algoritmica grafurilor"
+          },
+          "correct_answer": ["B"]
+        }
+      ]
+    },
+      {
+      "name": "Algoritmica grafurilor",
+      "questions": [
+        {
+          "id": 1,
+          "text": "O procedura ce parcurge arborele binar in postordine va afisa:",
+          "image": "grafuri_1.png",
+          "options": {
+            "A": "A B C D E F",
+            "B": "A B D E C F",
+            "C": "D B E A F C",
+            "D": "D E B F C A",
+            "E": "D E F B C A"
+          },
+          "correct_answer": ["D"]
+        },
+        {
+          "id": 2,
+          "text": "O procedura ce parcurge arborele binar  in preordine va afisa:",
+          "image": "grafuri_2.png",
+          "options": {
+            "A": "J D P B H L R F N",
+            "B": "J D B H F P L N R",
+            "C": "N F R L H B P D J",
+            "D": "B D H F N L P R J",
+            "E": "B D F H L J N P R"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 3,
+          "text": "O procedura ce parcurge arborele binar  in inordine va afisa:",
+          "image": "grafuri_3.png",
+          "options": {
+            "A": "B H F D L N P R J",
+            "B": "B D H F N L P R J",
+            "C": "N F R L H B P D J",
+            "D": "J D P B H L R F N",
+            "E": "B D F H J L N P R"
+          },
+          "correct_answer": ["E"]
+        },
+        {
+          "id": 4,
+          "text": "O procedura ce parcurge arborele binar  in A-preordine va afisa:",
+          "image": "grafuri_4.png",
+          "options": {
+            "A": "A B C E F D G H I J",
+            "B": "A B C D E F G H I J",
+            "C": "B E F C G H I J D A",
+            "D": "B A E C F G D H I J",
+            "E": "B E F G H I J C D A"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 5,
+          "text": "Care este numarul maxim de componente conexe pe care le poate avea un graf neorientat cu 20 de noduri si 12 muchii?",
+          "options": {
+            "A": "6",
+            "B": "12",
+            "C": "10",
+            "D": "15",
+            "E": "18"
+          },
+          "correct_answer": ["D"]
+        },
+        {
+          "id": 6,
+          "text": "Cate grafuri neorientate, distincte, cu 4 varfuri se pot construi? Doua grafuri se considera distincte \ndaca matricele lor de adiacenta sunt diferite.",
+          "options": {
+            "A": "4 (la 6)",
+            "B": "2 (la 6)",
+            "C": "6 (la 4)",
+            "D": "4",
+            "E": "2 (la 10)"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 7,
+          "text": "Intr-un graf neorientat cu 10 muchii, fiecare nod are gradul un numar nenul. Doar trei dintre noduri \nau gradul un numar par, restul nodurilor avand gradele numere impare. Care este numarul maxim \nde noduri pe care poate sa le aiba graful?",
+          "options": {
+            "A": "14",
+            "B": "10",
+            "C": "17",
+            "D": "16",
+            "E": "19"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 8,
+          "text": "Determinati numarul de frunze ale arborelui cu radacina descris prin urmatorul vector tata: (6, 5, 5, 2, 0, 3, 3, 3, 8, 7, 7)?",
+          "options": {
+            "A": "1",
+            "B": "2",
+            "C": "4",
+            "D": "5",
+            "E": "7"
+          },
+          "correct_answer": ["D"]
+        },
+        {
+          "id": 9,
+          "text": "Care dintre urmatoarele valori pot reprezenta gradele nodurilor unui graf neorientat cu 6 noduri?",
+          "options": {
+            "A": "(3, 2, 2, 2, 3, 3)",
+            "B": "(4, 2, 2, 2, 3, 2)",
+            "C": "(5, 2, 2, 2, 0, 3)",
+            "D": "(5, 2, 2, 2, 1, 2)",
+            "E": "(5, 2, 3, 2, 1, 2)"
+          },
+          "correct_answer": ["D"]
+        },
+        {
+          "id": 10,
+          "text": "Se considera graful neorientat cu multimea varfurilor {1, 2, 3, 4, 5, 6} si multimea muchiilor \n{[1, 2], [2, 3], [3, 4], [3, 5], [4, 5], [1, 3], [2, 6], [2, 4], [4, 6]}. Care este numarul minim de muchii ce trebuie \neliminate (care sunt aceste muchii) astfel incat graful partial obtinut sa nu mai fie conex?",
+          "options": {
+            "A": "1",
+            "B": "3",
+            "C": "2",
+            "D": "5",
+            "E": "nici una"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 11,
+          "text": "Se considera graful neorientat G cu 8 noduri, care are urmatoarele proprietati: \nI. suma gradelor tuturor nodurilor este 12; \nII. graful are exact 3 noduri cu gradul 1. \nCare este numarul maxim de noduri de grad 0 ale grafului G?",
+          "options": {
+            "A": "1",
+            "B": "4",
+            "C": "2",
+            "D": "3",
+            "E": "0"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 12,
+          "text": "Se considera graful neorientat cu 80 de noduri si 3160 de muchii. Care este numarul de muchii ce pot fi eliminate astfel incat graful partial obtinut sa devina arbore?",
+          "options": {
+            "A": "80",
+            "B": "3160",
+            "C": "3081",
+            "D": "6320",
+            "E": "2450"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 13,
+          "text": "Se considera graful orientat G reprezentat prin listele de adiacenta alaturate. Care este lungimea\nmaxima a unui drum elementar din acest graf? Sa se specifice arcele ce compun un drum cu aceste\nproprietati.\n1 2 6 5\n2 3\n3 1\n4 6\n5 6\n6 2",
+          "options": {
+            "A": "1",
+            "B": "7",
+            "C": "3",
+            "D": "4",
+            "E": "5"
+          },
+          "correct_answer": ["E"]
+        },
+        {
+          "id": 14,
+          "text": "Pentru care dintre urmatorii arbori cu radacina, fiecare avand 9 noduri, numerotate de la 1 la 9, \nmemorati cu ajutorul vectorilor tata, nodul 3 are cei mai multi descendenti?",
+          "options": {
+            "A": "(2, 0, 2, 3, 2, 3, 4, 4, 3)",
+            "B": "(3, 3, 4, 0, 2, 3, 4, 4, 4)",
+            "C": "(4, 2, 4, 0, 3, 3, 3, 3, 3)",
+            "D": "(0, 1, 1, 3, 4, 3, 4, 4, 3)",
+            "E": "(0, 1, 2, 3, 4, 5, 6, 7, 8)"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 15,
+          "text": "Care dintre urmatoarele proprietati este adevarata pentru un graf orientat cu n varfuri si n arce \n(n > 3) si care prezinta un circuit de lungime n:",
+          "options": {
+            "A": "exista un varf cu gradul intern n(cid:0)1.",
+            "B": "pentru orice varf, gradul intern si gradul extern sunt egale.",
+            "C": "graful nu are drumuri de lungime strict mai mare decat 2.",
+            "D": "gradul intern al oricarui varf este egal cu 2.",
+            "E": "daca notam graful cu G = (V, E), |V| = n, atunci |E| = n - 1."
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 16,
+          "text": "Care este ordinea de parcurgere a nodurilor grafului din figura 1, daca se foloseste metoda de \nvizitare in latime (BFS) pornind din nodul 5?",
+          "image": "grafuri_16.png",
+          "options": {
+            "A": "5, 2, 1, 3, 4, 7, 6, 8",
+            "B": "5, 2, 1, 3, 5, 7, 6, 8",
+            "C": "5, 7, 6, 4, 8, 2, 1, 3",
+            "D": "5, 2, 7, 1, 6, 3, 4, 8",
+            "E": "5, 7, 2, 6, 1, 8, 4, 3"
+          },
+          "correct_answer": ["D"]
+        },
+        {
+          "id": 17,
+          "text": "Care este ordinea de parcurgere a nodurilor grafului din figura 2, daca se foloseste metoda de \nvizitare in adancime (DFS) pornind din nodul 3?",
+          "image": "grafuri_17.png",
+          "options": {
+            "A": "3, 5, 7, 6, 4, 8, 2, 1",
+            "B": "3, 5, 2, 7, 1, 6, 4, 8",
+            "C": "3, 5, 2, 1, 4, 7, 6, 8",
+            "D": "3, 5, 2, 1, 4, 6, 8, 7",
+            "E": "3, 5, 2, 7, 1, 4, 6, 8"
+          },
+          "correct_answer": ["D"]
+        },
+        {
+          "id": 18,
+          "text": "Deteminati ordinul si dimensiunea grafului din figura 3?",
+          "image": "grafuri_18.png",
+          "options": {
+            "A": "5, 6",
+            "B": "8, 5",
+            "C": "7, 6",
+            "D": "7, 7",
+            "E": "6, 7"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 19,
+          "text": "Daca pentru un arbore binar avem un numar de N muchii, sa se determine numarul de muchii \ncritice ale arborelui?",
+          "options": {
+            "A": "N - 1",
+            "B": "N + 1",
+            "C": "N/2",
+            "D": "(N +1 )/2",
+            "E": "N"
+          },
+          "correct_answer": ["E"]
+        },
+        {
+          "id": 20,
+          "text": "Daca avem un arbore binar plin cu 9 nivele,sa se determine numarul de varfuri ce se \nafla pe nivelul cu numarul 5?",
+          "options": {
+            "A": "15",
+            "B": "31",
+            "C": "2 (la 5)",
+            "D": "2 (la 4)",
+            "E": "14"
+          },
+          "correct_answer": ["D"]
+        },
+        {
+          "id": 21,
+          "text": "Avand un arbore binar reprezentat prin urmatoarea expresie cu paranteze: \n1(2(3(0, 4(0, 0)), 5(6(0, 0), 7(0, 0))), 8(0, 9(0, 0))). Sa se determine numarul de frunze ale grafului.",
+          "options": {
+            "A": "4",
+            "B": "3",
+            "C": "5",
+            "D": "9",
+            "E": "6"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 22,
+          "text": "Avand graful ponderat din figura 4, sa se determine un arbore de acoperire de cost minim. \nVom considera nodul A ca nod de plecare. Care este ordinea de parcurgere a nodurilor?",
+          "image": "grafuri_22.png",
+          "options": {
+            "A": "A, C, B, D, E;",
+            "B": "A, B, D, E, C;",
+            "C": "A, D, E, C, B;",
+            "D": "A, B, D, C, E;",
+            "E": "A, B, E, B, D;"
+          },
+          "correct_answer": ["B"]
+        }
+      ]
+    },
+    {
+      "name": "Metode de analiza a algoritmilor",
+      "questions": [
+        {
+          "id": 1,
+          "text": "Care este expresia timpului de executie T(n) al urmatorului algoritm in cazul cel mai favorabil, \nin cazul mediu si in cazul cel mai defavorabil, unde n noteaza dimensiunea setului de intrare, \niar k, k1, ..., k8 - orice constanta pozitiva:",
+          "image": "maa_1.png",
+          "options": {
+            "A": "k, k1n, k2n + k3",
+            "B": "k1n + k2, k3n + k4, k5n + k6",
+            "C": "k, k1n + k2, k2n² + k3n + k4",
+            "D": "k1n + k2, k3n + k4, k5n² + k6n + k7",
+            "E": "k, k1n² + k2n + k3, k4n² + k5n + k6",
+            "F": "k1n + k2, k3n² + k4n + k5, k6n² + k7n + k8"
+          },
+          "correct_answer": ["F"]
+        },
+        {
+          "id": 2,
+          "text": "Determinati in care caz timpii de executie T1(n) si T2(n) au acelasi ordin de crestere, unde prin n\nnotam dimensiunea datelor de inrtare iar k noteaza o constanta oarecare pozitiva: ",
+          "options": {
+            "A": "lim (n → ∞) (T1(n)/T2(n)) = 0",
+            "B": "lim (n → ∞) (T1(n)/T2(n)) = ∞",
+            "C": "lim (n → ∞) (T1(n)/T2(n)) = k"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 3,
+          "text": "Pentru lim (n → ∞) (f(n)/g(n)) = ∞, care din urmatoarele afirmatii sunt adevarate?",
+          "options": {
+            "A": "f(n) ∈ ω(g(n))",
+            "B": "f(n) ∈ Θ(g(n))",
+            "C": "f(n) ∈ Ω(g(n))"
+          },
+          "correct_answer": ["A", "C"]
+        },
+        {
+          "id": 4,
+          "text": "Pentru f(n) ∈ Θ(n) si g(n) ∈ Ω(n) atunci",
+          "options": {
+            "A": "f(n)g(n) ∈ Ω(n²)",
+            "B": "f(n)g(n) ∈ Θ(n²)",
+            "C": "f(n)g(n) ∈ O(n²)"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 5,
+          "text": "Pentru f(n)=6n^3 + 14n^2 - 8n + 4 si g(n)=2n^3 care din urmatoarele afirmatii sunt adevarate?",
+          "options": {
+            "A": "f(n), g(n) ∈ O(2n^3)",
+            "B": "f(n), g(n) ∈ O(n^3)",
+            "C": "f(n) ∈ O(6n^3) si g(n) ∈ O(2n^3)"
+          },
+          "correct_answer": ["A", "B", "C"]
+        },
+        {
+          "id": 6,
+          "text": "Pentru f(n) ∈ Ω(n) si g(n) ∈ O(n2) atunci",
+          "options": {
+            "A": "(f(n) / g(n)) ∈ Ω(n)",
+            "B": "(f(n) / g(n)) ∈ O(n)",
+            "C": "(f(n) / g(n)) ∈ Θ(n)"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 7,
+          "text": "Pentru f(n) ∈ O(h(n)) si h(n) ∈ O(g(n)) atunci",
+          "options": {
+            "A": "functia f(n) este echivalenta cu g(n)",
+            "B": "f(n) ∈ O(g(n))",
+            "C": "f(n) ∈ Θ(g(n))"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 8,
+          "text": "Pentru n - numar natural nenul si f(n) = 1 + 2 + ... + n atunci",
+          "options": {
+            "A": "f(n) ∈ O(n)",
+            "B": "f(n) ∈ O(n²)",
+            "C": "f(n) ∈ Θ(n²)"
+          },
+          "correct_answer": ["B", "C"]
+        },
+        {
+          "id": 9,
+          "text": "Care este ordinul de complexitate al algoritmului de cautare binara?",
+          "image": "maa_9.png",
+          "options": {
+            "A": "Ω(logn)",
+            "B": "O(logn)",
+            "C": "O(n)"
+          },
+          "correct_answer": ["A", "B"]
+        },
+        {
+          "id": 10,
+          "text": "Care este ordinul de complexitate al algoritmului de ridicare la putere al unui numar x^n?",
+          "options": {
+            "A": "Θ(n)",
+            "B": "Θ(logn)",
+            "C": "Θ(x^n)"
+          },
+          "correct_answer": ["A", "B"]
+        },
+        {
+          "id": 11,
+          "text": "Care este ordinul de complexitate al functiei f(n) cu relatia de recurenta t(n)=2t(sqrt(n)) + logn?",
+          "options": {
+            "A": "f(n) ∈ O(lognlog(logn))",
+            "B": "f(n) ∈ O(logn)",
+            "C": "f(n) ∈ O(n^1/2)"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 12,
+          "text": "Care este ordinul de crestere al unui algoritm avand timpul de executie de forma urmatoare:",
+          "image": "maa_12.png",
+          "options": {
+            "A": "f(n) ∈ O(n²)",
+            "B": "f(n) ∈ Θ(n²)",
+            "C": "f(n) ∈ O(n)"
+          },
+          "correct_answer": ["A", "B"]
+        },
+        {
+          "id": 13,
+          "text": "Care este ordinul de crestere al unui algoritm avand timpul de executie de forma urmatoare:",
+          "image": "maa_13.png",
+          "options": {
+            "A": "f(n) ∈ O(log2n)",
+            "B": "f(n) ∈ O(logn)",
+            "C": "f(n) ∈ O(lgn)"
+          },
+          "correct_answer": ["A", "B", "C"]
+        },
+        {
+          "id": 14,
+          "text": "Care este ordinul de crestere al algoritmului pentru problema Turnurilor din Hanoi avand timpul \nde executie de forma",
+          "image": "maa_14.png",
+          "options": {
+            "A": "f(n) ∈ O(n)",
+            "B": "f(n) ∈ O(2^n)",
+            "C": "f(n) ∈ O(logn)"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 15,
+          "text": "Care este ordinul de crestere al unui algoritm avand timpul de executie de forma urmatoare:",
+          "image": "maa_15.png",
+          "options": {
+            "A": "f(n) ∈ O(n)",
+            "B": "f(n) ∈ O(2^logn)",
+            "C": "f(n) ∈ O(logn)"
+          },
+          "correct_answer": ["A", "B"]
+        },
+        {
+          "id": 16,
+          "text": "Care este ordinul de complexitate al algoritmului mergesort avand relatia de \nrecurenta t(n) = 2t(n/2) + Θ(n)?",
+          "options": {
+            "A": "f(n) ∈ Θ(nlogn)",
+            "B": "f(n) ∈ Θ(n)",
+            "C": "f(n) ∈ Θ(n+nlogn)"
+          },
+          "correct_answer": ["A", "C"]
+        },
+        {
+          "id": 17,
+          "text": "Sa se indice ordinul de crestere al functiei f(n) cu urmatoarea relatie de recurenta:",
+          "image": "maa_17.png",
+          "options": {
+            "A": "f(n) ∈ O(n²)",
+            "B": "f(n) ∈ Θ(n)",
+            "C": "f(n) ∈ O(logn)"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 18,
+          "text": "Sa se indice ordinul de crestere al functiei f(n) cu urmatoarea relatie de recurenta:",
+          "image": "maa_18",
+          "options": {
+            "A": "f(n) ∈ O(n!)",
+            "B": "f(n) \u2208 O(n\u00B2)",
+            "C": "f(n) ∈ O(n)"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 19,
+          "text": "Sa se indice ordinul de crestere al functiei f(n) cu urmatoarea relatie de recurenta:",
+          "image": "maa_19",
+          "options": {
+            "A": "f(n) ∈ Θ(n)",
+            "B": "f(n) ∈ Θ(n+nlogn)",
+            "C": "f(n) ∈ Θ(nlogn)"
+          },
+          "correct_answer": ["B", "C"]
+        },
+        {
+          "id": 20,
+          "text": "Care din urmatoarele interpretari fac adevarata formula F ilustrata in graficul din Figura 5?",
+          "image": "maa_20",
+          "options": {
+            "A": "x1 = true, x2 = true, x3 = true",
+            "B": "x1 = false, x2 = true, x3 = false",
+            "C": "x1 = true, x2 = false, x3 = true"
+          },
+          "correct_answer": ["B"]
+        }
+      ]
+    },
+    {
+      "name": "Arhitectura calculatoarelor",
+      "questions": [
+        {
+          "id": 1,
+          "text": "Exprimati in binar, octal, hexazecimal numarul zecimal 3.625",
+          "options": {
+            "A": "11.2000; 3.42; 4.20;",
+            "B": "11.101; 3.5; 3.A;",
+            "C": "2.1001; 3.52; 2D;",
+            "D": "11.10000; 3.20; 3.2A;",
+            "E": "11.10000; 2.42; 3.2;"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 2,
+          "text": "Convertiti in zecimal numerele urmatoare (baza este indicata in indice): DA.C (baza 16), 27:4 (baza 8), 11011.101 (baza 2)",
+          "options": {
+            "A": "216.5; 17.5; 27.52;",
+            "B": "218.75; 23.5; 27.625;",
+            "C": "218.75; 22.5; 26.5;",
+            "D": "218.5; 23.5; 27.6;",
+            "E": "218.75; 23.55; 27.625;"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 3,
+          "text": "Dati valoarea zecimala cu semn a numarului B7 (baza 16) codificat in complement fata de 1 (cod invers)",
+          "options": {
+            "A": "+7.2",
+            "B": "71;",
+            "C": "72;",
+            "D": "-71;",
+            "E": "-72;"
+          },
+          "correct_answer": ["E"]
+        },
+        {
+          "id": 4,
+          "text": "Dati pe 8 biti (in hexazecimal) reprezentarea in complement fata de 2 (cod complementar) a valorii  \nintregi negative -32.",
+          "options": {
+            "A": "E3",
+            "B": "E0;",
+            "C": "E1;",
+            "D": "E2;",
+            "E": "DF;"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 5,
+          "text": "Dati sub forma a x 2(la b) (a si b in sistemul zecimal) valoarea care corespunde reprezentarii in VMSP \n(virgula mobila simpla precizie, adica: 1 bit = semnul mantisei, 8 biti = exponentul decalat, \n23 biti = mantisa normalizata), 27660000000 (baza 8)",
+          "options": {
+            "A": "0.8 x 2 (la 4);",
+            "B": "-0.5 x 2 (la -3);",
+            "C": "-8.8 x 2 (la 4);",
+            "D": "-8.8125 x 2 (la -4);",
+            "E": "-100;"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 6,
+          "text": "Dati reprezentarea interna, exprimata in hexazecimal), in VMSP (virgula mobila simpla precizie, \nadica: 1 bit = semnul mantisei,8 biti = exponentul decalat,\n23 biti = mantisa normalizata) pentru \nvaloarea zecimala -6.25.",
+          "options": {
+            "A": "44C58000;",
+            "B": "C1E40000;",
+            "C": "C4B59000;",
+            "D": "C4C58000;",
+            "E": "CDFAA000;"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 7,
+          "text": "Fie o transmisie care utilizeaza codul lui Hamming cu paritate para. Gasiti mesajul transmis ( in octal) \nstiind ca reprezentarea datelor de transmis (pe 16 biti) este 7B (baza 16)",
+          "options": {
+            "A": "3724",
+            "B": "3723;",
+            "C": "3726;",
+            "D": "3725;",
+            "E": "3727;"
+          },
+          "correct_answer": ["D"]
+        },
+        {
+          "id": 8,
+          "text": "Fie o transmisie care utilizeaza codul lui Hamming cu paritate impara. Regasiti ( in octal) mesajul \ninitial (corectand eventualele erori daca mesajul primit (pe 21 biti) este 6130014 (in octal).",
+          "options": {
+            "A": "140441 (baza 8);",
+            "B": "141441 (baza 8);",
+            "C": "142442 (baza 8);",
+            "D": "C522 (baza 16);",
+            "E": "C321 (baza 16);"
+          },
+          "correct_answer": ["B", "E"]
+        },
+        {
+          "id": 9,
+          "text": "Fie o transmisie care utilizeaza metoda codurilor polinomiale (CRC) prin intermediul polinomului \ngenerator G(x) = x(la 3) + x + 1. Daca se doreste transmiterea datelor (7 biti) cu reprezentarea octala \n131, care va fi mesajul trimis?",
+          "options": {
+            "A": "25DC (baza 16)",
+            "B": "1313 (baza 8);",
+            "C": "2CB (baza 16);",
+            "D": "22734 (baza 8);",
+            "E": "22735 (baza 10);"
+          },
+          "correct_answer": ["B", "C"]
+        },
+        {
+          "id": 10,
+          "text": "Fie o transmisie care utilizeaza metoda codurilor polinomiale (CRC) prin intermediul polinomului \ngenerator G(x) = x² + x + 1. Daca s-a receptionat mesajul T = 2332 (baza 8) (11 biti) sa se stabileasca \ndaca a fost trimis corect, iar daca raspunsul este afirmativ sa se afle mesajul M initial.",
+          "options": {
+            "A": "132 (baza 10);",
+            "B": "464 (baza 8);",
+            "C": "134 (baza 16);",
+            "D": "136 (baza 16);",
+            "E": "466 (baza 8);"
+          },
+          "correct_answer": ["D", "E"]
+        },
+        {
+          "id": 11,
+          "text": "Reduceti expresia formei normale disjunctive (cu mintermeni) a functiei logice \nf(a, b, c) = a¯bc + ab¯c + ab¯c¯ + abc¯ + abc",
+          "options": {
+            "A": "a¯ + bc",
+            "B": "a + bc;",
+            "C": "a + b¯c;",
+            "D": "a¯ + b;",
+            "E": "a + b¯."
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 12,
+          "text": "Reduceti expresia formei normale disjunctive (cu mintermeni) a functiei logice de 4 variabile care \nia valoarea 1 daca pqrs vazut ca numar binar are o valoare mai mica deca 10.",
+          "options": {
+            "A": "p¯ + q¯r¯;",
+            "B": "p¯qr + pq¯ + pq;",
+            "C": "p + p¯q¯s;",
+            "D": "pqr + r¯;",
+            "E": "pq + qr + rs."
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 13,
+          "text": "Se consider˘a urm˘atorul cont¸inut al registrelor ¸si al memoriei: (XR1) = 1; (1000) = 0; (3000) = 4;\n(B2) = 2000; (2000) = 2; (B1) = 1000; (1001) = 1; (3001) = 5; (2001) = 3; (0) = 1000.\nCare este valoarea lui F dup˘a execut¸ia programului urm˘ator: 1) LOAD 3000; 2) LOAD 2000,\nXR1; 3) SUB 2001,B1 4) MPY 1001,B2; 5) DIV 2000; 6) ADD 1000, IM; 7) SUB 0,I,XR1;\n8) STA F;",
+          "options": {
+            "A": "1001;",
+            "B": "1002;",
+            "C": "1003;",
+            "D": "1004;",
+            "E": "1005;"
+          },
+          "correct_answer": ["D"]
+        },
+        {
+          "id": 14,
+          "text": "Se considera o memorie centrala unde fiecare octet este adresat separat. Calculati in hexazecimal adresa \ncelui de-al 7-lea element al unui tablou cu adresa primului element 1000 si fiecare element 16 are 16 biti.",
+          "options": {
+            "A": "1008;",
+            "B": "1009;",
+            "C": "100A;",
+            "D": "100B;",
+            "E": "100C;"
+          },
+          "correct_answer": ["E"]
+        },
+        {
+          "id": 15,
+          "text": "Se considera o memorie intretesuta constituita din doua unitati de cate 4 Mo. \nStiind ca adresa de memorie se constituie pe 23 de biti astfel: 1 bit identifica superunitatea, 20 biti specifica adresa in \ncadrul unitatii, iar ultimii 2 biti octetul din cadrul cuvantului), sa se identifice ( in zecimal) linia  \nintr-o memorie cache de 1Ko precum si bitii de pondere mare ai adresei de memorie A = 10000.",
+          "options": {
+            "A": "600; 42;",
+            "B": "600; 2;",
+            "C": "452; 42;",
+            "D": "600; 24;",
+            "E": "452; 2;"
+          },
+          "correct_answer": ["E"]
+        },
+        {
+          "id": 16,
+          "text": "Presupunem ca o adresa in memoria virtuala paginata, necesita 20 de biti organizati astfel: offset\n(cuvant): bitii de la 0 la 11; pagina: bit¸ii de la 12 la 19; Care este adresa octala a celui de-al 970-lea\ncuvant de la pagina 213 ?",
+          "options": {
+            "A": "3251718;",
+            "B": "3251711;",
+            "C": "3261711;",
+            "D": "3261811;",
+            "E": "3271711;"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 17,
+          "text": "Presupunem ca o adresa in memoria virtuala paginata, necesita 20 de biti organizati astfel: \noffset (cuvant): bitii de la 0 la 11; pagina: bitii de la 12 la 19; Care este numarul cuvantului si numarul \nde pagina pentru adresa hexazecimala ABCDE? Dati rezultatul in zecimal.",
+          "options": {
+            "A": "4000; 171;",
+            "B": "3295; 170;",
+            "C": "3294; 171;",
+            "D": "4500; 200;",
+            "E": "2951; 117;"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 18,
+          "text": "Presupunem ca o adresa in memoria virtuala segmentatasi paginata, necesita 24 de biti organizati \nastfel: offset (cuvant): bitii de la 0 la 7; pagina: bitii de la 8 la 17; segment: bitii de la 18 la 23; \nCare este adresa octala a celui de-al 145-lea cuvant de la pagina 111 a segmentului al 32-lea?",
+          "options": {
+            "A": "37067620;",
+            "B": "32517180;",
+            "C": "32517160;",
+            "D": "37007620;",
+            "E": "37062620;"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 19,
+          "text": "Presupunem ca o adresa in memoria virtuala segmentatasi paginata, necesita 24 de biti organizati \nastfel: offset (cuvant): bitii de la 0 la 7; pagina: bitii de la 8 la 17; segment: bitii de la 18 la 23; \nCare este numarul cuvantuluisi numarul de pagina pentru adresa hexazecimala ABCDE? Dati rezultatul in zecimal.",
+          "options": {
+            "A": "144; 111; 31;",
+            "B": "150; 120; 131;",
+            "C": "119; 053; 33;",
+            "D": "150; 111; 131;",
+            "E": "155; 120; 131;"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 20,
+          "text": "Care este efectul urmatoarei secvente de instructiuni care se executa pe o masina cu programare \npe zero adrese: 1) LOAD B; 2) LOAD C; 3) LOAD D 4) LOAD E; 5) DIV ; 6) ADD ;\n7) LOAD F; 8) LOAD G; 9) MPY ; 10) ADD ; 11) MPY ; STA R;",
+          "options": {
+            "A": "R = B × (C + D/E + F × G);",
+            "B": "R = B/(C + D/E + F × G);",
+            "C": "R = B × (C + D/E − F × G);",
+            "D": "R = B × (C + D/E + F/G);",
+            "E": "R = B × (C + D × E + F × G);"
+          },
+          "correct_answer": ["A"]
+        }
+      ]
+    },
+    {
+      "name": "Sisteme de operare si Proiectarea sistemelor de operare",
+      "questions": [
+        {
+          "id": 1,
+          "text": "Apelul sistem SLEEP produce:",
+          "options": {
+            "A": "trecerea producatorului in starea BLOCAT daca buffer-ul este gol",
+            "B": "blocarea procesului pana cand un altul il trezeste prin WAKEUP",
+            "C": "blocarea procesului pana cand un altul lanseaza apelul SLEEP",
+            "D": "trecerea procesului precizat de parametrul apelului in starea GATA"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 2,
+          "text": "Planificarea preemptiva este strategia de planificare conform careia:",
+          "options": {
+            "A": "un proces nu poate fi suspendat temporar daca este in starea GATA",
+            "B": "un proces care din punct de vedere logic poate fi executat este temporar suspendat",
+            "C": "unprocesodatalansat inexecutienumaiestesuspendatatuncicandpoatefi inexecutie",
+            "D": "un proces nu poate fi suspendat temporar daca este in starea BLOCAT"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 3,
+          "text": "Planificarea Round-Robin:",
+          "options": {
+            "A": "determina atribuirea unei cunate de timp in care procesului ii este permis sa ruleze",
+            "B": "determina suspendarea unui proces intr-un moment arbitrar",
+            "C": "determina atribuirea unei prioritati fixe pentru executia unui proces",
+            "D": "determina lansarea in executie a unui proces daca nu exista altul mai prioritar in executie"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 4,
+          "text": "Care din urmatoarele functiuni sunt indeplinite de sistemul calculator hardware generator de baza:",
+          "options": {
+            "A": "functia de conservare a informatiei",
+            "B": "functia de generare a informatiei",
+            "C": "functia de prelucrare a informatiei",
+            "D": "functia de receptionare a informatiei"
+          },
+          "correct_answer": ["A", "C", "D"]
+        },
+        {
+          "id": 5,
+          "text": "Subunitatile de intrerupere sunt:",
+          "options": {
+            "A": "un mijloc de intrerupere al sistemului calculator",
+            "B": "un mecanism de transmitere a informatillor intre dispozitivele de intrare-iesire",
+            "C": "un mijloc de terminare a unei operatii de intrare-iesire",
+            "D": "un mijloc de comunicatie  intre sistemul calculator hardware si sistemul de operare"
+          },
+          "correct_answer": ["D"]
+        },
+        {
+          "id": 6,
+          "text": "La declansarea unei intreruperi prima actiune desfasurata in sistemul calculator este:",
+          "options": {
+            "A": "salvarea registrelor procesului intrerupt in tabela de procese",
+            "B": " incarcarcarea registrului program counter cu continutul vectorului de intrerupere",
+            "C": "salvarea starii programului intrerupt in stiva",
+            "D": "modificarea starii procesului intrerupt"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 7,
+          "text": "Mecanismul de adresare al memoriei este:",
+          "options": {
+            "A": "mecanismul prin care se incarca programele in memorie",
+            "B": "mecanismul prin care se traduce memoria virtuala in memorie reala",
+            "C": "mecanismul prin care se construiesc adresele de memorie",
+            "D": "mecanismul prin care se depun datele in memoria operativa"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 8,
+          "text": "Apelurile sistem DOWN si UP actioneaza asupra unei variabile de tip:",
+          "options": {
+            "A": "contor",
+            "B": "semafor",
+            "C": "contor de evenimente",
+            "D": "conditie"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 9,
+          "text": "Un proces este:",
+          "options": {
+            "A": "activitatea unitatii de prelucrare",
+            "B": "un program compilat",
+            "C": "un program in executie",
+            "D": "un program link-editat"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 10,
+          "text": "Registrul “contor program” contine:",
+          "options": {
+            "A": "adresele opereanzilor operatiei ce trebuie executata",
+            "B": "adresa urmatoarei instructiuni ce trebuie executata",
+            "C": "chiar operanzii operatiei ce trebuie executata",
+            "D": "numarul instructiunii ce trebuie executata"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 11,
+          "text": "Sectiunile critice sunt:",
+          "options": {
+            "A": "secvente de program care trebuie tratate cu mare atentie",
+            "B": "secvente de tratare a intreruperilor importante",
+            "C": "secvente din activitatea sistemului calculator cand resursele sunt insuficiente",
+            "D": "secvente de program unde se acceseaza date partajate"
+          },
+          "correct_answer": ["D"]
+        },
+        {
+          "id": 12,
+          "text": "Planificatorul este componenta sistemului de operare care decide:",
+          "options": {
+            "A": "care proces trece in starea de executie si pentru cat timp",
+            "B": "care proces trebuie terminat si care proces trebuie inceput",
+            "C": "care dispozitiv periferic va fi folosit de catre program",
+            "D": "care dintre fisierele deschise trebuie inchis la un moment dat"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 13,
+          "text": "Criteriile generale urmarite de algoritmii de planificare sunt:",
+          "options": {
+            "A": "corectitudinea (echitabilitatea)",
+            "B": "respectarea politicii SO",
+            "C": "eficienta",
+            "D": "mentenabilitatea"
+          },
+          "correct_answer": ["A", "B", "C"]
+        },
+        {
+          "id": 14,
+          "text": "Un sistem de operare asigura indeplinirea urmatoarelor functii: ",
+          "options": {
+            "A": "cresterea performantelor unitatii de prelucrare",
+            "B": "un management eficient al resurselor fizice si logice",
+            "C": "asistarea utilizatorului printr-un sistem dezvoltat de comunicatie",
+            "D": "protectia informatiei"
+          },
+          "correct_answer": ["B", "C", "D"]
+        },
+        {
+          "id": 15,
+          "text": "Care din urmatoarele resurse fizice este “preemptibila”:",
+          "options": {
+            "A": "banda magnetica",
+            "B": "memoria",
+            "C": "scanerul",
+            "D": "imprimanta"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 16,
+          "text": "Exceptiile program sunt:",
+          "options": {
+            "A": "evenimente care se produc la nivelul dispozitivelor fizice tratate prin intermediul unor\nsecvente de program",
+            "B": "intreruperi ale masinii abstracte reprezentate prin programul care se executa \npe un sistem calculator real",
+            "C": "mijloace de auto intrerupere a unui program pentru a solicita executarea unor \nfunctii de catre sistemul de operare",
+            "D": "evenimente datorate executiei unei anume instructiuni din programul care ruleaza"
+          },
+          "correct_answer": ["B", "C", "D"]
+        },
+        {
+          "id": 17,
+          "text": "Care dintre urmatoarele operatii se pot efectua asupra variabilelor contor?",
+          "options": {
+            "A": "ADVANCE",
+            "B": "AWAIT",
+            "C": "READ",
+            "D": "AWAKE"
+          },
+          "correct_answer": ["A", "B", "C"]
+        },
+        {
+          "id": 18,
+          "text": "Principalele functiuni ale sistemelor de operare sunt:",
+          "options": {
+            "A": "managementul fisierelor",
+            "B": "managementul serverelor",
+            "C": "managementul memoriei",
+            "D": "managementul dispozitivelor periferice",
+            "E": "managementul proceselor"
+          },
+          "correct_answer": ["A", "C", "D", "E"]
+        },
+        {
+          "id": 19,
+          "text": "Prin constructia sistemului calculator fiecarui nivel de intrerupere i se asociaza:",
+          "options": {
+            "A": "un registru de adresare",
+            "B": "o instructiune de calcul",
+            "C": "o adresa de memorie specifica",
+            "D": "un registru general"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 20,
+          "text": "Tranzitia unui proces din starea “ in execu?ie” in starea “blocat” are loc atunci cand:",
+          "options": {
+            "A": "planificatorul decide suspendarea procesului pentru a lansa un altul mai prioritar",
+            "B": "planificatorul decide blocarea procesului din cauza unei erori",
+            "C": "procesul asteapta aparitia unor date de care depinde continuarea executiei",
+            "D": "procesul nu mai poate continua executia din cauza unei erori"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 21,
+          "text": "Subsistemul memorie satisface urmatoarele proprietati:",
+          "options": {
+            "A": "permite accesul direct la fisiere",
+            "B": "permite extensia modulara",
+            "C": "permite alocarea dinamica",
+            "D": "permite lucrul in paralel"
+          },
+          "correct_answer": ["B", "C", "D"]
+        },
+        {
+          "id": 22,
+          "text": "Planificarea pe doua nivele se utilizeaza atunci cand:",
+          "options": {
+            "A": "procesele din sistemul calculator nu ocupa intreaga memorie operativa existenta",
+            "B": " in memoria operativa nu se poate pastra la un moment dat decat un singur proces",
+            "C": "procesele active la un moment dat au prioritati diferite",
+            "D": "memoria necesara proceselor active la un moment dat depaseste dimensiunea memoriei existente"
+          },
+          "correct_answer": ["D"]
+        },
+        {
+          "id": 23,
+          "text": "In sistemele de operare de tip client-server nucleul acestuia realizeaza:",
+          "options": {
+            "A": "servirea proceselor server",
+            "B": "servirea proceselor client",
+            "C": "transportul mesajelor de la procesele client catre procesele server",
+            "D": "accesul la resursele proceselor client si ale proceselor server"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 24,
+          "text": "Fiecare nivel al ierarhiei sistemului de calcul este un sistem calculator caracterizat de:",
+          "options": {
+            "A": "structuri de informatie",
+            "B": "relatia intre nivele",
+            "C": "tipuri de date",
+            "D": "operatii primitive"
+          },
+          "correct_answer": ["A", "C", "D"]
+        },
+        {
+          "id": 25,
+          "text": "Un vector de intrerupere reprezinta:",
+          "options": {
+            "A": "adresele punctelor de intrerupere a activitatii sistemului calculator",
+            "B": "punctul de intrare in sistemul de operare relativ la evenimentul care a deter- minat aparitia intreruperii",
+            "C": "directia catre care se indreapta sistemul de operare",
+            "D": "o colectie de registre la care au acces toate subunitatile care pot fi intrerupte de unitatea centrala"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 26,
+          "text": "Fie un sistem cu 5 procese, notate A,B,C,D,E si 4 resurse R,S,T,U pentru care cunoastem ca: \n- procesul A este blocat pe resursa T si detine U \n- procesul B solicita pe U si detine S \n- procesul C detine R \n- procesul D este blocat pe S si R si detine T \n- procesul E este blocat pe R \nProcesele si resursele implicate in interblocare sunt:",
+          "options": {
+            "A": "nu exista interblocare",
+            "B": "A-S-D-U-C-T-B",
+            "C": "A-U-B-S-D-R",
+            "D": "B-U-A-T-D-R",
+            "E": "D-S-B-U-A-T"
+          },
+          "correct_answer": ["E"]
+        },
+        {
+          "id": 27,
+          "text": "Evacuarea-re incarcarea proceselor (swapping) este procesul de:",
+          "options": {
+            "A": "terminare, respectiv incepe a proceselor",
+            "B": "transfer al datelor in fisiere pe disc",
+            "C": "lansare in executie a programelor",
+            "D": "transfer al proceselor intre memorie si disc"
+          },
+          "correct_answer": ["D"]
+        },
+        {
+          "id": 28,
+          "text": "Functia unui operator al unitatii de prelucrare reprezinta:",
+          "options": {
+            "A": "multimea operatiilor de verificare a operanzilor operatorului respectiv",
+            "B": "multimea operatiilor primitive diferite care pot fi executate de operatorul respectiv",
+            "C": "multimea operatiilor binare ale sistemului calculator",
+            "D": "multimea subprogramelor pe care le poate executa un operator"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 29,
+          "text": "Un subsistem functional al sistemului calculator este compus din:",
+          "options": {
+            "A": "unitate functionala propriu-zisa",
+            "B": "unitate de control",
+            "C": "unitate de legatura",
+            "D": "unitate de comanda"
+          },
+          "correct_answer": ["A", "B"]
+        },
+        {
+          "id": 30,
+          "text": "Operatorii unitatii de prelucrare sunt:",
+          "options": {
+            "A": "operatorul binar",
+            "B": "operatorul virgula fixa",
+            "C": "operatorul virgula mobila",
+            "D": "operatorul zecimal"
+          },
+          "correct_answer": ["A", "C", "D"]
+        },
+        {
+          "id": 31,
+          "text": "Tranzitia unui proces din starea “ in executie” in starea “gata” are loc atunci cand:",
+          "options": {
+            "A": "planificatorul decide suspendarea procesului pentru ca i-a expirat cuanta de timp alocata",
+            "B": "planificatorul, in urma analizei proceselor active stabileste ca un proces nu poate continua executia",
+            "C": "procesul nu mai are date de prelucrat si trebuie sa-si termine executia",
+            "D": "procesul nu mai are date de transferat si poate sa-si continue executia"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 32,
+          "text": "Intr-un sistem de operare de tip client-server procesele server lucreaza in modul de lucru:",
+          "options": {
+            "A": "supervizor",
+            "B": "kernel",
+            "C": "utilizator",
+            "D": "privilegiat"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 33,
+          "text": "Cuvantul de stare al programului (PSW):",
+          "options": {
+            "A": "asigura interfata intre sistemul calculator si program",
+            "B": "asigura interfata intre sistemul de operare si program",
+            "C": "asigura interfata intre unitatea de prelucrare si program",
+            "D": "asigura interfata intre sistemul calculator si sistemul de operare"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 34,
+          "text": "Pentru a se evita “conditiile de competitie” este nevoie sa utilizam:",
+          "options": {
+            "A": "variabile partajate",
+            "B": "fisiere partajate",
+            "C": "excludere mutuala",
+            "D": "sectiuni critice"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 35,
+          "text": "Planificarea cu cozi multiple se aplica la:",
+          "options": {
+            "A": "sistemele calculator la care comutarea intre procese este foarte rapida",
+            "B": "sistemele calculator la care comutarea intre procese este foarte lenta",
+            "C": "sistemele calculator cu doua procesoare",
+            "D": "sistemele calculator pentru conducerea proceselor industriale"
+          },
+          "correct_answer": ["B"]
+        }
+      ]
+    },
+    {
+      "name": "Retele de calculatoare",
+      "questions": [
+        {
+          "id": 1,
+          "text": "O retea de calculatoare reprezinta:",
+          "options": {
+            "A": "o colectie de calculatoare autonome interconectate prin cablu UTP",
+            "B": "o colectie de calculatoare personale conectate la Internet",
+            "C": "o colectie de calculatoare autonome interconectate folosind o singura tehnologie",
+            "D": "o colectie de calculatoare autonome interconectate folosind o arhitectura client-server",
+            "E": "o colectie de calculatoare personale interconectate folosind o tehnologie orientata pe conexiuni"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 2,
+          "text": "O retea de calculatoare a carei raspandire este la nivelul unui campus este:",
+          "options": {
+            "A": "o retea locala",
+            "B": "o retea metropolitana",
+            "C": "o retea de tip stea",
+            "D": "o retea cu difuzare",
+            "E": "o retea larg raspandita geografic"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 3,
+          "text": "O retea de tip inel,",
+          "options": {
+            "A": "conecteaza printr-un singur cablu toate calculatoarele din retea",
+            "B": "conecteaza fiecare calculator de alte doua",
+            "C": "foloseste un calculator central care va fi conectat cu toate celelalte prin conexiuni directe",
+            "D": "conecteaza toate calculatoarele intre ele fara ca vreunul sa aiba rol coodonator",
+            "E": "are un singur canal de comunicatie care este partajat de toate masinile din retea"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 4,
+          "text": "Retelele care dispun de numeroase conexiuni intre perechi de masini individuale sunt:",
+          "options": {
+            "A": "retele cu difuzare",
+            "B": "retele de tip stea",
+            "C": "retele de tip plasa",
+            "D": "retele de tip punct-la-punct",
+            "E": "retele de tip magistrala"
+          },
+          "correct_answer": ["D"]
+        },
+        {
+          "id": 5,
+          "text": "Stiva de protocoale reprezinta:",
+          "options": {
+            "A": "o structura de date de tip ultimul intrat – primul servit folosita de protocoalele retelei",
+            "B": "o lista de protocoale folosite de un anumit sistem cate un protocol pentru fiecare nivel",
+            "C": "stiva folosita pentru transmiterea parametrilor functiilor realizate de protocoalele unei retele"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 6,
+          "text": "Pentru a utiliza un serviciu orientat pe conexiuni beneficiarul trebuie sa:",
+          "options": {
+            "A": "stabileasca o conexiune, sa foloseasca aceasta conexiune si apoi sa o elibereze",
+            "B": "se conecteze la retea folosind un nume de utilizator si o parola corespunzatoare",
+            "C": "sa nu foloseasca medii de comunicatie fara fir (wireless)"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 7,
+          "text": "Un serviciu este",
+          "options": {
+            "A": "un set de primitive (operatii) pe care un nivel le furnizeaza entitatii pereche de pe calculatorul cu care comunica",
+            "B": "un set de primitive (operatii) pe care un nivel le furnizeaza nivelului de deasupra sa",
+            "C": "un set de primitive (operatii) pe care un nivel le furnizeaza nivelului fizic",
+            "D": "un set de primitive (operatii) pe care un nivel le pune la dispozitia utilizatorului",
+            "E": "un set de primitive (operatii) pe care un nivel le furnizeaza interfetelor de retea"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 8,
+          "text": "Un protocol este",
+          "options": {
+            "A": "un set de reguli folosit pentru apelul primitivelor de serviciu",
+            "B": "un set de reguli care guverneaza formatul si semnificatia cadrelor, pachetelor \nsau mesajelor schimbate intre ele de entitatile pereche de pe un anumit nivel",
+            "C": "un set de reguli care guverneaza formatul pachetelor transmise nivelelor superioare",
+            "D": "un set de reguli care guverneaza formatul pachetelor transmise nivelului fizic"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 9,
+          "text": "Care dintre urmatoarele niveluri nu face parte din modelul ISO-OSI?",
+          "options": {
+            "A": "nivelul fizic",
+            "B": "nivelul legatura de date",
+            "C": "nivelul internet",
+            "D": "nivelul transport",
+            "E": "nivelul sesiune"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 10,
+          "text": "Care dintre urmatoarele niveluri nu face parte din modelul TCP/IP?",
+          "options": {
+            "A": "nivelul internet",
+            "B": "nivelul transport",
+            "C": "nivelul prezentare",
+            "D": "nivelul aplicatie",
+            "E": "nivelul gazda-la-retea"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 11,
+          "text": "Care dintre urmatoarele sarcini NU apartine nivelului legatura de date?",
+          "options": {
+            "A": "tratarea erorilor",
+            "B": "tratarea secventialitatii",
+            "C": "controlul traficului",
+            "D": "controlul accesului la mediu"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 12,
+          "text": "Care dintre urmatoarele sarcini NU apartine nivelului retea?",
+          "options": {
+            "A": "dirijarea pachetelor",
+            "B": "controlul congestiei",
+            "C": "calitatea serviciilor",
+            "D": "refacerea ordinii de transmisie a pachetelor",
+            "E": "interconectarea retelelor eterogene"
+          },
+          "correct_answer": ["D"]
+        },
+        {
+          "id": 13,
+          "text": "Care dintre urmatoarele sarcini NU apartine nivelului sesiune?",
+          "options": {
+            "A": "difuzarea mesajelor",
+            "B": "controlul dialogului",
+            "C": "sincronizarea",
+            "D": "gestiunea jetonului"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 14,
+          "text": "Care dintre urmatoarele afirmatii este FALSA?",
+          "options": {
+            "A": "Modelul OSI suporta ambele tipuri de comunicatii – orientata pe conexiuni respectiv fara\nconexiuni – la nivelul retea",
+            "B": "Modelul OSI suporta numai comunicatia orientata pe conexiuni la nivelul transport",
+            "C": "Modelul TCP/IP suporta ambele tipuri de comunicatii – orientata pe conexiuni \nrespectiv fara conexiuni – la nivelul transport",
+            "D": "Modelul TCP/IP suporta numai comunicatia fara conexiuni la nivelul retea",
+            "E": "Modelul OSI suporta numai comunicatia fara conexiuni la nivelul transport"
+          },
+          "correct_answer": ["E"]
+        },
+        {
+          "id": 15,
+          "text": "Care dintre protocoalele urmatoare nu este de nivel aplicatie?",
+          "options": {
+            "A": "HTTP",
+            "B": "UDP",
+            "C": "FTP",
+            "D": "SMTP",
+            "E": "DNS"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 16,
+          "text": "Care dintre urmatoarele afirmatii este ADEVARATA?",
+          "options": {
+            "A": "TCP este un protocol sigur orientat pe conexiuni",
+            "B": "TCP este un protocol sigur fara conexiuni",
+            "C": "UDP este un protocol sigur fara conexiuni",
+            "D": "UDP este un protocol nesigur orientat pe conexiuni",
+            "E": "TCP este un protocol nesigur orientat pe conexiuni"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 17,
+          "text": "Serviciile de baza, oferite in mod curent de catre nivelul legatura de date sunt:",
+          "options": {
+            "A": "serviciu neconfirmat fara conexiune",
+            "B": "serviciu neconfirmat orientat-conexiune",
+            "C": "serviciu confirmat fara conexiune",
+            "D": "serviciu confirmat orientat-conexiune"
+          },
+          "correct_answer": ["A", "C", "D"]
+        },
+        {
+          "id": 18,
+          "text": "Controlul fluxului in nivelul legatura de date se face prin",
+          "options": {
+            "A": "controlul erorilor",
+            "B": "reactie inversa",
+            "C": "controlul retransmisiilor",
+            "D": "detectarea coliziunilor"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 19,
+          "text": "Protocoalele folosite pentru a determina cine urmeaza sa transmita intr-un canal multiacces apartin",
+          "options": {
+            "A": "subnivelul MAC",
+            "B": "subnivelului LLC",
+            "C": "nivelului fizic",
+            "D": "nivelului legatura de date"
+          },
+          "correct_answer": ["A", "D"]
+        },
+        {
+          "id": 20,
+          "text": "Care dintre campurile de mai jos apartin unui cadru (frame) Ethernet?",
+          "options": {
+            "A": "adresa destinatie",
+            "B": "date",
+            "C": "suma de control",
+            "D": "port sursa"
+          },
+          "correct_answer": ["A", "B", "C"]
+        },
+        {
+          "id": 21,
+          "text": "Adresele subnivelului MAC Ethernet se reprezinta pe",
+          "options": {
+            "A": "4 octeti",
+            "B": "5 octeti",
+            "C": "6 octeti",
+            "D": "8 octeti"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 22,
+          "text": "Lungimea minima a unui cadru Ethernet valid este de:",
+          "options": {
+            "A": "40 octeti",
+            "B": "80 octeti",
+            "C": "64 octeti",
+            "D": "128 octeti"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 23,
+          "text": "Care dintr eregulile urmatoare sunt utilizate pentru dirijarea traficului in cadrul puntilor \ntransparente (transparent bridges)?",
+          "options": {
+            "A": "Daca LAN-ul sursa este acela si cu LAN-ul destinatie, atunci abandoneaza cadrul",
+            "B": "Daca LAN-ul sursa si cel destinatie sunt diferite, atunci transmite cadrul",
+            "C": "Daca LAN-ul destinatie nu este cunoscut, atunci foloseste inundarea",
+            "D": "Daca LAN-ul destinatie nu este cunoscut, atunci abandoneaza cadrul"
+          },
+          "correct_answer": ["A", "B", "C"]
+        },
+        {
+          "id": 24,
+          "text": "Serviciile nivelului retea au fost proiectate avand in vedere urmatoarele scopuri:",
+          "options": {
+            "A": "serviciile trebuie sa fie independente de tehnologia ruterului",
+            "B": "nivelul transport trebuie sa fie independent de numarul, tipul si topologia \nruterelor existente",
+            "C": "adresele de retea disponibile la nivelul transport trebuie sa foloseasca o schema \nde numerotare uniforma, chiar in cadrul retelelor LAN si WAN",
+            "D": "serviciile trebuie sa asigure evitarea coliziunilor"
+          },
+          "correct_answer": ["A", "B", "C"]
+        },
+        {
+          "id": 25,
+          "text": "Care dintre urmatoarele campuri fac parte din datagrama IP?",
+          "options": {
+            "A": "versiunea",
+            "B": "tip serviciu",
+            "C": "port destinatie",
+            "D": "timp de viata"
+          },
+          "correct_answer": ["A", "B", "D"]
+        },
+        {
+          "id": 26,
+          "text": "Multimea adreselor IP de clasa A se regaseste in intervalul de adrese:",
+          "options": {
+            "A": "10.0.0.0 – 127.255.255.255",
+            "B": "128.0.0.0 – 191.255.255.255",
+            "C": "1.0.0.0 - 127.255.255.255",
+            "D": "1.0.0.0 – 127.0.0.1"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 27,
+          "text": "Multimea adreselor IP de clasa B se regaseste in intervalul de adrese:",
+          "options": {
+            "A": " 128.0.0.0 – 192.0.0.0",
+            "B": "128.0.0.0 - 191.255.255.255",
+            "C": "127.255.255.255 – 191.255.255.255",
+            "D": "127.0.0.1 – 192.0.0.0"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 28,
+          "text": "Multimea adreselor IP de clasa C se regaseste in intervalul de adrese:",
+          "options": {
+            "A": "191.255.255.255 – 223.255.255.255",
+            "B": "192.0.0.0 – 224.0.0.0",
+            "C": "191.255.255.255 – 224.0.0.0",
+            "D": "192.0.0.0 - 223.255.255.255"
+          },
+          "correct_answer": ["D"]
+        },
+        {
+          "id": 29,
+          "text": "Multimea adreselor IP de clasa D se regaseste in intervalul de adrese:",
+          "options": {
+            "A": "224.0.0.0 – 239.255.255.255",
+            "B": "223.255.255.255 – 239.255.255.255",
+            "C": "223.255.255.255 – 240.0.0.0",
+            "D": "224.0.0.0 – 240.0.0.0"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 30,
+          "text": "Multimea adreselor IP de clasa E se regaseste in intervalul de adrese:",
+          "options": {
+            "A": "240.0.0.0 – 255.255.255.255",
+            "B": "239.255.255.255 – 255.255.255.255",
+            "C": "240.0.0.0 – 255.0.0.0",
+            "D": "239.255.255.255 – 255.0.0.0"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 31,
+          "text": "Bitii cei mai semnificativi ai unei adrese valide de clasa A au valorile:",
+          "options": {
+            "A": "0",
+            "B": "1",
+            "C": "01",
+            "D": "10"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 32,
+          "text": "Bitii cei mai semnificativi ai unei adrese valide de clasa B au valorile:",
+          "options": {
+            "A": "10",
+            "B": "1",
+            "C": "01",
+            "D": "11"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 33,
+          "text": "Bitii cei mai semnificativi ai unei adrese valide de clasa C au valorile:",
+          "options": {
+            "A": "110",
+            "B": "111",
+            "C": "100",
+            "D": "10"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 34,
+          "text": "Bitii cei mai semnificativi ai unei adrese valide de clasa D au valorile:",
+          "options": {
+            "A": "1110",
+            "B": "110",
+            "C": "01",
+            "D": "10"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 35,
+          "text": "Carei clase de adrese apartine adresa IP 88.100.10.23?",
+          "options": {
+            "A": "A",
+            "B": "B",
+            "C": "C",
+            "D": "D"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 36,
+          "text": "Carei clase de adrese apartine adresa IP 163.21.84.12?",
+          "options": {
+            "A": "A",
+            "B": "B",
+            "C": "C",
+            "D": "D"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 37,
+          "text": "Carei clase de adrese apartine adresa IP 231.2.4.1?",
+          "options": {
+            "A": "A",
+            "B": "B",
+            "C": "C",
+            "D": "D"
+          },
+          "correct_answer": ["D"]
+        },
+        {
+          "id": 38,
+          "text": "Protocolul ARP se utilizeaza pentru a afla,",
+          "options": {
+            "A": "adresa Ethernet pe baza adresei IP",
+            "B": "adresa IP pe baza adresei Ethernet",
+            "C": "adresa IP pe baza claselor de adrese",
+            "D": "adresa IP destinatie pe baza algoritmilor de dirijare"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 39,
+          "text": "Care dintre obiectivele de mai jos sunt vizate de protocolul IPv6?",
+          "options": {
+            "A": "reducerea dimensiunii tabelelor de dirijare",
+            "B": "extinderea adreselor Ethernet la 128 de biti",
+            "C": "posibilitatea ca un calculator gazda sa migreze fara a-si schimba adresa IP",
+            "D": "asigurarea unei securitati sporite prin mecanisme de autentificare si confidentialitate"
+          },
+          "correct_answer": ["A", "C", "D"]
+        },
+        {
+          "id": 40,
+          "text": "Care dintre campurile urmatoare fac parte din antetul obligatoriu IPv6?",
+          "options": {
+            "A": "urmatorull antent",
+            "B": "eticheta fluxului",
+            "C": "limita de salturi",
+            "D": "tipul nodului: client sau server"
+          },
+          "correct_answer": ["A", "B", "C"]
+        }
+      ]
+    },
+    {
+      "name": "Securitatea retelelor de calculatoare",
+      "questions": [
+        {
+          "id": 1,
+          "text": "Un sistem criptografic este",
+          "options": {
+            "A": "Un tuplu format dintr-o functie de criptare, una de decriptare, domeniile de \ndefinitie si chei",
+            "B": "Un tuplu format din functie de criptare decriptare, domenii de definitie si chei",
+            "C": "Un tuplu format din functie de criptare si chei",
+            "D": "Un aparat special de transformare a caracterelor",
+            "E": "O metoda de codificare"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 2,
+          "text": "Un sistem de criptare prin shift-are are o cheie compusa din",
+          "options": {
+            "A": "doua numere intregi",
+            "B": "un numar natural",
+            "C": "un numar intreg si unul real",
+            "D": "un numar irational",
+            "E": "doua numere"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 3,
+          "text": "Autentificarea unui mesaj reprezinta",
+          "options": {
+            "A": "verificarea integritatii mesajului primit de un destinatar",
+            "B": "modul prin care expeditorul nu poate nega faptul ca a transmis mesajul",
+            "C": "destinatarul unui mesaj trebuie sa dispuna de modalitati de a verifica \nidentitatea expeditorului si originea mesajului"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 4,
+          "text": "Non-Repudierea mesajului intr-o retea reprezinta",
+          "options": {
+            "A": "Modul de a se accepta un mesaj",
+            "B": "dupa transmiterea unui mesaj, trebuie ca expeditorul sa nu il poata nega",
+            "C": "dupa transmiterea unui mesaj trebuie ca destinatarul sa nu poata sa il refuze"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 5,
+          "text": "Criptologia reprezinta",
+          "options": {
+            "A": "o metoda de codificare a mesajelor",
+            "B": "o metoda de analiza a corectitudinii mesajelor criptate",
+            "C": "un mod de criptare",
+            "D": "un mod de decriptare",
+            "E": "cumulul dintre criptare si analiza criptografica"
+          },
+          "correct_answer": ["E"]
+        },
+        {
+          "id": 6,
+          "text": "Criptografia este",
+          "options": {
+            "A": "o metoda de analiza a datelor",
+            "B": "un sistem de regasire a mesajelor in clar din mesaje criptate",
+            "C": "stiinta matematica care asigura confidentialitatea datelor"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 7,
+          "text": "Sistemul de criptare cu cheie simetrica foloseste",
+          "options": {
+            "A": "o cheie pentru criptare si una pentru decriptare, diferite",
+            "B": "o cheie pentru criptare si una pentru decriptare, a doua fiind obtinuta prin transformarea primei chei",
+            "C": "o cheie la criptare si una la decriptare, identice",
+            "D": "o singura cheie, pentru criptare, decriptarea fiind facuta de destinatar, fara cheie"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 8,
+          "text": "Criptarea de tip stream este o criptare",
+          "options": {
+            "A": "simetrica, cu doua chei diferite",
+            "B": "asimetrica, cu o singura cheie",
+            "C": "nu este o criptare, este o codificare",
+            "D": "este inversa criptarii de tip bloc",
+            "E": "simetrica"
+          },
+          "correct_answer": ["E"]
+        },
+        {
+          "id": 9,
+          "text": "Criptarea de tip bloc, este",
+          "options": {
+            "A": "o criptare asimetrica, cu doua chei identice",
+            "B": "o criptare asimetrica",
+            "C": "o codificare a mesajului, pentru autentificare",
+            "D": "un mod de semnare",
+            "E": "o criptare simetrica"
+          },
+          "correct_answer": ["E"]
+        },
+        {
+          "id": 10,
+          "text": "Sniffer este un termen care defineste",
+          "options": {
+            "A": "un sistem criptografic simetric",
+            "B": "un sistem criptografic asimetric",
+            "C": "un mod de analiza a puterii unui algoritm criptografic",
+            "D": "un mod de analiza a datelor transferate intr-o retea de calculatoare"
+          },
+          "correct_answer": ["D"]
+        },
+        {
+          "id": 11,
+          "text": "SSL si TLS sunt",
+          "options": {
+            "A": "unul si acelasi protocol",
+            "B": "doua protocoale criptografice pentru retele",
+            "C": "doua modele de criptare locale, al doilea se bazeaza pe primul"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 12,
+          "text": "Intr-o retea de calculatoare un sniffer are acces la datele",
+          "options": {
+            "A": "toate datele care tranziteaza reteaua",
+            "B": "datele de la computerele legate indirect la acelasi server",
+            "C": "datele din computerele care sunt in aceeasi zona geografica",
+            "D": "datele de la computerelec are comunica in orice fel cu un computer care ares niffer instalat",
+            "E": "datele din subreteaua primului switch de deasupra sa, in ierahia retelei"
+          },
+          "correct_answer": ["E"]
+        },
+        {
+          "id": 13,
+          "text": "O semnatura electronica are la baza",
+          "options": {
+            "A": "un algoritm simetric de criptare",
+            "B": "un algoritm asimetric de criptare, in care semnatarul foloseste cheia publica",
+            "C": "un algoritm asimetric de criptare, in care semnatarul foloseste cheia privata",
+            "D": "o cheie pentru fiecare utilizator si fiecare mesaj"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 14,
+          "text": "O retea de calculatoare are ca mod de comunicare standard un modul numit placa de retea. \nAceasta comunica date",
+          "options": {
+            "A": "criptat, cu un algoritm simetric",
+            "B": "criptat, cu un algoritm asimetric",
+            "C": "semnate de destinatar",
+            "D": "in clar"
+          },
+          "correct_answer": ["D"]
+        }
+      ]
+    },
+    {
+      "name": "Baze de Date",
+      "questions": [
+        {
+          "id": 1,
+          "text": "Intre avantajele bazelor de date se numara:",
+          "options": {
+            "A": "nepartajarea datelor intre utilizatori",
+            "B": "organizarea datelor pe doua niveluri - fizic si logic",
+            "C": "gestionarea centralizata a datelor printr-un SGBD",
+            "D": "integrarea in aceeasi structura a tuturor datelor pertinente ale unui sistem informatic",
+            "E": "independenta datelor fata de programele de aplicatii"
+          },
+          "correct_answer": ["B", "C", "E"]
+        },
+        {
+          "id": 2,
+          "text": "O entitate se caracterizeaza prin:",
+          "options": {
+            "A": "este identificata unic printr-un nume",
+            "B": "cuprinde, in general, mai multe valori sau realizari",
+            "C": "administreaza obiecte",
+            "D": "semnifica un obiect concret sau abstract, reprezentat prin proprietatile sale",
+            "E": "semnifica o caracteristica a unui obiect concret"
+          },
+          "correct_answer": ["A", "B", "D"]
+        },
+        {
+          "id": 3,
+          "text": "O entitate din modelul Entitate-Asociere are urmatoarele caracteristici:",
+          "options": {
+            "A": "are o existenta proprie",
+            "B": "este intotdeauna concreta",
+            "C": "trebuie definita fara ambiguitati",
+            "D": "este intotdeauna legata de o alta entitate printr-o asociatie",
+            "E": "este identificata unic prin ansamblul atributelor sale"
+          },
+          "correct_answer": ["C", "E"]
+        },
+        {
+          "id": 4,
+          "text": "Administratorul bazei de date asigura:",
+          "options": {
+            "A": "scrierea programelor in cod-masina",
+            "B": "autorizarea accesului la date",
+            "C": "realizarea obiectivelor si functiilor sistemului",
+            "D": "definirea strategiei de salvare si restaurare a bazei de date",
+            "E": "crearea programelor de aplicatii"
+          },
+          "correct_answer": ["B", "D"]
+        },
+        {
+          "id": 5,
+          "text": "Se da tabelul: ANGAJATI (CodAngaj, Nume, DataAngajare, Compartiment, Profesia, Salariu) Care dintre urmatoarele instructiuni SQL permite afisarea numarului de salariati pe fiecare com- partiment care incepe cu litera ”A”?",
+          "options": {
+            "A": "SELECT CodAngajat, Nume, Compartiment FROM ANGAJATI WHERE Nume like A* ;",
+            "B": "SELECT COUNT(CodAngajat) AS Numar, Nume, Compartiment FROM ANGAJATI WHERE Nume like \"A*\" GROUP BY Compartiment ;",
+            "C": "SELECT CodAngajat, Nume, Compartiment FROM ANGAJATI WHERE Compartiment like A*;",
+            "D": "SELECT COUNT(CodAngajat) AS Numar, Compartiment FROM ANGAJATI WHERE Compartiment like \"A*\" GROUP BY Compartiment;",
+            "E": "Niciuna dintre cele de mai sus"
+          },
+          "correct_answer": ["D"]
+        },
+        {
+          "id": 6,
+          "text": "Urmatoarele operatii sunt echivalente:",
+          "options": {
+            "A": "R3= R1U R2 si R3= APPEND(R1,R2);",
+            "B": "R3= R1-R2 si R3 = R1 OR R2;",
+            "C": "R3 = R1XR2 si R3 = PRODUCT(R1,R2);",
+            "D": "R3=R1U R2 si R3= UNION(R1,R2);",
+            "E": "R3=R1-(R1-R2) si AND(R1,R2);"
+          },
+          "correct_answer": ["C", "D", "E"]
+        },
+        {
+          "id": 7,
+          "text": "Se da tabelul:\nCHITANTE (NrChitanta, Suma, DataChitanta, NrGhiseu )\nCare dintre urmatoarele instructiuni SQL are ca efect afisarea zilelor in care s-au emis mai mult de\n2 chitante?\n",
+          "options": {
+            "A": "SELECT Nrchitanta, Suma, Data FROM CHITANTE WHERE COUNT(NrChitanta)>2;",
+            "B": "SELECT Nrchitanta, Suma, Data FROM CHITANTE HAVING COUNT(NrChitanta)>2;",
+            "C": "SELECT CHITANTE.Data FROM CHITANTE GROUP BY Data HAVING COUNT(NrChitanta)>2;",
+            "D": "SELECT COUNT(Data), COUNT(NrChitanta) FROM CHITANTE WHERE Data IS Unique;",
+            "E": "SELECT Data FROM CHITANTE WHERE COUNT(NrChitanta) > 2;"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 8,
+          "text": "Se da entitatea ANGAJATI, cu urmatoarele atribute: ANGAJATI (CodAngaj, Nume, DataAngajare, compartiment, profesia, salariu) CaredintreurmatoareleinstructiuniSQLpermitestergereasalariatilorangajatiinaintedeinceputul anului 2007, cu profesia ”profesor”.",
+          "options": {
+            "A": "DELETE FROM Angajati WHERE DataAngajare < ”1/1/2006” AND profesia = ”pro- fesor” ;",
+            "B": "DELETE*FROMAngajatiWHEREprofesiaLIKE”profesor”HAVINGYEAR(DataAngajare) <2007;",
+            "C": "DELETEAngajatiWHEREDataAngajare<\"1/1/2007\"ANDprofesiaLIKE \"*profesor*\";",
+            "D": "UPDATE Angajati SET CodAngaj = Null WHERE DataAngajare < ”1/1/2006” AND profesia = ”profesor”;",
+            "E": "niciuna"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 9,
+          "text": "Fie tabelul proiecte(CodProiect;CodAng;functie;suma)cu cheia(CodProiect;CodAng), de sto- care a informatiilor privind repartizarea pe proiecte a salariatilor unei firme. Suma obtinuta de- pindede CodAng si de functia inacel proiect (CodAng;functie)!suma. Aplicand a doua forma normala care din schemele urmatoare este corecta?",
+          "options": {
+            "A": "R1=(CodProiect,CodAng,functie),R2=(CodProiect,functie,suma)",
+            "B": "R1=(CodProiect,CodAng, suma), R2=(CodAng,functie)",
+            "C": "R1=(CodProiect,CodAng, suma), R2=(CodProiect,functie)",
+            "D": "R1=(CodProiect,CodAng), R2=(CodProiect,functie)",
+            "E": "Niciuna"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 10,
+          "text": "Fie relatia r de schema R si X ⊂  R, Y ⊂  R si dependenta tranzitiva K -> X -> Y. Care din urmatoarele descompuneri sunt in forma normala trei?",
+          "options": {
+            "A": "R1=K(R-Y), R2=(KY)",
+            "B": "R1=K(R-Y), R2=(XY)",
+            "C": "R1=K(R-Y), R2=(XX)",
+            "D": "R1=(R-Y), R2=(XX)",
+            "E": "R1=KY, R2=(XX)"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 11,
+          "text": "Fie relatia r de schema R, X ⊂ R, Y ⊂ R, Z = R - XY si dependenta multivoca X ->> Y. Care din urmatoarele descompuneri sunt in forma normala patru?",
+          "options": {
+            "A": "R1=XZ , R2=(XY)",
+            "B": "R1=XZ, R2=(X)",
+            "C": "R1=K(R-Y), R2=(XZ)",
+            "D": "R1=XY, R2=(XZ)",
+            "E": "R1=KX, R2=(XZ)"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 12,
+          "text": "Fie tabelul Studenti(NrLeg, LimbaStraina, M asina)\n111 Engleza Logan\n111 Franceza Logan\n111 Spaniola Logan\n111 Engleza Cielo\n111 Franceza Cielo\n112 Engleza Logan\n112 Franceza Logan\nsi dependentele multivoce NrLeg \u0010 LimbaStraina, NrLeg \u0010 M asina. Care este reprezentarea\nFN4 determinata de aceste MV-dependente.",
+          "options": {
+            "A": "R1= NrLeg, LimbaStraina, R2= NrLeg, Masina",
+            "B": "R1= Masina,LimbaStraina, R2= NrLeg, LimbaStraina,",
+            "C": "R1= NrLeg,LimbaStraina R2= NrLeg,LimbaStraina,Masina",
+            "D": "R1= NrLeg,Masina R2= NrLeg,LimbaStraina",
+            "E": "R1= NrLeg,Masina R2= NrLeg,LimbaStraina,Masina"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 13,
+          "text": "Restrictiile referentiale intre 2 tabele sunt date de:",
+          "options": {
+            "A": "Cheile primare si cheile externe",
+            "B": "Coloanele commune",
+            "C": "Coloanele din clauza CHECK",
+            "D": "Coloanele din SELECT",
+            "E": "Chei externe"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 14,
+          "text": "Fie baza de date formata din tabelele: studenti(NrLeg, Nume, Pren, Fac,An,grupa) cataloage(NrLeg,CodDis,dat,nota), discipline(CodDis,Denumire,NrOreC, NrOreL, NrOreS, NrOreP,Credite,An,Sectie). Care din expresiile algebrei relationale determina studentii din anul II:",
+          "options": {
+            "A": "πAn(studenti)",
+            "B": "σAn=2(studenti)",
+            "C": "πAn(σAn=2(studenti))",
+            "D": "σAn(πAn=2(studenti))",
+            "E": "πNume(studenti)"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 15,
+          "text": "Pentru o baza de date relationala algebra relationala este:",
+          "options": {
+            "A": "Completa (permite sa extrag orice informatii din baza)",
+            "B": "Procedurala (Arata si modul cum se obtin informatiile din baza de date)",
+            "C": "Complexa (permite sa extrag informatii obiectuale)",
+            "D": "Limbaj formal",
+            "E": "Limbaj de interogare"
+          },
+          "correct_answer": ["A", "B", "D", "E"]
+        },
+        {
+          "id": 16,
+          "text": "Restrictiile date de dependentele functionale pentru un tabel se testeaza cu ajutorul:",
+          "options": {
+            "A": "Axiomelor de inferenta",
+            "B": "Algoritmul de satisfacere(satisfie)",
+            "C": "Algoritmul de inchidere",
+            "D": "Algoritmul de sortare",
+            "E": "Algoritmul de normalizare"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 17,
+          "text": "Fiind data apriori o multime de restrictii data de o multime de dependente funtionale F. Elaborarea\nunei reguli de validare pentru o dependenta functionala X → Y presupune:",
+          "options": {
+            "A": "Verificarea deductibilitatii din F",
+            "B": "Verificarea incluziunii X ⊂ Y",
+            "C": "Verificarea incluziunii X ⊂ X+",
+            "D": "Normalizarea schemei de relatie XY",
+            "E": "Toate"
+          },
+          "correct_answer": ["A", "C"]
+        },
+        {
+          "id": 18,
+          "text": "Fiind data apriori o multime de restrictii data de o multime de dependente funtionale F. Elaborarea\nunei proceduri pentru a verifica dependenta functionala X → Y presupune mai intai:",
+          "options": {
+            "A": "Verificarea redundantei acesteia",
+            "B": "Inlaturarea atributelor eliminabile din determinantul X",
+            "C": "Inlaturarea atributelor eliminabile din determinantul Y",
+            "D": "Inlaturarea atributelor eliminabile din X si Y",
+            "E": "Niciuna"
+          },
+          "correct_answer": ["A", "B", "C", "D"]
+        },
+        {
+          "id": 19,
+          "text": "Fiind data apriori o multime de restrictii data de o multime de dependente funtionale F. Aceasta este folosita la:",
+          "options": {
+            "A": "Normalizarea bazei de date",
+            "B": "La validarea starii bazei de date",
+            "C": "Crearea bazei de date",
+            "D": "Crearea procedurilor de interogare",
+            "E": "Constructia algebrei relationale"
+          },
+          "correct_answer": ["A", "B"]
+        },
+        {
+          "id": 20,
+          "text": "Interogarile din SQL sunt la fel de expresive cu:",
+          "options": {
+            "A": "Algebra relationala",
+            "B": "Calculul relational al tuplurilor",
+            "C": "Calculul relational al domeniilor",
+            "D": "Calculul procedural",
+            "E": "Calculul bazat pe tablouri"
+          },
+          "correct_answer": ["A", "B", "C"]
+        }
+      ]
+    },
+    {
+      "name": "Fundamentele bazelor de date",
+      "questions": [
+        {
+          "id": 1,
+          "text": "O baza de date distribuita este:",
+          "options": {
+            "A": "O colectie de date si de scheme partajate si interconectate logic, distribuite fizic pe calculatoarele unei retele,",
+            "B": "O colectie de date impartita in mai multe fragmente,",
+            "C": "O colectie de date impartita in mai multe replici,",
+            "D": "O colectie de fragmente mixte.",
+            "E": "Niciuna."
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 2,
+          "text": "O tranzactie este:",
+          "options": {
+            "A": "O unitate de program ce realizeaza citiri si scrieri,",
+            "B": "O multime finita si ordonata de operatii de citire, scriere si terminare,",
+            "C": "O multime de instructiuni executabile dintr-un limbaj gazda,",
+            "D": "O serie finita de opeartii de modificare a datelor dintr-o baza de date ORACLE",
+            "E": "O multime finita de operatii coerente, executate de un SGBD, care\n manipuleaza datele unei baze de date."
+          },
+          "correct_answer": ["E"]
+        },
+        {
+          "id": 3,
+          "text": "Numele unei coloane dintr-un tabelin ORACLE :",
+          "options": {
+            "A": "trebuie sa fie unic in cadrul tabelului,",
+            "B": "trebuie sa fie unicin cadrul bazei de date,",
+            "C": "are asociat un index ,",
+            "D": "trebuie sa aparaa in instructiunea CREATE TABLE,",
+            "E": "rebuie sa fie specificat a in instructiunea ALTER TABLE."
+          },
+          "correct_answer": ["A", "D"]
+        },
+        {
+          "id": 4,
+          "text": "O tranzactie urmeaza un protocol in doua faze daca:",
+          "options": {
+            "A": "Blocheaza accesul la un element de date,",
+            "B": "Toate opratiile de blocare preced prima operatie de deblocare,",
+            "C": "Cere mai intai deblocarea si apoi realizeaza blocarea accesului la un element de date,",
+            "D": "Blocheaza tabelul la care are acces,",
+            "E": "Blocheaza accesul altor utilizatori la o baza de date."
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 5,
+          "text": "Proprietatea de consistenta a tranzactiei consta din:",
+          "options": {
+            "A": "Transformarea unei stari consistente intr-o stare consistenta,",
+            "B": "Eliminarea redundantelor,",
+            "C": "Izolarea tranzactiilor in executie,",
+            "D": "Transparenta,",
+            "E": "Durabilitate."
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 6,
+          "text": "Un cursor este:",
+          "options": {
+            "A": "Un pointer catre un set de rezultate,",
+            "B": "un set de rezultate ale instructiunii select,",
+            "C": "o metoda de analiza a performantei,",
+            "D": "o colectie de randuri ale unei tabele,",
+            "E": "Sun buffer care pastreaza rezultatul unei istructiuni SELECT."
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 7,
+          "text": "Abordarea distribuita a unei baze de date oglindeste:",
+          "options": {
+            "A": "Structura organizationala,",
+            "B": "Paralelismul prelucrarilor",
+            "C": "Gestiunile locale ale bazelor de date,",
+            "D": "Seriabilitatea tranzactiilor,",
+            "E": "Toate."
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 8,
+          "text": "O baza de date distribuita se gaseste implementata numai:",
+          "options": {
+            "A": "Intr-o retea de calculatoare,",
+            "B": "Pe un calculator performant,",
+            "C": "Pe mai multe calculatoare izolate, conectate la Internet,",
+            "D": "Pe un Calculator client,",
+            "E": "Pe un laptop."
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 9,
+          "text": "Tranzactiile se numesc in 2 faze daca :",
+          "options": {
+            "A": "Satisfac protocolul in 2 faze,",
+            "B": "Sunt formate numai din citiri si scrieri,",
+            "C": "Contin comenzile commit si rollback,",
+            "D": "Contin 2 faze de executie,",
+            "E": "Contin 2 faze, una de definire a datelor, si alta de prelucrare a lor."
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 10,
+          "text": "Se dau tabelele\nPERSONAL(Marca, Numepren, Compart, Datasv, Salorar,Salorarco, Compart)\nPONTAJE(Marca, Data, Orelucrate, Oreco, Orenoapte, Oreabsnem)\nCe afiseaza urmatoarea interogare?\n\nWITH VENITURI AS\n(SELECT Numepren, SUM(Orelucrate*Salorar+Oreco*Salorarco) AS Venit_Baza\nFROM PONTAJE po INNER JOIN PERSONAL pe ON po.Marca=pe.Marca GROUP BY Numepren),\nrasp AS\n(SELECT MAX(SUM(Orelucrate*Salorar+Oreco*Salorarco)) AS Venit_Max from PONTAJE po\nINNER JOIN PERSONAL pe ON po.Marca=pe.Marca GROUP BY Numepren)\nSELECT Numepren,Venit_Baza from VENITURI INNER JOIN rasp ON Venit_Baza=Venit_Max",
+          "options": {
+            "A": "Venitul maxim al unui angajat dintr-un compartiment utilizand expresii tabela",
+            "B": "Angajatul sau angajatii cu cel mai mare venit utilizand expresii tabela",
+            "C": "Venitul de baza al unui angajat utilizand operatorul INNER JOIN",
+            "D": "Veniturile angajatilorin ordine descrescatoare utilizand expresii tabela",
+            "E": "Numele angajatului din fiecare compartiment cu venitul cel mai mare"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 11,
+          "text": "Se da tabelul\nPREZENTA(Marca, Data, Orelucrate, Oreco, Orenoapte, Oreabsnem)\nCe executa urmatoarea secventa?\n\nDECLARE an salarii.an\\%TYPE := 2015;\nluna salarii.luna\\%TYPE := 1;\nprima_zi DATE ; zi DATE; BEGIN prima_zi :=\nTO_DATE(’01/’||luna||’/’||an, ’DD/MM/YYYY’); zi:= prima_zi; WHILE\nzi <= LAST_DAY(prima_zi) LOOP IF RTRIM(TO_CHAR(zi,’DAY’)) IN\n(’SATURDAY’, ’SUNDAY’) THEN NULL;\n ELSE\n BEGIN\n  INSERT INTO pontaje (marca, data)\n   SELECT marca, zi FROM personal;\n   EXCEPTION\n   WHEN DUP_VAL_ON_INDEX THEN\n   DELETE FROM pontaje WHERE data=zi;\n   INSERT INTO pontaje (marca, data)\n   SELECT marca, zi FROM personal;\n END;\n END IF;\n  zi:=zi + 1;\n END LOOP;\n COMMIT;\n END;",
+          "options": {
+            "A": "Introduce inregistrari numai pentru zilele nelucratoare",
+            "B": "Populeaza cu inregistrari tabela pe o luna dintr-un an",
+            "C": "Nu populeaza tabela datorita exceptiei DUP-VAL-ON-INDEX",
+            "D": "Daca se executa de doua ori succesiv, nu produce rezultate",
+            "E": "Daca se executa de doua ori succesiv, dubleazainregistrarile din tabela"
+          },
+          "correct_answer": ["B", "D"]
+        },
+        {
+          "id": 12,
+          "text": "Se da tabelul \nSTUDENT(CNP, Nume, Grupa, Adresa) \nCare secventa creaza un view ce permite ca modificarilein tabela \nsa se reflecte automat siin view?",
+          "options": {
+            "A": "CREATE VIEW stud AS \nSELECT * FROM STUDENT WHERE Grupa IN (210,220);",
+            "B": "CREATE VIEW emp_vu AS \nSELECT * FROM STUDENT WHERE Grupa IN (210,220) \nWITH READ ONLY;",
+            "C": "CREATE VIEW stud AS \nSELECT * FROM STUDENT WHERE Grupa IN (210,220) \nWITH CHECK OPTION;",
+            "D": "CREATE FORCE VIEW stud AS \nSELECT * FROM STUDENT WHERE Grupa IN (210,220);",
+            "E": "CREATE FORCE VIEW stud AS \nSELECT * FROM STUDENT WHERE Grupa=210 OR GRUPA=220;"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 13,
+          "text": "Se da tabelul \nSTUDENT(CNP, Nume, Grupa, Adresa) \nsi urmatoarea secventa ce reprezinta o tranzactie: \n\nCREATE table STUDENT_NOU ( CNP NUMBER, Nume VARCHAR2(30)); \nINSERT INTO STUDENT_NOU SELECT CNP, Nume from STUDENT; \nSavepoint s1; \nUPDATE STUDENT_NOU SET Nume = UPPER(Nume); \nSavepoint s2; \nDELETE FROM STUDENT_NOU; \nRollback to s2; \nDELETE FROM STUDENT_NOU WHERE CNP=100; \nUPDATE STUDENT_NOU SET Nume = ’Ionescu’; \nRollback to s2; \nUPDATE STUDENT_NOU SET Nume = ’Ionescu’ WHERE CNP=100; \nRollback; \n\nCare este rezultatul acestei tranzactii?",
+          "options": {
+            "A": "Nu avem linii in tabela",
+            "B": "Avem un student cu numele Ionescu",
+            "C": "Nu putem sa facem Rollback mai mult de o data pe un punct de reluare",
+            "D": "Ultimul UPDATE esueaza deoarece studentul cu CNP-ul 100 a fost sters",
+            "E": "Tranzactia esueaza deoarece avem mai multe puncte de reluare"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 14,
+          "text": "Se dau tabelele \nANGAJATI(ID-Angajat, Nume, ID-Compart, Salariu) \nCOMPARTIMENT (ID-Compart, Nume-Compart) \nsi urmatoarea interogare: \nSELECT e.EMPLOYEE_ID,e.LAST_NAME,e.DEPARTMENT_ID, d.DEPARTMENT_NAME \nFROM EMP e, DEPARTMENT d \nWHERE e.DEPARTMENT_ID = d.DEPARTMENT_ID; \n\nCe operatii implementeaza aceasta interogare?",
+          "options": {
+            "A": "Diferenta, proiectia si join",
+            "B": "Selectia, proiectia si join",
+            "C": "Selectia, intersectia si join",
+            "D": "Intersectia, proiectia si join",
+            "E": "Diferenta, intersectia si join"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 15,
+          "text": "Se da tabelul \nSTUDENT(CNP, Nume, Grupa, Adresa) cu cheia primara CNP \nsi urmatoarele doua declansatoare: \n\nD1. CREATE OR REPLACE TRIGGER t1 \n BEFORE INSERT ON STUDENT \n REFERENCING OLD AS OLD NEW AS NEW \n FOR EACH ROW \n BEGIN \n  SELECT NVL(MAX(CNP),100)+1 INTO:NEW.CNP FROM STUDENT; \n END; \nD2. CREATE SEQUENCE secventa INCREMENT BY 1 \n INVALUE 101 MAXVALUE 500 NOCYCLE NOCACHE ORDER; \n\n CREATE OR REPLACE TRIGGER t2 \n BEFORE INSERT ON STUDENT \n REFERENCING OLD AS OLD NEW AS NEW \n FOR EACH ROW \n BEGIN \n  SELECT secventa.NEXTVAL INTO:NEW.CNP FROM STUDENT; \n END; \n\nCare dintre urmatoarele afirmatii sunt adevarate?",
+          "options": {
+            "A": "Declansatorul D1 atribuie o valoare maxima atributului CNP  inainte de o noua inserare",
+            "B": "Cele doua declasatoare produc acelasi rezultat",
+            "C": "Declansatorul D2 nu violeaza restrictia de cheie primara",
+            "D": "Declansatorul D1 poate viola restrictia de cheie primara",
+            "E": "Cele doua declasatoare nu produc acelasi rezultat"
+          },
+          "correct_answer": ["A", "B", "C"]
+        },
+        {
+          "id": 16,
+          "text": "Se dau tabelele \nANGAJATI(ID-Angajat, Nume, ID-Compart, Salariu) \nCOMPARTIMENT (ID-Compart, Nume-Compart) \nsi urmatorul declansator: \n\nCREATE OR REPLACE TRIGGER actual \nAFTER UPDATE OF ID_Compart ON COMPARTIMENT \nREFERENCING OLD AS OLD NEW AS NEW \nFOR EACH ROW \nBEGIN \n UPDATE ANGAJATI SET ID_Compart=:NEW.ID_Compart WHERE ID_Compart=:OLD.ID_Compart; \nEND; \n\nCare dintre urmatoarele afirmatii sunt adevarate?",
+          "options": {
+            "A": "Comanda UPDATE trebuie sa se limiteze numai la o linie a tabelei COM- PARTIMENT",
+            "B": "Declansatorul implementeaza optiunea UPDATE CASCADE din Oracle",
+            "C": "Declansatorul se va lansa numai la modificarea atributului ID-Compart din tabela COMPARTIMENT",
+            "D": "Comanda UPDATE poate modifica mai multe linii din tabela ANGAJATI",
+            "E": "Comanda UPDATE nu poate modifica mai multe linii din tabela ANGAJATI"
+          },
+          "correct_answer": ["A", "B", "C", "D"]
+        },
+        {
+          "id": 17,
+          "text": "Se da tabelul \nPERSONAL(Marca, Numepren,Compart,Datasv,Salorar,Salorarco,Compart) \nsi urmatorul bloc PL/SQL: \n\nDECLARE \nani_etalon PLS_INTEGER := 15; \nnumar PLS_INTEGER; \n BEGIN \n UPDATE personal SET salorar = salorar + 10 \n WHERE MONTHS_BETWEEN (SYSDATE,datasv) / 12 >= ani_etalon; \n IF SQL%FOUND THEN \n  DBMS_OUTPUT.PUT_LINE(’Exista cel putin un angajat cu vechime de peste ’ || \n  ani_etalon ||’ ani’); \n  numar:= SQL%ROWCOUNT; \n  DBMS_OUTPUT.PUT_LINE(’Numarul lor este ’ || numar); \n ELSE \n  DBMS_OUTPUT.PUT_LINE(’Nici un angajat nu indeplineste conditia’); \n END IF; \n END; \n\nCare dintre urmatoarele afirmatii sunt adevarate?",
+          "options": {
+            "A": "Blocul mareste cu 10 lei salariul orar al tuturor angajatilor",
+            "B": "Este un exemplu de cursor implicit",
+            "C": "Blocul mareste cu 10 lei salariul orar al angajatilor cu o vechime de peste 15 ani",
+            "D": "Pentru afisarea la ecran a mesajelor din bloc, trebuie lansata comanda SET SERVEROUTPUT",
+            "E": "Blocul mareste cu 12 lei salariul orar al tuturor angajatilor"
+          },
+          "correct_answer": ["B", "C", "D"]
+        },
+        {
+          "id": 18,
+          "text": "Se dau tabelele \nPERSONAL(Marca, Numepren, Compart, Datasv, Salorar,Salorarco, Compart) \nPONTAJE(Marca, Data, Orelucrate, Oreco, Orenoapte, Oreabsnem) \nsi urmatoarea procedura: \n\nCREATE OR REPLACE PROCEDURE populare \n(an_ IN salarii.an%TYPE, luna_ IN salarii.luna%TYPE) \nIS \nprima_zi DATE ; \nzi DATE ; \nBEGIN \nprima_zi := TO_DATE(’01/’|| luna_ ||’/’||an_ , ’DD/MM/YYYY’) ; \nzi := prima_zi ; \n WHILE zi <= LAST_DAY(prima_zi) LOOP \n IF RTRIM(TO_CHAR(zi,’DAY’)) IN (’SATURDAY’, ’SUNDAY’) THEN \n  NULL; \n ELSE \n BEGIN \n  INSERT INTO pontaje (marca, data) \n  SELECT marca, zi FROM personal; \n  EXCEPTION \n  WHEN DUP_VAL_ON_INDEX THEN \n  DELETE FROM pontaje WHERE data = zi ; \n  INSERT INTO pontaje (marca, data) \n  SELECT marca, zi FROM personal ; \n END ; \nEND IF ; \nzi:= zi + 1; \n END LOOP; \n COMMIT; \nEND populare; \n\nCare dintre urmatoarele afirmatii sunt adevarate?",
+          "options": {
+            "A": "Procedura nu permite incalcarea restrictiei de cheie primara",
+            "B": "Variabilele an si luna sunt parametrii formali",
+            "C": "Procedura populeaza tabela PONTAJE pe o luna si un an cu date din tabela PERSONAL",
+            "D": "Apelul se face astfel: populare(07,2008);",
+            "E": "Apelul se face astfel: populare(2008,07);"
+          },
+          "correct_answer": ["A", "C"]
+        },
+        {
+          "id": 19,
+          "text": "Fie tabelul \nANGAJAT(Marca, Numepren, Compart, Datasv, Salorar,Salorarco, Compart)\n cu interogarea \nSELECT marca, Numepren, Datasv, vechime(datasv,2008,7) FROM ANGAJAT) \nsi functia \n\nCREATE OR REPLACE FUNCTION vechime \n(Datasv_ DATE, An_ Number(4), Luna_ Number(2)) \nRETURN Integer \nAS \nprima_zi DATE:=TO_DATE(’01/’||luna_||’/’||an_,’DD/MM/YYYY’); \nBEGIN \n RETURN TRUNC(MONTHS_BETWEEN(prima_zi,Datasv_)/12,0); \nEND; \n\nCare dintre urmatoarele afirmatii sunt adevarate?",
+          "options": {
+            "A": "Interogarea produce o singura valoare",
+            "B": "Apelul functiei nu este plasat corectin interogare",
+            "C": "Functia calculeaza numarul de ani dintre o datasi prima zi a lunii de referinta",
+            "D": "Functia si interogarea sunt corecte",
+            "E": "Interogarea produce mai multe valori"
+          },
+          "correct_answer": ["C", "D"]
+        },
+        {
+          "id": 20,
+          "text": "In definirea unui cursor explicit exista urmatoarele 5 operatiuni: \n1. Declararea variabileiin care va fi stocata o linie a cursorului \n2. Deschiderea cursorului (OPEN) \n3. Declararea cursorului printr-o fraza SELECT (CURSOR nume IS SELECT ...) \n4. Structura de ciclare ce include, obligatoriu, o comanda deincarcare a \nurmatoarelor linii din cursor altfel bucla se repeta la infinit \n5. Incarcarea urmatoarei linii din cursor (FETCH) Care este ordinea corecta a acestor operatii?",
+          "options": {
+            "A": "3,2,1,4,5",
+            "B": "3,1,2,5,4",
+            "C": "2,3,1,5,4",
+            "D": "1,3,2,4,5",
+            "E": "2,1,3,4,5"
+          },
+          "correct_answer": ["B"]
+        }
+      ]
+    },
+    {
+      "name": "Tehnologii Web",
+      "questions": [
+        {
+          "id": 1,
+          "text": "Care este rezultatul urmatoarei operatiiin JavaScript: “1” + 2 + 4 ?",
+          "options": {
+            "A": "124",
+            "B": "\"124\"",
+            "C": "eroare,asemenea operatii nu pot fi efectuate",
+            "D": "“1” si 24",
+            "E": "“1” si 6"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 2,
+          "text": "Care este rezultatul urmatoarei operatiiin JavaScript: 2 + 5 + “8”?",
+          "options": {
+            "A": "\"78\"",
+            "B": "eroare, asemenea operatii nu pot fi efectuate",
+            "C": "78",
+            "D": "“258”",
+            "E": "258"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 3,
+          "text": "Ce face operatorul “= = =”in JavaScript?",
+          "options": {
+            "A": "nu exista acest operator",
+            "B": "operatorul este adevarat doar daca operatorii sunt egali fara nicio conversie de tip",
+            "C": "este operatorul egal strict",
+            "D": "operatorul este adevarat daca operatorii sunt egali dupa o conversie de tip",
+            "E": "operatorul se foloseste doarin cazul string-urilor"
+          },
+          "correct_answer": ["B", "C"]
+        },
+        {
+          "id": 4,
+          "text": "Ce face urmatoarea regula CSS? p {color: red}",
+          "options": {
+            "A": "scrie cu rosu toate textele din toate paragrafele",
+            "B": "scrie cu rosu textul din paragraful urmator",
+            "C": "atribuie variabilei p culoarea rosu",
+            "D": "schimba culoarea fundaluluiin rosu",
+            "E": "functia p are ca parametru culoarea rosu"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 5,
+          "text": "Ce face urmatoarea regula CSS? p em {color:green}",
+          "options": {
+            "A": "textul scris in stil italic din paragrafe este verde",
+            "B": "textele din paragrafe sunt scrise cu culoarea verde",
+            "C": "textul scrisin stil italic din paragraful urmator este verde",
+            "D": "cuvantul em din paragraful urmator este scris cu verde",
+            "E": "regula este scrisa gresit"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 6,
+          "text": "Ce rezultat are urm˘atorul cod HTML?\n<TABLE BORDER=”2” CELLPADDING=”2” WIDTH=”100%”>\n<TR onMouseover=”this.bgColor=’#EEEEEE’”onMouseout=”this.bgColor=’#FFFFFF’”>\n<TD>Your Table Data</TD>\n</TR><TR onMouseover=”this.bgColor=’#EEEEEE’”onMouseout=”this.bgColor=’#FFFFFF’”>\n<TD>Your Table Data</TD></TR>\n<TR onMouseover=”this.bgColor=’#EEEEEE’”onMouseout=”this.bgColor=’#FFFFFF’”>\n<TD>Your Table Data</TD></TR></TABLE>",
+          "options": {
+            "A": "schimba culoare de background a tabelului cand se trece cu mouse-ul pe deasupra acestuia",
+            "B": "creeaza un tabel cu 3 coloane",
+            "C": "creeaza un tabel",
+            "D": "schimba culoarea de background a paginii din #EEEEEE in #FFFFFF cand se trece cu mouse-ul peste tabel",
+            "E": "schimba culoarea de background a paginii din #FFFFFF in #EEEEEE cand se trece cu mouse-ul peste tabel"
+          },
+          "correct_answer": ["A", "C"]
+        },
+        {
+          "id": 7,
+          "text": "Ce rezultat are urmatorul cod?\n <form> \n<inputtype=”button”value=”Clickme”onclick=”window.open(’http://www.domain.com’)”> \n</form>",
+          "options": {
+            "A": "deschide o noua fereastra de browser cu ajutorul unui buton",
+            "B": "nu face nimic, variabila onclick nu este declarata",
+            "C": "creeaza un buton",
+            "D": "creeaza un link catre o noua fereastra de browser",
+            "E": "niciunul dintre raspunsurile de mai sus"
+          },
+          "correct_answer": ["A", "C"]
+        },
+        {
+          "id": 8,
+          "text": "Ce rezultat are urmatorul cod JavaScript?\n <a href=”” onMouseOver=”alert(’Your Message’);return true;”>Linked Text</a>",
+          "options": {
+            "A": "in momentul in care se trece cu mouse-ul peste link sare o fereastra de alertare",
+            "B": "in momentulin care se apasa link-ul sare o fereastra de alertare",
+            "C": "in momentulin care se trece peste link cu mouse-ul browserul deschide o noua fereastra",
+            "D": "nu are niciun efect",
+            "E": "niciunul dintre raspunsurile de mai sus"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 9,
+          "text": "Cum se defineste o constantain PHP?",
+          "options": {
+            "A": "prin directiva define()",
+            "B": "cu ajutorul cuvantului cheie const",
+            "C": "cu ajutorul cuvintelor cheie var const",
+            "D": "cu ajutorul cuvantului static",
+            "E": "cu un Macro"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 10,
+          "text": "Cum se poate trimite un formular fara ajutorul unui buton de “Submit”?",
+          "options": {
+            "A": "cu ajutorul unui hyperlink",
+            "B": "cu ajutorul unui hyperlink, dar cu ajutorul JavaScript",
+            "C": "<a href=\"javascript: document.myform.submit();\">Submit Me</a>",
+            "D": "<a href=” myform.submit();”>Submit Me</a>",
+            "E": "nu se poate trimite"
+          },
+          "correct_answer": ["B", "C"]
+        },
+        {
+          "id": 11,
+          "text": "De ce urmatorul cod nu afiseaza o noua linie corect?\n <?php $str = ‘Hello, there.nnHow are you?nnThanks for visiting fyicenter’; print $str; ?>",
+          "options": {
+            "A": "pentru ca \\nn\" nu este interpretat ca o linie noua",
+            "B": "afiseaza corect linia noua",
+            "C": "\\n\" si \\n\" sunt afisate ca o secventa de caractere",
+            "D": "lipseste directiva newLine();",
+            "E": "lipseste directiva println();"
+          },
+          "correct_answer": ["A", "C"]
+        },
+        {
+          "id": 12,
+          "text": "Care este lungimea maxima a unui nume de tabel, de baza de date sau campin MySQL?",
+          "options": {
+            "A": "tabel: 64 de caractere, baza de date: 64 de caractere, camp: 64 de caractere",
+            "B": "48 de caractere, baza de date: 64 de caractere, camp: 48 de caractere",
+            "C": "8 de caractere, baza de date: 8 de caractere, camp: 8 de caractere",
+            "D": "64 de caractere, baza de date: 64 de caractere, camp: 63 de caractere",
+            "E": "nu exista limita de lungime"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 13,
+          "text": "Care din urmatoarele functii sunt functii de criptarein PHP?",
+          "options": {
+            "A": "CRYPT()",
+            "B": "MD5()",
+            "C": "CRYPTED()",
+            "D": "MD6()",
+            "E": "ENCRYPT()"
+          },
+          "correct_answer": ["A", "B"]
+        },
+        {
+          "id": 14,
+          "text": "Ce efect are urmatoarea linie de cod:\n <marquee>THIS WILL DISAPPEAR</marquee>?",
+          "options": {
+            "A": "textul disparein fundal",
+            "B": "textul se plimba pe ecran de la stanga la dreapta",
+            "C": "textul se plimba pe ecran de la dreapta la stanga",
+            "D": "afiseaza un dreptunghi cu textul THIS WILL DISAPPER",
+            "E": "marcheaza textul THIS WILL DISAPPEAR"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 15,
+          "text": "Care dintre sintaxele urmatoare este corecta?",
+          "options": {
+            "A": "body {color: black}",
+            "B": "{body;color:black}",
+            "C": "body:color=black",
+            "D": "{body:color=black(body}",
+            "E": "{body=color:black(body)}"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 16,
+          "text": "Cum se adauga aceeasi culoare de background pentru toate elementele <h1>?",
+          "options": {
+            "A": "h1 {background-color:#FFFFFF}",
+            "B": "h1.all {background-color:#FFFFFF}",
+            "C": "all.h1 {background-color:#FFFFFF}",
+            "D": "h1 ={background-color:#FFFFFF}",
+            "E": "h1 :{background-color:#FFFFFF"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 17,
+          "text": "Care este eticheta corecta HTML pentru a scrie un text cu bold?",
+          "options": {
+            "A": "<b>",
+            "B": "<bold>",
+            "C": "<bld>",
+            "D": "<bb>",
+            "E": "B"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 18,
+          "text": "Care este eticheta corecta HTML pentru a scrie un hyperlink?",
+          "options": {
+            "A": "<a>http://www.w3schools.com</a>",
+            "B": "<a url=”http://www.w3schools.com”>W3Schools.com</a>",
+            "C": "<a href=\"http://www.w3schools.com\">W3Schools</a>",
+            "D": "<a name=”http://www.w3schools.com”>W3Schools.com</a>",
+            "E": "<a href=”http://www.w3schools.com”>W3Schools<a>"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 19,
+          "text": "Care este eticheta corecta HTML pentru un link e-mail?",
+          "options": {
+            "A": "<mail>aaa@yyy</mail>",
+            "B": "<a href=”aaa@yyy”>",
+            "C": "<mail href=”aaa@yyy”>",
+            "D": "<a href=\"mailto:aaa@yyy\">",
+            "E": "<a href=”mailto:aaa@yyy”></a>"
+          },
+          "correct_answer": ["D"]
+        },
+        {
+          "id": 20,
+          "text": "Care este eticheta corecta HTML pentru liste numerotate?",
+          "options": {
+            "A": "<ul>",
+            "B": "<dl>",
+            "C": "<ol>",
+            "D": "<list>",
+            "E": "<numl>"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 21,
+          "text": "Care este eticheta corecta HTML pentru inserarea unei imagini?",
+          "options": {
+            "A": "<img href=”image.gif>",
+            "B": "<img>image.gif</img>",
+            "C": "<image src=”image.gif”>",
+            "D": "<img src=\"image.gif\">",
+            "E": "<image src=”image.gif”></image>"
+          },
+          "correct_answer": ["D"]
+        },
+        {
+          "id": 22,
+          "text": "Ce face urmatorul script JavaScript?\n<body>\n<script language=”JavaScript”>\n<!–\nvar myVariable = “Hello there”;\nvar therePlace = myVariable.search(“there”);\ndocument.write(therePlace);\n–>\n</script>\n</body>",
+          "options": {
+            "A": "cauta un anumit cuvant intr-un text",
+            "B": "cauta cuvantul \\there\" in \\Hello there\"",
+            "C": "cauta cuvantul \\there\"",
+            "D": "scrie variabila \\therePlace\"",
+            "E": "cauta un anumit cuvant in string-ul \\Hello there\""
+          },
+          "correct_answer": ["A", "B", "C", "D", "E"]
+        },
+        {
+          "id": 23,
+          "text": "Inauntrul carui element HTML putem scrie un script JavaScript?",
+          "options": {
+            "A": "<script>",
+            "B": "<js>",
+            "C": "<javascript>",
+            "D": "<scripting>",
+            "E": "<jscript>"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 24,
+          "text": "Care este sintaxa corecta Javascript pentru a scrie “Hello World”?",
+          "options": {
+            "A": "document.write(\"Hello World\")",
+            "B": "”Hello World”",
+            "C": "”Hello World”",
+            "D": "response.write(”Hello World”)",
+            "E": "document.write(Hello World”)"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 25,
+          "text": "Cum se scrie “Hello World” intr-o fereastra alert?",
+          "options": {
+            "A": "alertBox=”Hello World”",
+            "B": "alertBox(”Hello World”)",
+            "C": "msgBox(”Hello World”)",
+            "D": "alert(\"Hello World\")",
+            "E": "winalert(“Hello World”)"
+          },
+          "correct_answer": ["D"]
+        },
+        {
+          "id": 26,
+          "text": "Care sunt delimitatorii pentru script-urile PHP?",
+          "options": {
+            "A": "<script language=\"php\">...</script>",
+            "B": "<?php...?>",
+            "C": "<&>...</&>",
+            "D": "¡<?php>...</?>",
+            "E": "<php>...</php>"
+          },
+          "correct_answer": ["A", "B"]
+        },
+        {
+          "id": 27,
+          "text": "Cum se scrie “Hello World”in PHP?",
+          "options": {
+            "A": "Document.Write(”Hello World”);",
+            "B": "document.write(”Hello World”);",
+            "C": "echo \"Hello World\";",
+            "D": "”Hello World”;",
+            "E": "System.out.println(“Hello World”);"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 28,
+          "text": "Variabilelein PHPincep cu:",
+          "options": {
+            "A": "$",
+            "B": "&",
+            "C": "!",
+            "D": "Nimic",
+            "E": "%"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 29,
+          "text": "Ceinseamna CSS?",
+          "options": {
+            "A": "Cascading Style Sheets",
+            "B": "Colorful Style Sheets",
+            "C": "Creative Style Sheets",
+            "D": "Computer Style Sheets",
+            "E": "Cascade Style Sheets"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 30,
+          "text": "Care este sintaxa unei reguli CSS?",
+          "options": {
+            "A": "selector {proprietate : valoare}",
+            "B": "selector(proprietate, valoare)",
+            "C": "selector.proprietate = valoare",
+            "D": "selector(proprietate) = valoare",
+            "E": "{selector.proprietate = valoare}"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 31,
+          "text": "CSS-ul se foloseste pentru:",
+          "options": {
+            "A": "poate fi folosit de mai multi agenti (browser, telefon mobil PDA)",
+            "B": "separa continutul de prezentare",
+            "C": "iti confirma faptul ca ai scris codul corect",
+            "D": "a crea programe stand-alone",
+            "E": "a face legatura cu o baza de date"
+          },
+          "correct_answer": ["A", "B", "C"]
+        },
+        {
+          "id": 32,
+          "text": "Ce efect are urmatoarea regula CSS? fcolor:green;g",
+          "options": {
+            "A": "totul o sa fie transformat in verde",
+            "B": "* din text sunt transformatein verde",
+            "C": "regula este un comentariu",
+            "D": "regula este scrisa gresit",
+            "E": "nu are niciun efect"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 33,
+          "text": "Ce efect are urmatoarea regula CSS? img [title] fborder: 2px solid blue;g <img src=”images/sunset.jpg” alt=”Lahina Sunset” title=”Lahina Sunset”>",
+          "options": {
+            "A": "imaginea o sa aiba o margine de 2px",
+            "B": "imaginea o sa aiba marimea de 2px",
+            "C": "nu are niciun efect deoarece imaginea nu este inserata corect",
+            "D": "scrie titlul imaginii cu albastru inchis",
+            "E": "titlul imaginii esteincadrat de o margine de 2px"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 34,
+          "text": "Cum se trimitein PHP un query MySQL?",
+          "options": {
+            "A": "mysql_query",
+            "B": "mysql.query",
+            "C": "query.mysql",
+            "D": "query_mysql",
+            "E": "mysql_q"
+          },
+          "correct_answer": ["A"]
+        },
+        {
+          "id": 35,
+          "text": "Ceinseamna PHP?",
+          "options": {
+            "A": "Personal Hypertext Processor",
+            "B": "PHP: Hypertext Preprocessor",
+            "C": "Private Home Page",
+            "D": "Personal Home Page",
+            "E": "PHP: Private Hypertext Processor"
+          },
+          "correct_answer": ["B"]
+        },
+        {
+          "id": 36,
+          "text": "Care este modul corect de a se conecta la o baza de date MySQL?",
+          "options": {
+            "A": "mysql open(”localhost”);",
+            "B": "connect mysql(”localhost”);",
+            "C": "mysql connect(\"localhost\");",
+            "D": "dbopen(”localhost”);",
+            "E": "dbconnetc(“localhost”);"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 37,
+          "text": "Care este modul corect de a adauga 1 la varibila $count?",
+          "options": {
+            "A": "$count =+1",
+            "B": "++count",
+            "C": "$count++;",
+            "D": "count++;",
+            "E": "$count==1"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 38,
+          "text": "Unde este corect sa asezam script-uri Javascript?",
+          "options": {
+            "A": "sectiunea body",
+            "B": "sectiunea head",
+            "C": "sectiunea body si sectiunea head",
+            "D": "sectiunea title",
+            "E": "sectiunea title si head"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 39,
+          "text": "Cum se poate introduce un script externin Javascript?",
+          "options": {
+            "A": "<script href=”aaa.js”>",
+            "B": "<script name=”aaa.js”>",
+            "C": "<script src=\"aaa.js\">",
+            "D": "<script src = “aaa.java”",
+            "E": "<script src = “aaa.javascript>"
+          },
+          "correct_answer": ["C"]
+        },
+        {
+          "id": 40,
+          "text": "Cum se scriu comentariilein JavaScript?",
+          "options": {
+            "A": "’Acesta este un comentariu",
+            "B": "<!–Acesta este un comentariu –>",
+            "C": "//Acesta este un comentariu",
+            "D": "Acesta este un comentariu",
+            "E": "nu se pot scrie comentariiin JavaScript"
+          },
+          "correct_answer": ["C"]
+        }
+      ]
+    }
+  ]
+}
