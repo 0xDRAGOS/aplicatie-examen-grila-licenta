@@ -5,16 +5,14 @@
       "questions": [
         {
           "id": 1,
-          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n#include <stdio.h>\nvoid main(){\n    int a,b = 0;\n    int i;\n    for (i=0;i<10;i++){\n        b = a;\n        a = i;\n    }\nprintf(\"%d\", b);\n}",
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n#include <stdio.h>\nvoid main(){\n int a,b = 0;\n int i;\n for (i=0;i<10;i++){\n  b = a;\n  a = i;\n }\n printf(\"%d\", b);\n}",
           "options": {
             "A": "8",
             "B": "9",
             "C": "10",
             "D": "0123456789"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 2,
@@ -26,10 +24,7 @@
             "D": "*(a+a)",
             "E": "*(a+i*sizeof(a[i]))"
           },
-          "correct_answer": [
-            "A",
-            "B"
-          ]
+          "correct_answer": ["A", "B"]
         },
         {
           "id": 3,
@@ -42,15 +37,11 @@
             "E": "k += k",
             "F": "k = k + sizeof(k)"
           },
-          "correct_answer": [
-            "A",
-            "B",
-            "C"
-          ]
+          "correct_answer": ["A", "B", "C"]
         },
         {
           "id": 4,
-          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program? \n\n#include <stdio.h>\nint a,b;\nvoid f1 (int *r, int *s){\n    int temp;\n    temp = *r;\n    *r = *s;\n    *s = temp;\n}\nvoid f2 (int *x, int *y){\n    if (*x > *y) f1(x,y);\n}\nmain(){\n    a = 64;\n    b = 42;\n    f2(&a,&b);\n    printf(\"%d,%d\\n\",a,b);\n}",
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program? \n\n#include <stdio.h>\nint a,b;\nvoid f1 (int *r, int *s){\n int temp;\n temp = *r;\n *r = *s;\n *s = temp;\n}\nvoid f2 (int *x, int *y){\nif (*x > *y) f1(x,y);\n}\nmain(){\n a = 64;\n b = 42;\n f2(&a,&b);\n printf(\"%d,%d\\n\",a,b);\n}",
           "options": {
             "A": "42,64",
             "B": "64,42",
@@ -58,13 +49,11 @@
             "D": "42,42",
             "E": "eroare de compilare pentru ca lipseste void la declararea functiei main"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 5,
-          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program? \n\n#include <stdio.h>\nint a,b;\nvoid f1 (int r, int s){\n    int temp;\n    temp = r;\n    r = s;\n    s = temp;\n}\nvoid f2 (int x, int y){\n    if (x > y) f1(x,y);\n}\nvoid main(){\n    a = 064;\n    b = 042;\n    f2(a,b);\n    printf(\"%d,%d\\n\",a,b);\n}",
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program? \n\n#include <stdio.h>\nint a,b;\nvoid f1 (int r, int s){\n int temp;\n temp = r;\n r = s;\n s = temp;\n}\nvoid f2 (int x, int y){\nif (x > y) f1(x,y);\n}\nvoid main(){\n a = 064;\n b = 042;\n f2(a,b);\n printf(\"%d,%d\\n\",a,b);\n}",
           "options": {
             "A": "52,34",
             "B": "64,42",
@@ -73,13 +62,11 @@
             "E": "0,0",
             "F": "rezultatul nu poate fi determinat avand in vedere valorile variabilelor a si b"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 6,
-          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program? \n\n#include <stdio.h>\nvoid main(){\n    int k[ ] = {100,200,300,400,500,600,700};\n    int *t=k+2;\n    printf(\"%d \",*t);\n    printf(\"%d \",*(t+2) + *t);\n    *t = *t + 10;\n    printf(\"%d \",*t);\n    t = t+3;\n    printf(\"%d \",*t);\n    *t = *t + *(t-2);\n    printf(\"%d \",*t);\n}",
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program? \n\n#include <stdio.h>\nvoid main(){\n int k[ ] = {100,200,300,400,500,600,700};\n int *t=k+2;\n printf(\"%d \",*t);\n printf(\"%d \",*(t+2) + *t);\n *t = *t + 10;\n printf(\"%d \",*t);\n t = t+3;\n printf(\"%d \",*t);\n *t = *t + *(t-2);\n printf(\"%d \",*t);\n}",
           "options": {
             "A": "300 800 310 600 1000",
             "B": "200 300 110 600 1100",
@@ -88,13 +75,11 @@
             "E": "100 900 310 600 1000",
             "F": "nici una din variante nu este corecta"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 7,
-          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <stdio.h>\nvoid main(){\n    int p[] = {50,60,70,80,90,100};\n    int *q[6],i;\n    for(i =0;i<6;i++)\n    q[i] = &p[i];\n    for(i=5;i>=1;i--){\n        q[i] = q[i-1];\n        *q[i] = *q[i] + *p * 2;\n    }\nfor(i=0;i<6;i++)\nprintf(\"%d \",p[i]);\n}",
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <stdio.h>\nvoid main(){\nint p[] = {50,60,70,80,90,100};\nint *q[6],i;\nfor(i =0;i<6;i++)\nq[i] = &p[i];\nfor(i=5;i>=1;i--){\nq[i] = q[i-1];\n*q[i] = *q[i] + *p * 2;\n}\nfor(i=0;i<6;i++)\nprintf(\"%d \",p[i]);\n}",
           "options": {
             "A": "150 160 170 180 190 100",
             "B": "160 160 170 180 190 100",
@@ -103,13 +88,11 @@
             "E": "150 160 170 180 190 200",
             "F": "nici una din variante nu este corecta"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 8,
-          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <stdio.h>\n#include <stdlib.h>\nvoid f(int *x){\n    x=(int *) malloc(sizeof(int));\n    *x=12;\n}\nvoid main(){\n    int v=15/10;\n    f(&v);\n    printf(\"%d\",v);\n}",
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <stdio.h>\n#include <stdlib.h>\nvoid f(int *x){\nx=(int *) malloc(sizeof(int));\n*x=12;\n}\nvoid main(){\nint v=15/10;\nf(&v);\nprintf(\"%d\",v);\n}",
           "options": {
             "A": "1",
             "B": "12",
@@ -118,13 +101,11 @@
             "E": "adresa variabilei v",
             "F": "adresa variabilei x"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 9,
-          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <stdio.h>\nvoid main(){\n    int i, p=0x10;\n    for(i=1;;i+=2){\n        if (i=5)\n        break;\n        p+=i;\n    }\nprintf(\"%d\",p);\n}",
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <stdio.h>\nvoid main(){\nint i, p=0x10;\nfor(i=1;;i+=2){\nif (i=5)\nbreak;\np+=i;\n}\nprintf(\"%d\",p);\n}",
           "options": {
             "A": "16",
             "B": "10",
@@ -133,13 +114,11 @@
             "E": "14",
             "F": "programul cicleaza la infinit"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 10,
-          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <stdio.h>\nint a = 10, b = 5;\nvoid f (int a, int t[]){\n    b = a;\n    t[2] = a % 2;\n    a = (t[0]+t[1])/2;\n    t[0]^=t[1];\n    t[1]^=t[0];\n    t[0]^=t[1];\n}\nvoid main(){\n    int t[]={4,3,1};\n    f(t[2],t);\n    printf(\"%d %d %d %d %d\",a,b,t[0],t[1],t[2]);\n}",
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <stdio.h>\nint a = 10, b = 5;\nvoid f (int a, int t[]){\nb = a;\nt[2] = a % 2;\na = (t[0]+t[1])/2;\nt[0]^=t[1];\nt[1]^=t[0];\nt[0]^=t[1];\n}\nvoid main(){\nint t[]={4,3,1};\nf(t[2],t);\nprintf(\"%d %d %d %d %d\",a,b,t[0],t[1],t[2]);\n}",
           "options": {
             "A": "10 1 3 4 1",
             "B": "10 5 4 3 1",
@@ -148,9 +127,7 @@
             "E": "5 5 10 4 0",
             "F": "nici una din variante nu este corecta"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 11,
@@ -166,16 +143,11 @@
             "H": "r = q;",
             "I": "r = p;"
           },
-          "correct_answer": [
-            "A",
-            "B",
-            "C",
-            "D"
-          ]
+          "correct_answer": ["A", "B", "C", "D"]
         },
         {
           "id": 12,
-          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <stdio.h>\nvoid main(){\n    char s[]=\"abcdef\";\n    char *p,*q,c;\n    p=s;\n    q=p+4;\n    while(p < q){\n        c=*p;\n        *p=*q;\n        *q=++c;\n        p++;q--;\n    }\nprintf(\"%s\",s);\n}",
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <stdio.h>\nvoid main(){\nchar s[]=\"abcdef\";\nchar *p,*q,c;\np=s;\nq=p+4;\nwhile(p < q){\nc=*p;\n*p=*q;\n*q=++c;\np++;q--;\n}\nprintf(\"%s\",s);\n}",
           "options": {
             "A": "edccbf",
             "B": "fedcba",
@@ -184,9 +156,7 @@
             "E": "bcdefg",
             "F": "nici una din variante nu este corecta"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 13,
@@ -200,9 +170,7 @@
             "F": "5",
             "G": "nici una"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 14,
@@ -214,13 +182,11 @@
             "D": "0xF006",
             "E": "0xF003"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 15,
-          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <stdio.h>\nvoid main(){\n    int x=7;\n    x = 1,2,3;\n    printf(\"%d\",x);\n}\n\nSolution: Operatorul virgula se evalueaza de la stanga la dreapta. Rezultatul este dat de\nultima valoare a expresiei. Insa, deoarce operatorul = are prioritatea mai mare decat a\noperatorului virgula mai intai se atribuie lui x valoarea 1 si apoi se evalueaza expresia x,2,3,\nrezultat care nu este memorat in nicio variabila.",
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <stdio.h>\nvoid main(){\nint x=7;\nx = 1,2,3;\nprintf(\"%d\",x);\n}\n\n Solution: Operatorul virgula se evalueaza de la stanga la dreapta. Rezultatul este dat de \nultima valoare a expresiei. Insa, deoarce operatorul = are prioritatea mai mare decat a \noperatorului virgula mai intai se atribuie lui x valoarea 1 si apoi se evalueaza expresia x,2,3, \nrezultat care nu este memorat in nicio variabila.",
           "options": {
             "A": "1",
             "B": "7",
@@ -229,13 +195,11 @@
             "E": "6",
             "F": "nimic (programul nu se compileaza)"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 16,
-          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <stdio.h>\nvoid main() {\n    int array[3][] = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}};\n    int s = 0, i ,j;\n    for (i = 0; i < 3 ; ++i){\n        for (j = 2; j < 3 ; j++){\n            s += array[i][j];\n        }\n}\nprintf(\"%d\",s);\n}\n\nSolution: La declararea tablourilor multidimensionale numai prima dimensiune poate fi omisa.\nIn acest caz, se genereaza eroare de compilare deoarece nu este specificat numarul de coloane.",
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <stdio.h>\nvoid main() {\nint array[3][] = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}};\nint s = 0, i ,j;\nfor (i = 0; i < 3 ; ++i){\nfor (j = 2; j < 3 ; j++){\ns += array[i][j];\n}\n}\nprintf(\"%d\",s);\n}\n\nSolution: La declararea tablourilor multidimensionale numai prima dimensiune poate fi omisa.\nIn acest caz, se genereaza eroare de compilare deoarece nu este specificat numarul de coloane.",
           "options": {
             "A": "nimic (programul nu se compileaza)",
             "B": "15",
@@ -243,13 +207,11 @@
             "D": "27",
             "E": "36"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 17,
-          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <stdio.h>\nint f(int y);\nvoid main(){\n    int x = 3;\n    int y = 6;\n    printf(\"%d\", f(x));\n}\nint f(int x){\n    return x+1;\n}",
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <stdio.h>\nint f(int y);\nvoid main(){\nint x = 3;\nint y = 6;\nprintf(\"%d\", f(x));\n}\nint f(int x){\nreturn x+1;\n}",
           "options": {
             "A": "4",
             "B": "7",
@@ -258,13 +220,11 @@
             "E": "nimic (eroare de compilare deoarce functia f a fost apelata inainte de a fi definita)",
             "F": "nimic (eroare de compilare deoarce numele argumentului functiei f este y la declarare si x la definire)"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 18,
-          "text": "Cate elemente ale vectorului a vor avea valoarea 9 dupa executia programului de mai jos?:\n\nvoid main(){\n    int a[] = {0, 1, 2, 3, 0, 4, 5, 6};\n    int i = 0, x = 9;\n    do{\n        a[i++] = x;\n    }while(i<6&&a[i]);\n}",
+          "text": "Cate elemente ale vectorului a vor avea valoarea 9 dupa executia programului de mai jos?:\n\nvoid main(){\nint a[] = {0, 1, 2, 3, 0, 4, 5, 6};\nint i = 0, x = 9;\ndo{\na[i++] = x;\n}while(i<6&&a[i]);\n}",
           "options": {
             "A": "nici unul",
             "B": "unu",
@@ -272,13 +232,11 @@
             "D": "patru",
             "E": "toate"
           },
-          "correct_answer": [
-            "D"
-          ]
+          "correct_answer": ["D"]
         },
         {
           "id": 19,
-          "text": "Fie urmatorul program:\n\nvoid main (){\n    int v[20], i, n, D;\n    scanf(\"%d\", &n);\n    for(i=0;i<n;i++)\n    v[i]=i%2?i:-i;\n    for(D=1,i=0;i<n;D*=v[i++]);\n    D++;\n    printf(\"%d\",D);\n}\n\nIn urma executiei sale sunt posibile urmatoarele situatii:",
+          "text": "Fie urmatorul program:\n\nvoid main (){\nint v[20], i, n, D;\nscanf(\"%d\", &n);\nfor(i=0;i<n;i++)\nv[i]=i%2?i:-i;\nfor(D=1,i=0;i<n;D*=v[i++]);\nD++;\nprintf(\"%d\",D);\n}\n\nIn urma executiei sale sunt posibile urmatoarele situatii:",
           "options": {
             "A": "Expresia conditionala din primul ciclu for este eronata din punct de vedere sintactic.",
             "B": "Daca variabila n primeste la citire valoarea 6, atunci elementele vectorului v vor fi, in ordine (0,1,-2,3,-4,5).",
@@ -286,14 +244,11 @@
             "D": "Daca variabila n primeste la citire valoarea 5, atunci programul afiseaza 1",
             "E": "Programul functioneaza corect pentru orice valoare intreaga a lui n mai mica sau egala cu MAXINT."
           },
-          "correct_answer": [
-            "B",
-            "D"
-          ]
+          "correct_answer": ["B", "D"]
         },
         {
           "id": 20,
-          "text": "Fie programul :\n\nvoid main(){\n    int v[]={0, 1, 2, 3, 4, 5, 0};\n    int i=0, n=0;\n    do{\n        if (i == v[i])\n        n++;\n    }while(i<6 && v[i++]);\n}\n\nIn urma executiei programului sunt posibile urmatoarele situatii:",
+          "text": "Fie programul :\n\nvoid main(){\nint v[]={0, 1, 2, 3, 4, 5, 0};\nint i=0, n=0;\ndo{\nif (i == v[i])\nn++;\n}while(i<6 && v[i++]);\n}\n\nIn urma executiei programului sunt posibile urmatoarele situatii:",
           "options": {
             "A": "variabila n va avea valoarea 0",
             "B": "variabila n va avea valoarea 1",
@@ -301,9 +256,7 @@
             "D": "variabila n va avea valoarea 5",
             "E": "variabila n va avea valoarea 2"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 21,
@@ -315,13 +268,11 @@
             "D": "Algoritmul sterge din vector elementul cu valoarea x, prin mutarea cu o pozitie mai la dreapta a elementelor aflate inaintea lui.",
             "E": "Algoritmul sterge din vector elementul cu valoarea x, prin mutarea cu o pozitie mai la stanga a elementelor a(cid:13)ate dupa el."
           },
-          "correct_answer": [
-            "E"
-          ]
+          "correct_answer": ["E"]
         },
         {
           "id": 22,
-          "text": "In programul urmator, care dintre secventele de instructiuni (I), (II), (III) realizeaza corect \ncitirea unui sir de caractere de la tastatura si afisarea acestuia?\n\nvoid main(){\n    char s1[10],s2[10],s3[10];\n    scanf(\"%s\", &s3[3]);\n    printf(\"%s\", s3[3]); //(I)\n    scanf(\"%s\", s2);\n    printf(\"s2=%s\", s2); //(II)\n    scanf(\"%s\",&s1);\n    printf(\"%s\", s1[10]); //(III)\n}",
+          "text": "In programul urmator, care dintre secventele de instructiuni (I), (II), (III) realizeaza corect \ncitirea unui sir de caractere de la tastatura si afisarea acestuia?\n\nvoid main(){\nchar s1[10],s2[10],s3[10];\nscanf(\"%s\", &s3[3]);\nprintf(\"%s\", s3[3]); //(I)\nscanf(\"%s\", s2);\nprintf(\"s2=%s\", s2); //(II)\nscanf(\"%s\",&s1);\nprintf(\"%s\", s1[10]); //(III)\n}",
           "options": {
             "A": "numai (I)",
             "B": "toate",
@@ -329,13 +280,11 @@
             "D": "(I) si (III)",
             "E": "numai (II)"
           },
-          "correct_answer": [
-            "E"
-          ]
+          "correct_answer": ["E"]
         },
         {
           "id": 23,
-          "text": "Pentru programul urmator, analizati corectitudinea afirmatiilor de mai jos:\n\n#include <stdlib.h>\n#include <string.h>\n#include <stdio.h>\nvoid main(){\n    char s1[4], s2[4];\n    long x;\n    scanf(\"%s %s\", s1, s2) ;\n    if (strcmp(s1, s2)>0)\n    x=atol(s1);\n    else\n    if(strcmp(s1, s2)==0)\n    x = 0;\n    else x = atol(s2);\n    printf(\"%d\", x);\n}",
+          "text": "Pentru programul urmator, analizati corectitudinea afirmatiilor de mai jos:\n\n#include <stdlib.h>\n#include <string.h>\n#include <stdio.h>\nvoid main(){\nchar s1[4], s2[4];\nlong x;\nscanf(\"%s %s\", s1, s2) ;\nif (strcmp(s1, s2)>0)\nx=atol(s1);\nelse\nif(strcmp(s1, s2)==0)\nx = 0;\nelse x = atol(s2);\nprintf(\"%d\", x);\n}",
           "options": {
             "A": "Conditiile din cele doua linii if sunt gresite.",
             "B": "Apelurile functiei atol sunt corecte",
@@ -343,15 +292,11 @@
             "D": "Daca de la tastatura se introduc sirurile \"123\" si \"121\", atunci programul va afisa sirul \"123\".",
             "E": ""
           },
-          "correct_answer": [
-            "B",
-            "C",
-            "D"
-          ]
+          "correct_answer": ["B", "C", "D"]
         },
         {
           "id": 24,
-          "text": "In conformitate cu standardul ASCII, codurile literelor mari sunt succesive incepand cu 65, ce va \nafisa programul de mai jos?\n\n#include <stdlib.h>\n#include <string.h>\n#include <stdio.h>\nvoid main(){\n    int x = 20, e;\n    char s[15] =\"ABC\", t[15], u[15];\n    e = s[1] + s[2];\n    itoa(e, t, 10);\n    strcpy(u, t);\n    strcat(s, u);\n    printf(\"%s \", s);\n}",
+          "text": "In conformitate cu standardul ASCII, codurile literelor mari sunt succesive incepand cu 65, ce va \nafisa programul de mai jos?\n\n#include <stdlib.h>\n#include <string.h>\n#include <stdio.h>\nvoid main(){\nint x = 20, e;\nchar s[15] =\"ABC\", t[15], u[15];\ne = s[1] + s[2];\nitoa(e, t, 10);\nstrcpy(u, t);\nstrcat(s, u);\nprintf(\"%s \", s);\n}",
           "options": {
             "A": "Nimic, sirul s fiind vid",
             "B": "ABC13",
@@ -359,9 +304,7 @@
             "D": "ABC133",
             "E": "ABC131"
           },
-          "correct_answer": [
-            "D"
-          ]
+          "correct_answer": ["D"]
         },
         {
           "id": 25,
@@ -375,12 +318,7 @@
             "F": "ba",
             "G": "toate variantele sunt corecte"
           },
-          "correct_answer": [
-            "A",
-            "B",
-            "D",
-            "E"
-          ]
+          "correct_answer": ["A", "B", "D", "E"]
         },
         {
           "id": 26,
@@ -392,13 +330,11 @@
             "D": "f2=fopen(”f2.txt”,”’w+”);",
             "E": "toate variantele anterioare sunt gresite"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 27,
-          "text": "Care este efectul subprogramului alaturat?\n\nvoid X(char *a, char *b){\n    FILE *f,*g;\n    char s[255];\n    f=fopen(a,\"a\");\n    g=fopen(b,\"r\");\n    while(!feof(g)){\n        fgets(s,255,g);\n        fputs(s,f);\n    }\nfclose(f);\nfclose(g);\n}",
+          "text": "Care este efectul subprogramului alaturat?\n\nvoid X(char *a, char *b){\nFILE *f,*g;\nchar s[255];\nf=fopen(a,\"a\");\ng=fopen(b,\"r\");\nwhile(!feof(g)){\nfgets(s,255,g);\nfputs(s,f);\n}\nfclose(f);\nfclose(g);\n}",
           "options": {
             "A": "copiaza continutul fisierului g peste continutul fisierului f",
             "B": "citeste informatiile din cele doua fisiere ale caror nume se transmit ca parametri",
@@ -406,9 +342,7 @@
             "D": "concateneaza doua fisiere, rezultatul concatenarii fiind pus in fisierul g",
             "E": "toate variantele anterioare sunt gresite"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 28,
@@ -420,35 +354,29 @@
             "D": "Nu pot fi adaugate informatii intr-un fisier",
             "E": "Toate celelalte variante sunt eronate"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 29,
-          "text": "Ce valori se vor gasi in fisierul numere.txt dupa executia urmatorului program?\n\n#include <conio.h>\n#include <stdio.h>\nFILE *f;\nint i=0, a[10]={20,11,17,4,5,10,14,34,23,11};\nvoid main(){\n    f=fopen(\"c:\\\\numere.txt\",\"w\");\n    for(i=0; i<5; i++){\n        if(a[i]%2!=0)\n        fprintf(f,\"%d \\n\",a[i]);\n    }\nfclose(f);\n}",
+          "text": "Ce valori se vor gasi in fisierul numere.txt dupa executia urmatorului program?\n\n#include <conio.h>\n#include <stdio.h>\nFILE *f;\nint i=0, a[10]={20,11,17,4,5,10,14,34,23,11};\nvoid main(){\nf=fopen(\"c:\\\\numere.txt\",\"w\");\nfor(i=0; i<5; i++){\nif(a[i]%2!=0)\nfprintf(f,\"%d \\n\",a[i]);\n}\nfclose(f);\n}",
           "options": {
             "A": "11 17 5 23 11",
             "B": "20 4 10 14 34",
             "C": "11\n17\n5",
             "D": "11\n17\n5\n23\n11"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 30,
-          "text": "Ce se intampla in urma executiei urmatorului program daca fisierul nr.txt contine\nvalorile 7 14 6 3 8 10 ?FILE *f, *g;\nint x;\nvoid main(){\n    f=fopen(\"nr.txt\",\"r+\");\n    g=fopen(\"nr2.txt\",\"w+\");\n    while(!feof(f)){\n        fscanf(f,\"%d\", &x);\n        if(x%2==0)\n        fprintf(g,\"%d \\n\",x);\n    }\nfclose(f);\nfclose(g);\n}",
+          "text": "Ce se intampla in urma executiei urmatorului program daca fisierul nr.txt contine\nvalorile 7 14 6 3 8 10 ?FILE *f, *g;\nint x;\nvoid main(){\nf=fopen(\"nr.txt\",\"r+\");\ng=fopen(\"nr2.txt\",\"w+\");\nwhile(!feof(f)){\nfscanf(f,\"%d\", &x);\nif(x%2==0)\nfprintf(g,\"%d \\n\",x);\n}\nfclose(f);\nfclose(g);\n}",
           "options": {
             "A": "Fisierul nr2.txt va contine valorile 14 6 8 10",
             "B": "Fisierul nr2.txt va contine valorile 14 6 8 10, fiecare pe alta linie",
             "C": "Fisierul nr.txt va contine valorile 7 14 6 8 10",
             "D": "Fisierul nr.txt va contine valorile 7 14 6 8 10, fiecare pe alta linie"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         }
       ]
     },
@@ -466,9 +394,7 @@
             "D": "(8;7;6;5;4;2;3)",
             "E": "(2;3;4;5;6;7;8)"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 2,
@@ -481,9 +407,7 @@
             "D": "3,6,5,7,10,12,13,15,16,18,20,23",
             "E": "3,5,6,7,10,12,13,16,15,18,20,23"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 3,
@@ -496,9 +420,7 @@
             "D": "3,6,5,7,10,12,13,15,16,18,20,23",
             "E": "3,5,6,7,10,12,13,16,15,18,20,23"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 4,
@@ -511,9 +433,7 @@
             "D": "3,6,5,7,10,12,13,15,16,18,20,23",
             "E": "3,5,6,7,10,12,13,16,15,18,20,23"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 5,
@@ -524,9 +444,7 @@
             "C": "ar trebui sa existe un mecanism de stergere sau/si de inserare a elementelor  in lista",
             "D": "niciuna de mai sus"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 6,
@@ -537,13 +455,11 @@
             "C": "trebuie sa existe un mecanism care sa permita accesul direct la elementul din mijloc",
             "D": "algoritmul de cautare binar nu este eficient atunci cand avem mai mult de 1000 de elemente"
           },
-          "correct_answer": [
-            "D"
-          ]
+          "correct_answer": ["D"]
         },
         {
           "id": 7,
-          "text": "Ce va afisa urmatorul program?\n\nString name;\nint i;\nboolean startWord;\nname = \"Franklin D. Roosevelt\";\nstartword = true;\nfor (i = 0; i < name.length(); i++) {\n    if (startWord)\n    System.out.println(name.charAt(i));\n    if (name.charAt(i) == ’ ’)\n    startWord = true;}\nelse\nstartWord = false;\n}",
+          "text": "Ce va afisa urmatorul program?\n\nString name;\nint i;\nboolean startWord;\nname = \"Franklin D. Roosevelt\";\nstartword = true;\nfor (i = 0; i < name.length(); i++) {\nif (startWord)\nSystem.out.println(name.charAt(i));\nif (name.charAt(i) == ’ ’)\nstartWord = true;}\nelse\nstartWord = false;\n}",
           "options": {
             "A": "FDR",
             "B": "Franklin",
@@ -551,9 +467,7 @@
             "D": "Roosevelt",
             "E": "Franklin D. Roosevelt"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 8,
@@ -566,9 +480,7 @@
             "D": "3,6,5,7,10,12,13,15,16,18,20,23",
             "E": "3,5,6,7,10,12,13,16,15,18,20,23"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 9,
@@ -581,9 +493,7 @@
             "D": "i3,6,5,7,10,12,13,15,16,18,20,23",
             "E": "3,5,6,7,10,12,13,16,15,18,20,23"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 10,
@@ -596,9 +506,7 @@
             "D": "3,6,5,7,10,12,13,15,16,18,20,23",
             "E": "3,5,6,7,10,12,13,16,15,18,20,23"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 11,
@@ -609,9 +517,7 @@
             "C": "BubbleSort",
             "D": "SwapSort"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 12,
@@ -623,9 +529,7 @@
             "D": "Input, merge top-down, merge bottom-up, quicksort, heapsort, output",
             "E": "Input, merge top-down, quicksort, heapsort, merge bottom-up, output"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 13,
@@ -638,9 +542,7 @@
             "E": "2^N",
             "F": "N!"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 14,
@@ -653,9 +555,7 @@
             "E": "2^N",
             "F": "N!"
           },
-          "correct_answer": [
-            "D"
-          ]
+          "correct_answer": ["D"]
         },
         {
           "id": 15,
@@ -668,13 +568,11 @@
             "E": "2^N",
             "F": "N!"
           },
-          "correct_answer": [
-            "F"
-          ]
+          "correct_answer": ["F"]
         },
         {
           "id": 16,
-          "text": "Analizand algoritmul de mai jos precizati ce timp de executie are.\n\npublic static int f1(int N){\nint x = 0;\nfor (int i = 0; i < N, i++)\nx++;\nreturn x;\n}\npublic static int f4(int N){\n    if (N==0) return 0;\n    return f4(N/2) + f1(N) + f4(N/2);\n}",
+          "text": "Analizand algoritmul de mai jos precizati ce timp de executie are.\n\npublic static int f1(int N){\nint x = 0;\nfor (int i = 0; i < N, i++)\nx++;\nreturn x;\n}\npublic static int f4(int N){\nif (N==0) return 0;\nreturn f4(N/2) + f1(N) + f4(N/2);\n}",
           "options": {
             "A": "logN",
             "B": "N",
@@ -683,13 +581,11 @@
             "E": "2^N",
             "F": "N!"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 17,
-          "text": "Analizand algoritmul de mai jos precizati ce timp de executie are.\n\npublic static int f1(int N){\nint x = 0;\nfor (int i = 0; i < N, i++)\nx++;\nreturn x;\n}\npublic static int f5(int N){\n    int x = 0;\n    for (int i = N; i > 0; i = i/2)\n    x+=f1(i);\n    return x;\n}",
+          "text": "Analizand algoritmul de mai jos precizati ce timp de executie are.\n\npublic static int f1(int N){\nint x = 0;\nfor (int i = 0; i < N, i++)\nx++;\nreturn x;\n}\npublic static int f5(int N){\nint x = 0;\nfor (int i = N; i > 0; i = i/2)\nx+=f1(i);\nreturn x;\n}",
           "options": {
             "A": "logN",
             "B": "N",
@@ -698,9 +594,7 @@
             "E": "2^N",
             "F": "N!"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 18,
@@ -713,9 +607,7 @@
             "E": "2^N",
             "F": "N!"
           },
-          "correct_answer": [
-            "E"
-          ]
+          "correct_answer": ["E"]
         },
         {
           "id": 19,
@@ -728,9 +620,7 @@
             "E": "2^N",
             "F": "N!"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 20,
@@ -741,9 +631,7 @@
             "C": "Gasirea celui mai scurt drum",
             "D": "Sortarea unei liste scurte de chei"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         }
       ]
     },
@@ -796,7 +684,7 @@
         },
         {
           "id": 4,
-          "text": "Consideram urmatorul program C++ \n\n#include <iostream>\nusing namespace std;\nclass C\n{\n    private:\n    int _i;\n    public:\n    C(int i):_i(i){}\n    C():_i(3){}\n    ~C(){cout<<_i<<endl;}\n};\nvoid main()\n{\n    C c1(4);\n    C c2;\n}\n\nCare din urmatoarele afirmatii sunt adevarate:",
+          "text": "Consideram urmatorul program C++ \n\n#include <iostream>\nusing namespace std;\nclass C\n{\nprivate:\nint _i;\npublic:\nC(int i):_i(i){}\nC():_i(3){}\n~C(){cout<<_i<<endl;}\n};\nvoid main()\n{\nC c1(4);\nC c2;\n}\n\nCare din urmatoarele afirmatii sunt adevarate:",
           "options": {
             "A": "programul nu contine erori de sintaxa",
             "B": "exista erori de sintaxa in definitiile metodelor constructor",
@@ -828,7 +716,7 @@
         },
         {
           "id": 6,
-          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program: \n\n#include <iostream.h>\nclass Test {\n    int n;\n    public:\n    Test(int x):n(x){}\n    int f(int n, int &x, int *p){\n        n=this->n;\n        x=n++;\n        *p=this->n + n;\n        return n;\n    }\n};\nvoid main(){\n    Test t(2);\n    int n=6,x=0x10,p=1;\n    cout<<t.f(n,x,&p)<<\" \";\n    cout<<n<<\" \"<<x<<\" \"<<p;\n}",
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program: \n\n#include <iostream.h>\nclass Test {\nint n;\npublic:\nTest(int x):n(x){}\nint f(int n, int &x, int *p){\nn=this->n;\nx=n++;\n*p=this->n + n;\nreturn n;\n}\n};\nvoid main(){\nTest t(2);\nint n=6,x=0x10,p=1;\ncout<<t.f(n,x,&p)<<\" \";\ncout<<n<<\" \"<<x<<\" \"<<p;\n}",
           "options": {
             "A": "3 6 2 5",
             "B": "3 6 16 1",
@@ -842,7 +730,7 @@
         },
         {
           "id": 7,
-          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program: \n\n#include <iostream.h>\nclass B1 {\n    public:\n    B1(){cout<<\"B1 \";}\n    ~B1(){cout<<\"DB1 \";}\n};\nclass B2 {\n    public:\n    B2(){cout<<\"B2 \";}\n    ~B2(){cout<<\"DB2 \";}\n};\nclass D: public B1, public B2{\n    public:\n    D():B2(),B1(){cout<<\"D \";}\n    ~D(){cout<<\"DD \";}\n};\nvoid main(){\n    D d1;\n    D d2=d1;\n}",
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program: \n\n#include <iostream.h>\nclass B1 {\npublic:\nB1(){cout<<\"B1 \";}\n~B1(){cout<<\"DB1 \";}\n};\nclass B2 {\npublic:\nB2(){cout<<\"B2 \";}\n~B2(){cout<<\"DB2 \";}\n};\nclass D: public B1, public B2{\npublic:\nD():B2(),B1(){cout<<\"D \";}\n~D(){cout<<\"DD \";}\n};\nvoid main(){\nD d1;\nD d2=d1;\n}",
           "options": {
             "A": "B1 B2 D DD DB2 DB1 DD DB2 DB1",
             "B": "B2 B1 D DD DB2 DB1 DD DB2 DB1",
@@ -856,7 +744,7 @@
         },
         {
           "id": 8,
-          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program:\n\n#include <iostream.h>\nclass B1 {\n    public:\n    B1(){cout<<\"B1 \";}\n    ~B1(){cout<<\"DB1 \";}\n};\nclass B2 {\n    public:\n    B2(){cout<<\"B2 \";}\n    ~B2(){cout<<\"DB2 \";}\n};\nclass D: public B1, public B2{\n    static int idGen;\n    int id;\n    public:\n    D():B2(),B1(){id=idGen++;cout<<\"D(\"<<id<<\") \";}\n    D(const D &o){id=idGen++;cout<<\"CD(\"<<id<<\") \";}\n    ~D(){cout<<\"DD \";}\n};\nint D::idGen = 0;\nvoid main(){\n    cout<<endl;\n    D d1;\n    D d2=d1;\n}",
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program:\n\n#include <iostream.h>\nclass B1 {\npublic:\nB1(){cout<<\"B1 \";}\n~B1(){cout<<\"DB1 \";}\n};\nclass B2 {\npublic:\nB2(){cout<<\"B2 \";}\n~B2(){cout<<\"DB2 \";}\n};\nclass D: public B1, public B2{\nstatic int idGen;\nint id;\npublic:\nD():B2(),B1(){id=idGen++;cout<<\"D(\"<<id<<\") \";}\nD(const D &o){id=idGen++;cout<<\"CD(\"<<id<<\") \";}\n~D(){cout<<\"DD \";}\n};\nint D::idGen = 0;\nvoid main(){\ncout<<endl;\nD d1;\nD d2=d1;\n}",
           "options": {
             "A": "B1 B2 D(0) B1 B2 CD(1) DD DB2 DB1 DD DB2 DB1",
             "B": "B1 B2 D(0) DD DB2 DB1 DD DB2 DB1",
@@ -871,7 +759,7 @@
         },
         {
           "id": 9,
-          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program:\n\n#include <iostream.h>\nclass B1 {\n    public:\n    B1(){cout<<\"B1 \";}\n    ~B1(){cout<<\"DB1 \";}\n};\nclass B2 {\n    public:\n    B2(){cout<<\"B2 \";}\n    ~B2(){cout<<\"DB2 \";}\n};\nclass D: public B1, public B2{\n    public:\n    D():B2(),B1(){cout<<\"D \";}\n    D(const D &o){cout<<\"CD \";}\n    ~D(){cout<<\"DD \";}\n};\nvoid main(){\n    D *d1 = new D;\n    D *d2 = d1;\n    delete d1;\n}",
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program:\n\n#include <iostream.h>\nclass B1 {\npublic:\nB1(){cout<<\"B1 \";}\n~B1(){cout<<\"DB1 \";}\n};\nclass B2 {\npublic:\nB2(){cout<<\"B2 \";}\n~B2(){cout<<\"DB2 \";}\n};\nclass D: public B1, public B2{\npublic:\nD():B2(),B1(){cout<<\"D \";}\nD(const D &o){cout<<\"CD \";}\n~D(){cout<<\"DD \";}\n};\nvoid main(){\nD *d1 = new D;\nD *d2 = d1;\ndelete d1;\n}",
           "options": {
             "A": "B1 B2 D DD DB2 DB1",
             "B": "B1 B2 D DD DB2 DB1 DD DB2 DB1",
@@ -886,7 +774,7 @@
         },
         {
           "id": 10,
-          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program:\n\n#include <iostream.h>\nclass A {\n    public:\n    A(){cout<<\"A()\";}\n    A(int n,int m=0){cout<<\"A(int,int)\";}\n    A(const A &o){cout<<\"A(const A&)\";}\n    ~A(){cout<<\"~A\";}\n};\nvoid main(){\n    cout<<endl;\n    A a1;\n    A a2=a1;\n    A a3=1;\n    A a4(1);\n    A a5(1,1);\n}",
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program:\n\n#include <iostream.h>\nclass A {\npublic:\nA(){cout<<\"A()\";}\nA(int n,int m=0){cout<<\"A(int,int)\";}\nA(const A &o){cout<<\"A(const A&)\";}\n~A(){cout<<\"~A\";}\n};\nvoid main(){\ncout<<endl;\nA a1;\nA a2=a1;\nA a3=1;\nA a4(1);\nA a5(1,1);\n}",
           "options": {
             "A": "A()A(const A&)A(int,int)A(int,int)A(int,int)~A~A~A~A~A",
             "B": "A(const A&)A(const A&)A(int)A(int,int)A(int,int)~A~A~A~A~A",
@@ -901,7 +789,7 @@
         },
         {
           "id": 11,
-          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program:\n\n#include <iostream.h>\nclass B {\n    public:\n    virtual void f() { cout<<\"B::f() \";}\n    void g() { cout<<\"B::g() \";}\n};\nclass D1: public B{\n    public:\n    void f() { cout<<\"D1::f() \";}\n    void g() { cout<<\"D1::g() \";}\n};\nclass D2: public B{\n    public:\n    void g() { cout<<\"D2::g() \";}\n};\nvoid main(){\n    int i;\n    B *b[] = {new B(), new D1(), new D2()};\n    for (i=2;i>=0;i--) {b[i]->f();}\n    for (i=0;i<=2;i++) {b[i]->g();}\n}",
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program:\n\n#include <iostream.h>\nclass B {\npublic:\nvirtual void f() { cout<<\"B::f() \";}\nvoid g() { cout<<\"B::g() \";}\n};\nclass D1: public B{\npublic:\nvoid f() { cout<<\"D1::f() \";}\nvoid g() { cout<<\"D1::g() \";}\n};\nclass D2: public B{\npublic:\nvoid g() { cout<<\"D2::g() \";}\n};\nvoid main(){\nint i;\nB *b[] = {new B(), new D1(), new D2()};\nfor (i=2;i>=0;i--) {b[i]->f();}\nfor (i=0;i<=2;i++) {b[i]->g();}\n}",
           "options": {
             "A": "B::f() D1::f() B::f() B::g() B::g() B::g()",
             "B": "D2::f() D1::f() B::f() B::g() B::g() B::g()",
@@ -915,7 +803,7 @@
         },
         {
           "id": 12,
-          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program:\n\n#include <iostream.h>\nclass B {\n    public:\n    virtual void f() { cout<<\"B::f() \";}\n};\nclass D1: public B{\n    public:\n    void f() { cout<<\"D1::f() \";}\n};\nclass D2: public B{\n    public:\n    void f() { cout<<\"D2::f() \";}\n};\nvoid main(){\n    int i;\n    B b[] = { B(), D1(), D2()};\n    for (i=2;i>=0;i--) {b[i].f();}\n}",
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program:\n\n#include <iostream.h>\nclass B {\npublic:\nvirtual void f() { cout<<\"B::f() \";}\n};\nclass D1: public B{\npublic:\nvoid f() { cout<<\"D1::f() \";}\n};\nclass D2: public B{\npublic:\nvoid f() { cout<<\"D2::f() \";}\n};\nvoid main(){\nint i;\nB b[] = { B(), D1(), D2()};\nfor (i=2;i>=0;i--) {b[i].f();}\n}",
           "options": {
             "A": "B::f() B::f() B::f()",
             "B": "D2::f() D1::f() B::f()",
@@ -928,7 +816,7 @@
         },
         {
           "id": 13,
-          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program:\n\n#include <iostream.h>\nclass B {\n    protected:\n    int x;\n    public:\n    B(int x=0){this->x=x;}\n    virtual void f() {x=x+1;}\n    void print(){cout<<x<<\" \";}\n};\nclass D1: public B{\n    public:\n    void f() {x=x+5;}\n};\nclass D2: public B{\n    public:\n    void f() {x=x+2;}\n};\nvoid main(){\n    int i;\n    B *b[] = { new B(2), new D1(), new D2(), new B};\n    for (i=3;i>0;i--) (*b[i]).f();\n    for (i=0;i<=3;i++) b[i]->print();\n}",
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program:\n\n#include <iostream.h>\nclass B {\nprotected:\nint x;\npublic:\nB(int x=0){this->x=x;}\nvirtual void f() {x=x+1;}\nvoid print(){cout<<x<<\" \";}\n};\nclass D1: public B{\npublic:\nvoid f() {x=x+5;}\n};\nclass D2: public B{\npublic:\nvoid f() {x=x+2;}\n};\nvoid main(){\nint i;\nB *b[] = { new B(2), new D1(), new D2(), new B};\nfor (i=3;i>0;i--) (*b[i]).f();\nfor (i=0;i<=3;i++) b[i]->print();\n}",
           "options": {
             "A": "2 5 2 1",
             "B": "2 0 0 0",
@@ -944,7 +832,7 @@
         },
         {
           "id": 14,
-          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program:\n\n#include <iostream.h>\nclass B {\n    int x;\n    public:\n    B(int x=0){this->x=x;}\n    virtual void f() {x=x+1;}\n    void print(){cout<<x<<\" \";}\n};\nclass D1: public B{\n    public:\n    void f() {x=x+5;}\n};\nclass D2: public B{\n    public:\n    void f() {x=x+2;}\n};\nvoid main(){\n    int i;\n    B *b[] = { new B(2), new D1(), new D2(), new B};\n    for (i=3;i>0;i--) (*b[i]).f();\n    for (i=0;i<=3;i++) b[i]->print();\n}",
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program:\n\n#include <iostream.h>\nclass B {\nint x;\npublic:\nB(int x=0){this->x=x;}\nvirtual void f() {x=x+1;}\nvoid print(){cout<<x<<\" \";}\n};\nclass D1: public B{\npublic:\nvoid f() {x=x+5;}\n};\nclass D2: public B{\npublic:\nvoid f() {x=x+2;}\n};\nvoid main(){\nint i;\nB *b[] = { new B(2), new D1(), new D2(), new B};\nfor (i=3;i>0;i--) (*b[i]).f();\nfor (i=0;i<=3;i++) b[i]->print();\n}",
           "options": {
             "A": "2 5 2 1",
             "B": "2 0 0 0",
@@ -960,7 +848,7 @@
         },
         {
           "id": 15,
-          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program:\n\n#include <iostream.h>\nclass B {\n    int x;\n    static int y;\n    public:\n    B(int x=0){this->x=x;}\n    void setX(int vx) {x=vx;}\n    void setY(int vy) {y=vy;}\n    void print(){cout<<x<<\" \"<<y<<\" \";}\n};\nint B::y=0;\nvoid main(){\n    B b1=3;\n    B b2(4);\n    b1.print(); b2.print();\n    b1.setX(5); b2.setY(2);\n    b1.print(); b2.print();\n}",
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program:\n\n#include <iostream.h>\nclass B {\nint x;\nstatic int y;\npublic:\nB(int x=0){this->x=x;}\nvoid setX(int vx) {x=vx;}\nvoid setY(int vy) {y=vy;}\nvoid print(){cout<<x<<\" \"<<y<<\" \";}\n};\nint B::y=0;\nvoid main(){\nB b1=3;\nB b2(4);\nb1.print(); b2.print();\nb1.setX(5); b2.setY(2);\nb1.print(); b2.print();\n}",
           "options": {
             "A": "3 0 4 0 5 2 4 2",
             "B": "3 0 4 0 5 0 4 2",
@@ -975,7 +863,7 @@
         },
         {
           "id": 16,
-          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <iostream.h>\nstruct A{\n    int x;\n    operator double() {\n        return 21.4;\n    }\n};\nvoid main(){\n    A a;\n    a.x = 11;\n    cout << (0?3:a);\n}",
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <iostream.h>\nstruct A{\nint x;\noperator double() {\nreturn 21.4;\n}\n};\nvoid main(){\nA a;\na.x = 11;\ncout << (0?3:a);\n}",
           "options": {
             "A": "21",
             "B": "21.4",
@@ -989,7 +877,7 @@
         },
         {
           "id": 17,
-          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <iostream.h>\nstruct A {\n    A(int d) : x(d) {}\n    int x;\n};\nvoid main(){\n    double x = 3.14;\n    A f( int(x) );\n    cout << f.x << endl;\n}",
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <iostream.h>\nstruct A {\nA(int d) : x(d) {}\nint x;\n};\nvoid main(){\ndouble x = 3.14;\nA f( int(x) );\ncout << f.x << endl;\n}",
           "options": {
             "A": "nimic (eroare de compilare)",
             "B": "0",
@@ -1003,7 +891,7 @@
         },
         {
           "id": 18,
-          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <iostream.h>\nint f(int x, int y = x) {\n    return x+y+1;\n}\nvoid main(){\n    cout << f(2);\n}",
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <iostream.h>\nint f(int x, int y = x) {\nreturn x+y+1;\n}\nvoid main(){\ncout << f(2);\n}",
           "options": {
             "A": "nimic (eroare de compilare)",
             "B": "1",
@@ -1017,7 +905,7 @@
         },
         {
           "id": 19,
-          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <iostream.h>\nstruct A {\n    virtual int f(int x = 5){\n        return x * 2;\n    }\n};\nstruct B : public A{\n    int f(int x = 10) {\n        return x * 3;\n    }\n};\nvoid main(){\n    A* a = new B;\n    cout << a->f();\n}",
+          "text": "Ce se va afisa pe ecran in urma executiei urmatorului program?\n\n#include <iostream.h>\nstruct A {\nvirtual int f(int x = 5){\nreturn x * 2;\n}\n};\nstruct B : public A{\nint f(int x = 10) {\nreturn x * 3;\n}\n};\nvoid main(){\nA* a = new B;\ncout << a->f();\n}",
           "options": {
             "A": "15",
             "B": "10",
@@ -1031,7 +919,7 @@
         },
         {
           "id": 20,
-          "text": "Fie secventa de program:\n\nclass A {\n    private:\n    int x,y;\n    public:\n    A(){x=0;y=0; }\n    A(int xi,int yi){\n        x=xi;y=yi;\n    }\nvoid afis(){\n    cout <<x ” ” << y;\n}\n};\nvoid main(){\n    A A1,A2(10,20);\n    A1.afis();\n    A2.afis();\n}\nCare din urmatoarele afirmatii sunt adevarate:",
+          "text": "Fie secventa de program:\n\nclass A {\nprivate:\nint x,y;\npublic:\nA(){x=0;y=0; }\nA(int xi,int yi){\nx=xi;y=yi;\n}\nvoid afis(){\ncout <<x ” ” << y;\n}\n};\nvoid main(){\nA A1,A2(10,20);\nA1.afis();\nA2.afis();\n}\nCare din urmatoarele afirmatii sunt adevarate:",
           "options": {
             "A": "Metoda afis() este incorect definita",
             "B": "Constructorul este incorect definit",
@@ -1045,7 +933,7 @@
         },
         {
           "id": 21,
-          "text": "Fie secventa de program:\n\nclass C{\n    public:\n    C(){n++;}\n    static int index(){return n;}\n    private:\n    static int n;\n};\nint C :: n = 0;\nclass A{\n    private:\n    C c;\n    int a;\n};\nclass B{\n    public:\n    B(int i = 0) :b(i)\n    {cout <<C :: index() <<” ”;}\n    private:\n    A a;\n    C c;\n    int b;\n};\nvoid main(){\n    A a1;\n    cout <<C :: index() <<’ ’;\n    B b1[3];\n}\nRezultatul executiei programului este:",
+          "text": "Fie secventa de program:\n\nclass C{\npublic:\nC(){n++;}\nstatic int index(){return n;}\nprivate:\nstatic int n;\n};\nint C :: n = 0;\nclass A{\nprivate:\nC c;\nint a;\n};\nclass B{\npublic:\nB(int i = 0) :b(i)\n{cout <<C :: index() <<” ”;}\nprivate:\nA a;\nC c;\nint b;\n};\nvoid main(){\nA a1;\ncout <<C :: index() <<’ ’;\nB b1[3];\n}\nRezultatul executiei programului este:",
           "options": {
             "A": "1 2 3 4",
             "B": "1 3 4 5",
@@ -1059,7 +947,7 @@
         },
         {
           "id": 22,
-          "text": "Se considera secventa de program:\n\nclass C {\n    private:\n    int x,y;\n    public:\n    C(int xi,int yi){ x=xi;y=yi; }\n    C(const C &a){\n        x=a.x;y=a.y;\n    }\n};\nIn care din urmatoarele situatii se realizeaza copierea unui obiect in altul:",
+          "text": "Se considera secventa de program:\n\nclass C {\nprivate:\nint x,y;\npublic:\nC(int xi,int yi){ x=xi;y=yi; }\nC(const C &a){\nx=a.x;y=a.y;\n}\n};\nIn care din urmatoarele situatii se realizeaza copierea unui obiect in altul:",
           "options": {
             "A": "C c1(4,5)",
             "B": "C c2(0.0, 0,0)",
@@ -1074,7 +962,7 @@
         },
         {
           "id": 23,
-          "text": "Se considera secventa de program:\n\nclass Punct {\n    private:\n    double x,y;\n    public:\n    Punct(double xi,double yi){\n        x=xi;y=yi;\n    }\n};\nIn care din urmatoarele situatii se realizeaza copierea unui obiect:",
+          "text": "Se considera secventa de program:\n\nclass Punct {\nprivate:\ndouble x,y;\npublic:\nPunct(double xi,double yi){\nx=xi;y=yi;\n}\n};\nIn care din urmatoarele situatii se realizeaza copierea unui obiect:",
           "options": {
             "A": "Punct P1(10,20)",
             "B": "Punct P2(P1(3))",
@@ -1089,7 +977,7 @@
         },
         {
           "id": 24,
-          "text": "Se da programul :\n\nclass P {\n    double x,y;\n    public:\n    P(double x1 = 0,double y1 = 0){\n        x=x1;y=y1;\n    }\nvoid afis(){\n    cout <<x <<” ” << y;\n}\nP operator++ (){\n    ++x;++y;\n    return *this;\n}\n};\nvoid main(){\n    P p1(1,2),p2;\n    p2=++p1;\n    p2.afis();\n}\nCare din afirmatiile urmatoare sunt corecte:",
+          "text": "Se da programul :\n\nclass P {\ndouble x,y;\npublic:\nP(double x1 = 0,double y1 = 0){\nx=x1;y=y1;\n}\nvoid afis(){\ncout <<x <<” ” << y;\n}\nP operator++ (){\n++x;++y;\nreturn *this;\n}\n};\nvoid main(){\nP p1(1,2),p2;\np2=++p1;\np2.afis();\n}\nCare din afirmatiile urmatoare sunt corecte:",
           "options": {
             "A": "Obiectul p2 nu poate fi instantiat",
             "B": "Asignarea p2=++p1 este incorecta",
@@ -1104,7 +992,7 @@
         },
         {
           "id": 25,
-          "text": "Se da programul :\n\nclass A {\n    int x,y;\n    public:\n    A(int xi = 0, int yi=0){\n        x=xi;y=yi;\n    }\nvoid afis(){\n    cout <<” x” << y;\n}\nA operator+ (A o2);\nfriend A operator++ (A &a);\n};\nA A::operator+ (A o2){\n    A temp;\n    temp.x=x+o2.x;\n    temp.y=y+o2.y;\n    return temp;\n}\nA operator++ (A &a){\n    ++a.x;++a.y;\n    return a;\n}\nvoid main(){\n    A a1(20,30),a2(2,2),a3;\n    a3=++a1+a2;\n    a3.afis();\n}\nCare din afirmatiile urmatoare sunt corecte:",
+          "text": "Se da programul :\n\nclass A {\nint x,y;\npublic:\nA(int xi = 0, int yi=0){\nx=xi;y=yi;\n}\nvoid afis(){\ncout <<” x” << y;\n}\nA operator+ (A o2);\nfriend A operator++ (A &a);\n};\nA A::operator+ (A o2){\nA temp;\ntemp.x=x+o2.x;\ntemp.y=y+o2.y;\nreturn temp;\n}\nA operator++ (A &a){\n++a.x;++a.y;\nreturn a;\n}\nvoid main(){\nA a1(20,30),a2(2,2),a3;\na3=++a1+a2;\na3.afis();\n}\nCare din afirmatiile urmatoare sunt corecte: ",
           "options": {
             "A": "Utilizarea cuvantului predefinit ” friend ” nu este permisa in acest context",
             "B": "Functia operatorului ++ nu este definita corect",
@@ -1133,7 +1021,7 @@
         },
         {
           "id": 27,
-          "text": "Se considera secventa:\n\nclass A {\n    int a[3];\n    public:\n    A(int xi, int yi, int zi ){\n        a[0]=xi;a[1]=yi;a[2]=zi;\n    }\nint &operator[](int i){\n    return a[i];\n}\n};\nvoid main() {\n    A o(1, 2, 3);\n    cout<<o[0];\n    o[1]=10;\n    cout<<o[1];\n}\nCe se poate afirma despre operator[]()?",
+          "text": "Se considera secventa:\n\nclass A {\nint a[3];\npublic:\nA(int xi, int yi, int zi ){\na[0]=xi;a[1]=yi;a[2]=zi;\n}\nint &operator[](int i){\nreturn a[i];\n}\n};\nvoid main() {\nA o(1, 2, 3);\ncout<<o[0];\no[1]=10;\ncout<<o[1];\n}\nCe se poate afirma despre operator[]()?",
           "options": {
             "A": "Supraincarca operatorul()",
             "B": "Supraincarca un operator unar",
@@ -1147,7 +1035,7 @@
         },
         {
           "id": 28,
-          "text": "Se considera secventa:\n\nclass B{\n    int a;\n    protected:\n    int b;\n    public:\n    int c;\n    void set a(int x){a = x;}\n    void set b(int y){b = y;}\n    void set c(int z){c = z;}\n};\nclass D : public B{ int d;\n    public:\n    void set b(int y) {b = y;}\n    void set c(int z) {c = z;}\n};\nvoid main(){\n    D o;\n    o.a = 1; //(1)\n    o.B::set a(2); //(2)\n    o.b = 3; //(3)\n    o.B::set b(4); //(4)\n    o.c = 5; //(5)\n}\nCare din instructiunile (1)-(5) acceseaza corect membrii claselor:",
+          "text": "Se considera secventa:\n\nclass B{\nint a;\nprotected:\nint b;\npublic:\nint c;\nvoid set a(int x){a = x;}\nvoid set b(int y){b = y;}\nvoid set c(int z){c = z;}\n};\nclass D : public B{ int d;\npublic:\nvoid set b(int y) {b = y;}\nvoid set c(int z) {c = z;}\n};\nvoid main(){\nD o;\no.a = 1; //(1)\no.B::set a(2); //(2)\no.b = 3; //(3)\no.B::set b(4); //(4)\no.c = 5; //(5)\n}\nCare din instructiunile (1)-(5) acceseaza corect membrii claselor:",
           "options": {
             "A": "Toate",
             "B": "(1), (2) si (5)",
@@ -1161,7 +1049,7 @@
         },
         {
           "id": 29,
-          "text": "In programul urmator, care din instructiunile (1)-(5) acceseaza corect membrii claselor:\n\nclass B{\n    int a;\n    protected:\n    int b;\n    public:\n    int c;\n    void set a(int x){a = x;}\n    void set b(int y){b = y;}\n    void set c(int z){c = z;}\n};\nclass D : protected B{\n    int d;\n    public:\n    void set b(int y) {b = y;}\n    void set c(int z) {c = z;}\n};\nvoid main(){\n    D o;\n    o.a = 1; //(1)\n    o.B::set a(2); //(2)\n    o.b = 3; //(3)\n    o.B::set b(4); //(4)\n    o.c = 5; //(5)\n}",
+          "text": "In programul urmator, care din instructiunile (1)-(5) acceseaza corect membrii claselor:\n\nclass B{\nint a;\nprotected:\nint b;\npublic:\nint c;\nvoid set a(int x){a = x;}\nvoid set b(int y){b = y;}\nvoid set c(int z){c = z;}\n};\nclass D : protected B{\nint d;\npublic:\nvoid set b(int y) {b = y;}\nvoid set c(int z) {c = z;}\n};\nvoid main(){\nD o;\no.a = 1; //(1)\no.B::set a(2); //(2)\no.b = 3; //(3)\no.B::set b(4); //(4)\no.c = 5; //(5)\n}",
           "options": {
             "A": "Toate",
             "B": "Nici una",
@@ -1174,20 +1062,18 @@
         },
         {
           "id": 30,
-          "text": "In programul urmator, care din instructiunile (1)-(6) acceseaza corect membrii claselor:\n\nclass B{\n    int a;\n    protected:\n    int b;\n    public:\n    int c;\n    void set a(int x){a = x;}\n    void set b(int y){b = y;}\n    void set c(int z){c = z;}\n};\nclass D : private B{\n    int d;\n    public:\n    void set b(int y) {b = y;}\n    void set c(int z) {c = z;}\n};\nvoid main(){\n    D o;\n    o.a = 1; //(1)\n    o.B::set a(2); //(2)\n    o.b = 3; //(3)\n    o.B::set b(4); //(4)\n    o.c = 5; //(5)\n    o.set c(6); //(6)\n}",
+          "text": "In programul urmator, care din instructiunile (1)-(6) acceseaza corect membrii claselor:\n\nclass B{\nint a;\nprotected:\nint b;\npublic:\nint c;\nvoid set a(int x){a = x;}\nvoid set b(int y){b = y;}\nvoid set c(int z){c = z;}\n};\nclass D : private B{\nint d;\npublic:\nvoid set b(int y) {b = y;}\nvoid set c(int z) {c = z;}\n};\nvoid main(){\nD o;\no.a = 1; //(1)\no.B::set a(2); //(2)\no.b = 3; //(3)\no.B::set b(4); //(4)\no.c = 5; //(5)\no.set c(6); //(6)\n}",
           "options": {
             "A": "(1) si (4)",
             "B": "(2), (3), (4)",
             "C": "Toate",
             "D": "(6)"
           },
-          "correct_answer": [
-            "D"
-          ]
+          "correct_answer": ["D"]
         }
       ]
     },
-    {
+      {
       "name": "Tehnologii Java",
       "questions": [
         {
@@ -1199,9 +1085,7 @@
             "C": "Va fi eroare la compilare deoarece o variabila nu poate fi  in acelasi timp accesata public si private;",
             "D": "Nici una din variantele de mai sus;"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 2,
@@ -1212,9 +1096,7 @@
             "C": "Codul este corect si va afisa Infinit;",
             "D": "Codul este corect si va afisa NaN;"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 3,
@@ -1225,9 +1107,7 @@
             "C": "Programul se compileaza si la executie afiseaza\ni 1 23 45 ;",
             "D": "Programul se compileaza si la executie afiseaza\ni 1 23 23 45 45 i;"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 4,
@@ -1238,61 +1118,51 @@
             "C": "Programul se compileaza si la executie afiseaza -3;",
             "D": "Programul se compileaza si la executie afiseaza -4;"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 5,
-          "text": "Ce puteti afirma despre urmatorul program Java?\n\npublic class Static1{\npublic static void main(String []args){\nStatic2 a=new Static2();\nStatic2 b=new Static2();\nSystem.out.print(\"a.x= \"+ a.x);\na.x=100; b.x=200;\nSystem.out.print(\"a.x= \"+a.x);\n}\n}\nclass Static2{\n    static int x=0;\n    Static2()\n    {\n        x++;\n    };\n}",
+          "text": "Ce puteti afirma despre urmatorul program Java?\n\npublic class Static1{\npublic static void main(String []args){\nStatic2 a=new Static2();\nStatic2 b=new Static2();\nSystem.out.print(\"a.x= \"+ a.x);\na.x=100; b.x=200;\nSystem.out.print(\"a.x= \"+a.x);\n}\n}\nclass Static2{\nstatic int x=0;\nStatic2()\n{\nx++;\n};\n}",
           "options": {
             "A": "Afiseaza: a.x=2 a.x=200;",
             "B": "Afiseaza: a.x=0 a.x=100;",
             "C": "Afiseaza: a.x=1 a.x=100;",
             "D": "Programul nu este corect deoarece asignarea lui x, conform obiectului b, este ilegala in Java;"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 6,
-          "text": "Ce se va afisa la executia urmatorului program Java?\n\ninterface I1{\nfloat x=2.3f;\n}\npublic class Test implements I1{\n    public static void main(String [] args){\n        System.out.print(x+\" \");\n        x=6.7f;\n        System.out.print(x);\n    }\n}",
+          "text": "Ce se va afisa la executia urmatorului program Java?\n\ninterface I1{\nfloat x=2.3f;\n}\npublic class Test implements I1{\npublic static void main(String [] args){\nSystem.out.print(x+\" \");\nx=6.7f;\nSystem.out.print(x);\n}\n}",
           "options": {
             "A": "Va aparea eroare la compilare deoarece valoarea variabilei x nu se mai poate modifica;",
             "B": "La executie se va afisa:\n2.3f 6.7f;",
             "C": "La executie se va afisa:\n2.3f 2.3f;",
             "D": "La executie se va afisa:\n2.3 6.7;"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 7,
-          "text": "Ce puteti spune despre urmatorul program Java?\n\nclass C1{\n    int x=1;\n    void f(int x){\n        this.x=x;\n    }\nint getX_C1(){\n    return x;\n}\n}\nclass C2 extends C1{\n    float x=5.0f;\n    int f(int x){\n        super.f((int)x);\n    }\nfloat getX_C2(){\n    return x;\n}\n}\npublic class Subiect9{\n    public static void main(String []args){\n        C2 obiect = new C2();\n        obiect.f(4);\n        System.out.print(obiect.getX_C2() + \" \");\n        System.out.println(obiect.getX_C1());\n    }\n}",
+          "text": "Ce puteti spune despre urmatorul program Java?\n\nclass C1{\nint x=1;\nvoid f(int x){\nthis.x=x;\n}\nint getX_C1(){\nreturn x;\n}\n}\nclass C2 extends C1{\nfloat x=5.0f;\nint f(int x){\nsuper.f((int)x);\n}\nfloat getX_C2(){\nreturn x;\n}\n}\npublic class Subiect9{\npublic static void main(String []args){\nC2 obiect = new C2();\nobiect.f(4);\nSystem.out.print(obiect.getX_C2() + \" \");\nSystem.out.println(obiect.getX_C1());\n}\n}",
           "options": {
             "A": "Programul este corect si va afisa la executie 5 4;",
             "B": "Programul este corect si va afisa la executie 4.0 4;",
             "C": "Va aparea eroare la compilare deoarece in clasa C2 s-a suprascris gresit atributul x din clasa C1;",
             "D": "Va aparea eroare la compilare deoarece metoda suprascrisa f() din clasa C2  intoarce un tip diferit de void;"
           },
-          "correct_answer": [
-            "D"
-          ]
+          "correct_answer": ["D"]
         },
         {
           "id": 8,
-          "text": "Ce puteti spune despre urmatorul program Java?\n\npublic class Test{\npublic static void main(String []args){\nC1 obiect =new C1();\nobiect.f(4,3);\n}\n}\nclass C1{\n    public void f(int xx, final int yy){\n        int a=xx+yy;\n        final int b=xx-yy;\n        class C2{\n            public void g(){\n                System.out.print(\"a= \"+a);\n                System.out.print(\", b= \"+b);\n            }\n    }\nC2 obiect2 = new C2();\nobiect2.g();\n}\n}",
+          "text": "Ce puteti spune despre urmatorul program Java?\n\npublic class Test{\npublic static void main(String []args){\nC1 obiect =new C1();\nobiect.f(4,3);\n}\n}\nclass C1{\npublic void f(int xx, final int yy){\nint a=xx+yy;\nfinal int b=xx-yy;\nclass C2{\npublic void g(){\nSystem.out.print(\"a= \"+a);\nSystem.out.print(\", b= \"+b);\n}\n}\nC2 obiect2 = new C2();\nobiect2.g();\n}\n}",
           "options": {
             "A": "Programul este corect si va afisa la executie a=4, b=3;",
             "B": "Va aparea eroare la compilare, deoarece clasa C2 nu poate fi definita in metoda f() din clasa C1;",
             "C": "Va aparea eroare la compilare deoarece in metoda g() nu putem accesa vari- abila locala a din metoda f();",
             "D": "Va aparea eroare la compilare deoarece nu se creeaza in clasa Test un obiect de tip C1.C2;"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 9,
@@ -1303,10 +1173,7 @@
             "C": "Prin apelul metodei block();",
             "D": "Prin apelul metodei wait();"
           },
-          "correct_answer": [
-            "A",
-            "D"
-          ]
+          "correct_answer": ["A", "D"]
         },
         {
           "id": 10,
@@ -1317,10 +1184,7 @@
             "C": "Pot fi apelate direct de catre utilizator;",
             "D": "Nu se pot declara noi metode;"
           },
-          "correct_answer": [
-            "B",
-            "C"
-          ]
+          "correct_answer": ["B", "C"]
         },
         {
           "id": 11,
@@ -1331,10 +1195,7 @@
             "C": "DefaultLayout;",
             "D": "FlowLayout;"
           },
-          "correct_answer": [
-            "A",
-            "D"
-          ]
+          "correct_answer": ["A", "D"]
         },
         {
           "id": 12,
@@ -1345,9 +1206,7 @@
             "C": "paint();",
             "D": "repaint();"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 13,
@@ -1358,10 +1217,7 @@
             "C": "In sistemele de operare Unix componentele AWT nu sunt vizibile, pe cand cele din Swing da;",
             "D": "Fiecare componenta AWT are o componenta corespondenta in Swing;"
           },
-          "correct_answer": [
-            "A",
-            "B"
-          ]
+          "correct_answer": ["A", "B"]
         },
         {
           "id": 14,
@@ -1372,10 +1228,7 @@
             "C": "JFrame f= new JFrame();\nf. add(new JButton(\"Buton\"));",
             "D": "JFrame f=new JFrame();\nJButton b=new JButton(\"Buton\");\nf.add(b);"
           },
-          "correct_answer": [
-            "A",
-            "B"
-          ]
+          "correct_answer": ["A", "B"]
         },
         {
           "id": 15,
@@ -1386,9 +1239,7 @@
             "C": "Nici o componenta nu va detine focusul;",
             "D": "Panoul p va detine focusul;"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 16,
@@ -1399,10 +1250,7 @@
             "C": "Pentru a crea o tabela folosind modelul AbstractModelTable, este indeajuns sa suprascriem metodele getRowCount() si getColumnCount();",
             "D": "Modelul de date AbstractTableModel tine datele intotdeauna intr-un Vector avand ele- mente Vector;"
           },
-          "correct_answer": [
-            "A",
-            "B"
-          ]
+          "correct_answer": ["A", "B"]
         },
         {
           "id": 17,
@@ -1413,10 +1261,7 @@
             "C": "Subclasa pentru JInternalFrame;",
             "D": "Componenta atomica simpla;"
           },
-          "correct_answer": [
-            "A",
-            "B"
-          ]
+          "correct_answer": ["A", "B"]
         },
         {
           "id": 18,
@@ -1427,9 +1272,7 @@
             "C": "Programul este incorect, deoarece nu sunt prezente argumentele;",
             "D": "NaN;"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 19,
@@ -1440,11 +1283,7 @@
             "C": "Programul se compileaza si la executie afiseaza\ni 1 21 26 ;",
             "D": "Programul se compileaza si la executie afiseaza\ni 1 21 21 26 26 i;"
           },
-          "correct_answer": [
-            "A",
-            "C",
-            "D"
-          ]
+          "correct_answer": ["A", "C", "D"]
         },
         {
           "id": 20,
@@ -1455,9 +1294,7 @@
             "C": "Ca utilizatorul sa aiba acces;",
             "D": "Accesul direct atunci cand clasa este utilizata dar care prezinta interes atunci\ncand cineva creeaza o subclasa a acesteia ca parte a unui pachet diferit, in\nvederea extinderii ei;"
           },
-          "correct_answer": [
-            "D"
-          ]
+          "correct_answer": ["D"]
         },
         {
           "id": 21,
@@ -1468,9 +1305,7 @@
             "C": "Se foloseste mostenirea multipla;",
             "D": "O subclasa abstracta nu poate fi instantiata;"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 22,
@@ -1481,11 +1316,7 @@
             "C": "Propagarea unei erori pana la un analizor de exceptii corespunzator;",
             "D": "Gruparea erorilor dupa tipul lor;"
           },
-          "correct_answer": [
-            "B",
-            "C",
-            "D"
-          ]
+          "correct_answer": ["B", "C", "D"]
         },
         {
           "id": 23,
@@ -1496,9 +1327,7 @@
             "C": "publice;",
             "D": "exceptii;"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 24,
@@ -1509,9 +1338,7 @@
             "C": "Prin apelul metodei join();",
             "D": "Niciodata;"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 25,
@@ -1522,9 +1349,7 @@
             "C": "Creaza o instanta a clasei Applet dupa care apeleaza metodele init() si start();",
             "D": "Se deschid mai multe procese pe masina client;"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 26,
@@ -1535,10 +1360,7 @@
             "C": "jar cfv arhiva.jar *.class *.jpg *.au;",
             "D": "jar cvf arhiva.jar ClasaPrincipala.class AltaClasa.class imagine.jpg sunet.au"
           },
-          "correct_answer": [
-            "A",
-            "C"
-          ]
+          "correct_answer": ["A", "C"]
         },
         {
           "id": 27,
@@ -1549,23 +1371,18 @@
             "C": "tabbedPanel.removeTabAt( iLocation );",
             "D": "JFrame f=new JFrame(); JButton b=new JButton(\"Buton\"); f.add(b, iLocation);"
           },
-          "correct_answer": [
-            "A",
-            "C"
-          ]
+          "correct_answer": ["A", "C"]
         },
         {
           "id": 28,
-          "text": "Ce rezulta din urmatorul fragment de cod Java?\n\nint x=1;\nString []names={\"Fred\",\"Jim\",\"Sheila\"};\nnames[--x]+=\".\";\nfor(int i=0;i<names.length;i++)\nSystem.out.println(names[i]);",
+          "text": "Ce rezulta din urmatorul fragment de cod Java?\n\nint x=1;\nString []names={\"Fred\",\"Jim\",\"Sheila\"};\nnames[--x]+=\".\";\nfor(int i=0;i<names.length;i++)\n   System.out.println(names[i]);",
           "options": {
             "A": "Output-ul include Sheila.;",
             "B": "Output-ul include Fred.;",
             "C": "Output-ul include Jim.;",
             "D": "Nimic din cele de mai sus;"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 29,
@@ -1576,9 +1393,7 @@
             "C": "Faptul ca detin un instrument cu ajutorul caruia se creaza relatii de mostenire;",
             "D": "Faptul ca detin un instrument care desemneaza meniurile din cadrul unei forme;"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 30,
@@ -1589,13 +1404,11 @@
             "C": "comportamentul obiectelor pe care le instantiaza;",
             "D": "o metoda prin care poate fi accesat de toate tipurile din Java sau de tipuri mostenite din tipul care contine membrul in discutie; 5 Algoritmica grafurilor"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         }
       ]
     },
-    {
+      {
       "name": "Algoritmica grafurilor",
       "questions": [
         {
@@ -1609,9 +1422,7 @@
             "D": "D E B F C A",
             "E": "D E F B C A"
           },
-          "correct_answer": [
-            "D"
-          ]
+          "correct_answer": ["D"]
         },
         {
           "id": 2,
@@ -1624,9 +1435,7 @@
             "D": "B D H F N L P R J",
             "E": "B D F H L J N P R"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 3,
@@ -1639,9 +1448,7 @@
             "D": "J D P B H L R F N",
             "E": "B D F H J L N P R"
           },
-          "correct_answer": [
-            "E"
-          ]
+          "correct_answer": ["E"]
         },
         {
           "id": 4,
@@ -1654,9 +1461,7 @@
             "D": "B A E C F G D H I J",
             "E": "B E F G H I J C D A"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 5,
@@ -1668,9 +1473,7 @@
             "D": "15",
             "E": "18"
           },
-          "correct_answer": [
-            "D"
-          ]
+          "correct_answer": ["D"]
         },
         {
           "id": 6,
@@ -1682,9 +1485,7 @@
             "D": "4",
             "E": "2 (la 10)"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 7,
@@ -1696,9 +1497,7 @@
             "D": "16",
             "E": "19"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 8,
@@ -1710,9 +1509,7 @@
             "D": "5",
             "E": "7"
           },
-          "correct_answer": [
-            "D"
-          ]
+          "correct_answer": ["D"]
         },
         {
           "id": 9,
@@ -1724,9 +1521,7 @@
             "D": "(5, 2, 2, 2, 1, 2)",
             "E": "(5, 2, 3, 2, 1, 2)"
           },
-          "correct_answer": [
-            "D"
-          ]
+          "correct_answer": ["D"]
         },
         {
           "id": 10,
@@ -1738,9 +1533,7 @@
             "D": "5",
             "E": "nici una"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 11,
@@ -1752,9 +1545,7 @@
             "D": "3",
             "E": "0"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 12,
@@ -1766,9 +1557,7 @@
             "D": "6320",
             "E": "2450"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 13,
@@ -1780,9 +1569,7 @@
             "D": "4",
             "E": "5"
           },
-          "correct_answer": [
-            "E"
-          ]
+          "correct_answer": ["E"]
         },
         {
           "id": 14,
@@ -1794,9 +1581,7 @@
             "D": "(0, 1, 1, 3, 4, 3, 4, 4, 3)",
             "E": "(0, 1, 2, 3, 4, 5, 6, 7, 8)"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 15,
@@ -1808,9 +1593,7 @@
             "D": "gradul intern al oricarui varf este egal cu 2.",
             "E": "daca notam graful cu G = (V, E), |V| = n, atunci |E| = n - 1."
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 16,
@@ -1823,9 +1606,7 @@
             "D": "5, 2, 7, 1, 6, 3, 4, 8",
             "E": "5, 7, 2, 6, 1, 8, 4, 3"
           },
-          "correct_answer": [
-            "D"
-          ]
+          "correct_answer": ["D"]
         },
         {
           "id": 17,
@@ -1838,9 +1619,7 @@
             "D": "3, 5, 2, 1, 4, 6, 8, 7",
             "E": "3, 5, 2, 7, 1, 4, 6, 8"
           },
-          "correct_answer": [
-            "D"
-          ]
+          "correct_answer": ["D"]
         },
         {
           "id": 18,
@@ -1853,9 +1632,7 @@
             "D": "7, 7",
             "E": "6, 7"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 19,
@@ -1867,9 +1644,7 @@
             "D": "(N +1 )/2",
             "E": "N"
           },
-          "correct_answer": [
-            "E"
-          ]
+          "correct_answer": ["E"]
         },
         {
           "id": 20,
@@ -1881,9 +1656,7 @@
             "D": "2 (la 4)",
             "E": "14"
           },
-          "correct_answer": [
-            "D"
-          ]
+          "correct_answer": ["D"]
         },
         {
           "id": 21,
@@ -1895,9 +1668,7 @@
             "D": "9",
             "E": "6"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 22,
@@ -1910,9 +1681,7 @@
             "D": "A, B, D, C, E;",
             "E": "A, B, E, B, D;"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         }
       ]
     },
@@ -1931,9 +1700,7 @@
             "E": "k, k1n² + k2n + k3, k4n² + k5n + k6",
             "F": "k1n + k2, k3n² + k4n + k5, k6n² + k7n + k8"
           },
-          "correct_answer": [
-            "F"
-          ]
+          "correct_answer": ["F"]
         },
         {
           "id": 2,
@@ -1943,9 +1710,7 @@
             "B": "lim (n → ∞) (T1(n)/T2(n)) = ∞",
             "C": "lim (n → ∞) (T1(n)/T2(n)) = k"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 3,
@@ -1955,10 +1720,7 @@
             "B": "f(n) ∈ Θ(g(n))",
             "C": "f(n) ∈ Ω(g(n))"
           },
-          "correct_answer": [
-            "A",
-            "C"
-          ]
+          "correct_answer": ["A", "C"]
         },
         {
           "id": 4,
@@ -1968,9 +1730,7 @@
             "B": "f(n)g(n) ∈ Θ(n²)",
             "C": "f(n)g(n) ∈ O(n²)"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 5,
@@ -1980,11 +1740,7 @@
             "B": "f(n), g(n) ∈ O(n^3)",
             "C": "f(n) ∈ O(6n^3) si g(n) ∈ O(2n^3)"
           },
-          "correct_answer": [
-            "A",
-            "B",
-            "C"
-          ]
+          "correct_answer": ["A", "B", "C"]
         },
         {
           "id": 6,
@@ -1994,9 +1750,7 @@
             "B": "(f(n) / g(n)) ∈ O(n)",
             "C": "(f(n) / g(n)) ∈ Θ(n)"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 7,
@@ -2006,9 +1760,7 @@
             "B": "f(n) ∈ O(g(n))",
             "C": "f(n) ∈ Θ(g(n))"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 8,
@@ -2018,10 +1770,7 @@
             "B": "f(n) ∈ O(n²)",
             "C": "f(n) ∈ Θ(n²)"
           },
-          "correct_answer": [
-            "B",
-            "C"
-          ]
+          "correct_answer": ["B", "C"]
         },
         {
           "id": 9,
@@ -2032,10 +1781,7 @@
             "B": "O(logn)",
             "C": "O(n)"
           },
-          "correct_answer": [
-            "A",
-            "B"
-          ]
+          "correct_answer": ["A", "B"]
         },
         {
           "id": 10,
@@ -2045,10 +1791,7 @@
             "B": "Θ(logn)",
             "C": "Θ(x^n)"
           },
-          "correct_answer": [
-            "A",
-            "B"
-          ]
+          "correct_answer": ["A", "B"]
         },
         {
           "id": 11,
@@ -2058,9 +1801,7 @@
             "B": "f(n) ∈ O(logn)",
             "C": "f(n) ∈ O(n^1/2)"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 12,
@@ -2071,10 +1812,7 @@
             "B": "f(n) ∈ Θ(n²)",
             "C": "f(n) ∈ O(n)"
           },
-          "correct_answer": [
-            "A",
-            "B"
-          ]
+          "correct_answer": ["A", "B"]
         },
         {
           "id": 13,
@@ -2085,11 +1823,7 @@
             "B": "f(n) ∈ O(logn)",
             "C": "f(n) ∈ O(lgn)"
           },
-          "correct_answer": [
-            "A",
-            "B",
-            "C"
-          ]
+          "correct_answer": ["A", "B", "C"]
         },
         {
           "id": 14,
@@ -2100,9 +1834,7 @@
             "B": "f(n) ∈ O(2^n)",
             "C": "f(n) ∈ O(logn)"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 15,
@@ -2113,10 +1845,7 @@
             "B": "f(n) ∈ O(2^logn)",
             "C": "f(n) ∈ O(logn)"
           },
-          "correct_answer": [
-            "A",
-            "B"
-          ]
+          "correct_answer": ["A", "B"]
         },
         {
           "id": 16,
@@ -2126,10 +1855,7 @@
             "B": "f(n) ∈ Θ(n)",
             "C": "f(n) ∈ Θ(n+nlogn)"
           },
-          "correct_answer": [
-            "A",
-            "C"
-          ]
+          "correct_answer": ["A", "C"]
         },
         {
           "id": 17,
@@ -2140,9 +1866,7 @@
             "B": "f(n) ∈ Θ(n)",
             "C": "f(n) ∈ O(logn)"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 18,
@@ -2150,12 +1874,10 @@
           "image": "maa_18",
           "options": {
             "A": "f(n) ∈ O(n!)",
-            "B": "f(n) ∈ O(n²)",
+            "B": "f(n) \u2208 O(n\u00B2)",
             "C": "f(n) ∈ O(n)"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 19,
@@ -2166,10 +1888,7 @@
             "B": "f(n) ∈ Θ(n+nlogn)",
             "C": "f(n) ∈ Θ(nlogn)"
           },
-          "correct_answer": [
-            "B",
-            "C"
-          ]
+          "correct_answer": ["B", "C"]
         },
         {
           "id": 20,
@@ -2180,9 +1899,7 @@
             "B": "x1 = false, x2 = true, x3 = false",
             "C": "x1 = true, x2 = false, x3 = true"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         }
       ]
     },
@@ -2199,9 +1916,7 @@
             "D": "11.10000; 3.20; 3.2A;",
             "E": "11.10000; 2.42; 3.2;"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 2,
@@ -2213,9 +1928,7 @@
             "D": "218.5; 23.5; 27.6;",
             "E": "218.75; 23.55; 27.625;"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 3,
@@ -2227,9 +1940,7 @@
             "D": "-71;",
             "E": "-72;"
           },
-          "correct_answer": [
-            "E"
-          ]
+          "correct_answer": ["E"]
         },
         {
           "id": 4,
@@ -2241,9 +1952,7 @@
             "D": "E2;",
             "E": "DF;"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 5,
@@ -2255,9 +1964,7 @@
             "D": "-8.8125 x 2 (la -4);",
             "E": "-100;"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 6,
@@ -2269,9 +1976,7 @@
             "D": "C4C58000;",
             "E": "CDFAA000;"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 7,
@@ -2283,9 +1988,7 @@
             "D": "3725;",
             "E": "3727;"
           },
-          "correct_answer": [
-            "D"
-          ]
+          "correct_answer": ["D"]
         },
         {
           "id": 8,
@@ -2297,10 +2000,7 @@
             "D": "C522 (baza 16);",
             "E": "C321 (baza 16);"
           },
-          "correct_answer": [
-            "B",
-            "E"
-          ]
+          "correct_answer": ["B", "E"]
         },
         {
           "id": 9,
@@ -2312,10 +2012,7 @@
             "D": "22734 (baza 8);",
             "E": "22735 (baza 10);"
           },
-          "correct_answer": [
-            "B",
-            "C"
-          ]
+          "correct_answer": ["B", "C"]
         },
         {
           "id": 10,
@@ -2327,10 +2024,7 @@
             "D": "136 (baza 16);",
             "E": "466 (baza 8);"
           },
-          "correct_answer": [
-            "D",
-            "E"
-          ]
+          "correct_answer": ["D", "E"]
         },
         {
           "id": 11,
@@ -2342,9 +2036,7 @@
             "D": "a¯ + b;",
             "E": "a + b¯."
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 12,
@@ -2356,9 +2048,7 @@
             "D": "pqr + r¯;",
             "E": "pq + qr + rs."
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 13,
@@ -2370,9 +2060,7 @@
             "D": "1004;",
             "E": "1005;"
           },
-          "correct_answer": [
-            "D"
-          ]
+          "correct_answer": ["D"]
         },
         {
           "id": 14,
@@ -2384,9 +2072,7 @@
             "D": "100B;",
             "E": "100C;"
           },
-          "correct_answer": [
-            "E"
-          ]
+          "correct_answer": ["E"]
         },
         {
           "id": 15,
@@ -2398,9 +2084,7 @@
             "D": "600; 24;",
             "E": "452; 2;"
           },
-          "correct_answer": [
-            "E"
-          ]
+          "correct_answer": ["E"]
         },
         {
           "id": 16,
@@ -2412,9 +2096,7 @@
             "D": "3261811;",
             "E": "3271711;"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 17,
@@ -2426,9 +2108,7 @@
             "D": "4500; 200;",
             "E": "2951; 117;"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 18,
@@ -2440,9 +2120,7 @@
             "D": "37007620;",
             "E": "37062620;"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 19,
@@ -2454,9 +2132,7 @@
             "D": "150; 111; 131;",
             "E": "155; 120; 131;"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 20,
@@ -2468,9 +2144,7 @@
             "D": "R = B × (C + D/E + F/G);",
             "E": "R = B × (C + D × E + F × G);"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         }
       ]
     },
@@ -2486,9 +2160,7 @@
             "C": "blocarea procesului pana cand un altul lanseaza apelul SLEEP",
             "D": "trecerea procesului precizat de parametrul apelului in starea GATA"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 2,
@@ -2499,9 +2171,7 @@
             "C": "unprocesodatalansat inexecutienumaiestesuspendatatuncicandpoatefi inexecutie",
             "D": "un proces nu poate fi suspendat temporar daca este in starea BLOCAT"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 3,
@@ -2512,9 +2182,7 @@
             "C": "determina atribuirea unei prioritati fixe pentru executia unui proces",
             "D": "determina lansarea in executie a unui proces daca nu exista altul mai prioritar in executie"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 4,
@@ -2525,11 +2193,7 @@
             "C": "functia de prelucrare a informatiei",
             "D": "functia de receptionare a informatiei"
           },
-          "correct_answer": [
-            "A",
-            "C",
-            "D"
-          ]
+          "correct_answer": ["A", "C", "D"]
         },
         {
           "id": 5,
@@ -2540,9 +2204,7 @@
             "C": "un mijloc de terminare a unei operatii de intrare-iesire",
             "D": "un mijloc de comunicatie  intre sistemul calculator hardware si sistemul de operare"
           },
-          "correct_answer": [
-            "D"
-          ]
+          "correct_answer": ["D"]
         },
         {
           "id": 6,
@@ -2553,9 +2215,7 @@
             "C": "salvarea starii programului intrerupt in stiva",
             "D": "modificarea starii procesului intrerupt"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 7,
@@ -2566,9 +2226,7 @@
             "C": "mecanismul prin care se construiesc adresele de memorie",
             "D": "mecanismul prin care se depun datele in memoria operativa"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 8,
@@ -2579,9 +2237,7 @@
             "C": "contor de evenimente",
             "D": "conditie"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 9,
@@ -2592,9 +2248,7 @@
             "C": "un program in executie",
             "D": "un program link-editat"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 10,
@@ -2605,9 +2259,7 @@
             "C": "chiar operanzii operatiei ce trebuie executata",
             "D": "numarul instructiunii ce trebuie executata"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 11,
@@ -2618,9 +2270,7 @@
             "C": "secvente din activitatea sistemului calculator cand resursele sunt insuficiente",
             "D": "secvente de program unde se acceseaza date partajate"
           },
-          "correct_answer": [
-            "D"
-          ]
+          "correct_answer": ["D"]
         },
         {
           "id": 12,
@@ -2631,9 +2281,7 @@
             "C": "care dispozitiv periferic va fi folosit de catre program",
             "D": "care dintre fisierele deschise trebuie inchis la un moment dat"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 13,
@@ -2644,11 +2292,7 @@
             "C": "eficienta",
             "D": "mentenabilitatea"
           },
-          "correct_answer": [
-            "A",
-            "B",
-            "C"
-          ]
+          "correct_answer": ["A", "B", "C"]
         },
         {
           "id": 14,
@@ -2659,11 +2303,7 @@
             "C": "asistarea utilizatorului printr-un sistem dezvoltat de comunicatie",
             "D": "protectia informatiei"
           },
-          "correct_answer": [
-            "B",
-            "C",
-            "D"
-          ]
+          "correct_answer": ["B", "C", "D"]
         },
         {
           "id": 15,
@@ -2674,9 +2314,7 @@
             "C": "scanerul",
             "D": "imprimanta"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 16,
@@ -2687,11 +2325,7 @@
             "C": "mijloace de auto intrerupere a unui program pentru a solicita executarea unor \nfunctii de catre sistemul de operare",
             "D": "evenimente datorate executiei unei anume instructiuni din programul care ruleaza"
           },
-          "correct_answer": [
-            "B",
-            "C",
-            "D"
-          ]
+          "correct_answer": ["B", "C", "D"]
         },
         {
           "id": 17,
@@ -2702,11 +2336,7 @@
             "C": "READ",
             "D": "AWAKE"
           },
-          "correct_answer": [
-            "A",
-            "B",
-            "C"
-          ]
+          "correct_answer": ["A", "B", "C"]
         },
         {
           "id": 18,
@@ -2718,12 +2348,7 @@
             "D": "managementul dispozitivelor periferice",
             "E": "managementul proceselor"
           },
-          "correct_answer": [
-            "A",
-            "C",
-            "D",
-            "E"
-          ]
+          "correct_answer": ["A", "C", "D", "E"]
         },
         {
           "id": 19,
@@ -2734,9 +2359,7 @@
             "C": "o adresa de memorie specifica",
             "D": "un registru general"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 20,
@@ -2747,9 +2370,7 @@
             "C": "procesul asteapta aparitia unor date de care depinde continuarea executiei",
             "D": "procesul nu mai poate continua executia din cauza unei erori"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 21,
@@ -2760,11 +2381,7 @@
             "C": "permite alocarea dinamica",
             "D": "permite lucrul in paralel"
           },
-          "correct_answer": [
-            "B",
-            "C",
-            "D"
-          ]
+          "correct_answer": ["B", "C", "D"]
         },
         {
           "id": 22,
@@ -2775,9 +2392,7 @@
             "C": "procesele active la un moment dat au prioritati diferite",
             "D": "memoria necesara proceselor active la un moment dat depaseste dimensiunea memoriei existente"
           },
-          "correct_answer": [
-            "D"
-          ]
+          "correct_answer": ["D"]
         },
         {
           "id": 23,
@@ -2788,9 +2403,7 @@
             "C": "transportul mesajelor de la procesele client catre procesele server",
             "D": "accesul la resursele proceselor client si ale proceselor server"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 24,
@@ -2801,11 +2414,7 @@
             "C": "tipuri de date",
             "D": "operatii primitive"
           },
-          "correct_answer": [
-            "A",
-            "C",
-            "D"
-          ]
+          "correct_answer": ["A", "C", "D"]
         },
         {
           "id": 25,
@@ -2816,9 +2425,7 @@
             "C": "directia catre care se indreapta sistemul de operare",
             "D": "o colectie de registre la care au acces toate subunitatile care pot fi intrerupte de unitatea centrala"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 26,
@@ -2830,9 +2437,7 @@
             "D": "B-U-A-T-D-R",
             "E": "D-S-B-U-A-T"
           },
-          "correct_answer": [
-            "E"
-          ]
+          "correct_answer": ["E"]
         },
         {
           "id": 27,
@@ -2843,9 +2448,7 @@
             "C": "lansare in executie a programelor",
             "D": "transfer al proceselor intre memorie si disc"
           },
-          "correct_answer": [
-            "D"
-          ]
+          "correct_answer": ["D"]
         },
         {
           "id": 28,
@@ -2856,9 +2459,7 @@
             "C": "multimea operatiilor binare ale sistemului calculator",
             "D": "multimea subprogramelor pe care le poate executa un operator"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 29,
@@ -2869,10 +2470,7 @@
             "C": "unitate de legatura",
             "D": "unitate de comanda"
           },
-          "correct_answer": [
-            "A",
-            "B"
-          ]
+          "correct_answer": ["A", "B"]
         },
         {
           "id": 30,
@@ -2883,11 +2481,7 @@
             "C": "operatorul virgula mobila",
             "D": "operatorul zecimal"
           },
-          "correct_answer": [
-            "A",
-            "C",
-            "D"
-          ]
+          "correct_answer": ["A", "C", "D"]
         },
         {
           "id": 31,
@@ -2898,9 +2492,7 @@
             "C": "procesul nu mai are date de prelucrat si trebuie sa-si termine executia",
             "D": "procesul nu mai are date de transferat si poate sa-si continue executia"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 32,
@@ -2911,9 +2503,7 @@
             "C": "utilizator",
             "D": "privilegiat"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 33,
@@ -2924,9 +2514,7 @@
             "C": "asigura interfata intre unitatea de prelucrare si program",
             "D": "asigura interfata intre sistemul calculator si sistemul de operare"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 34,
@@ -2937,9 +2525,7 @@
             "C": "excludere mutuala",
             "D": "sectiuni critice"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 35,
@@ -2950,9 +2536,7 @@
             "C": "sistemele calculator cu doua procesoare",
             "D": "sistemele calculator pentru conducerea proceselor industriale"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         }
       ]
     },
@@ -2969,9 +2553,7 @@
             "D": "o colectie de calculatoare autonome interconectate folosind o arhitectura client-server",
             "E": "o colectie de calculatoare personale interconectate folosind o tehnologie orientata pe conexiuni"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 2,
@@ -2983,9 +2565,7 @@
             "D": "o retea cu difuzare",
             "E": "o retea larg raspandita geografic"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 3,
@@ -2997,9 +2577,7 @@
             "D": "conecteaza toate calculatoarele intre ele fara ca vreunul sa aiba rol coodonator",
             "E": "are un singur canal de comunicatie care este partajat de toate masinile din retea"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 4,
@@ -3011,9 +2589,7 @@
             "D": "retele de tip punct-la-punct",
             "E": "retele de tip magistrala"
           },
-          "correct_answer": [
-            "D"
-          ]
+          "correct_answer": ["D"]
         },
         {
           "id": 5,
@@ -3023,9 +2599,7 @@
             "B": "o lista de protocoale folosite de un anumit sistem cate un protocol pentru fiecare nivel",
             "C": "stiva folosita pentru transmiterea parametrilor functiilor realizate de protocoalele unei retele"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 6,
@@ -3035,9 +2609,7 @@
             "B": "se conecteze la retea folosind un nume de utilizator si o parola corespunzatoare",
             "C": "sa nu foloseasca medii de comunicatie fara fir (wireless)"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 7,
@@ -3049,9 +2621,7 @@
             "D": "un set de primitive (operatii) pe care un nivel le pune la dispozitia utilizatorului",
             "E": "un set de primitive (operatii) pe care un nivel le furnizeaza interfetelor de retea"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 8,
@@ -3062,9 +2632,7 @@
             "C": "un set de reguli care guverneaza formatul pachetelor transmise nivelelor superioare",
             "D": "un set de reguli care guverneaza formatul pachetelor transmise nivelului fizic"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 9,
@@ -3076,9 +2644,7 @@
             "D": "nivelul transport",
             "E": "nivelul sesiune"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 10,
@@ -3090,9 +2656,7 @@
             "D": "nivelul aplicatie",
             "E": "nivelul gazda-la-retea"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 11,
@@ -3103,9 +2667,7 @@
             "C": "controlul traficului",
             "D": "controlul accesului la mediu"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 12,
@@ -3117,9 +2679,7 @@
             "D": "refacerea ordinii de transmisie a pachetelor",
             "E": "interconectarea retelelor eterogene"
           },
-          "correct_answer": [
-            "D"
-          ]
+          "correct_answer": ["D"]
         },
         {
           "id": 13,
@@ -3130,9 +2690,7 @@
             "C": "sincronizarea",
             "D": "gestiunea jetonului"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 14,
@@ -3144,9 +2702,7 @@
             "D": "Modelul TCP/IP suporta numai comunicatia fara conexiuni la nivelul retea",
             "E": "Modelul OSI suporta numai comunicatia fara conexiuni la nivelul transport"
           },
-          "correct_answer": [
-            "E"
-          ]
+          "correct_answer": ["E"]
         },
         {
           "id": 15,
@@ -3158,9 +2714,7 @@
             "D": "SMTP",
             "E": "DNS"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 16,
@@ -3172,9 +2726,7 @@
             "D": "UDP este un protocol nesigur orientat pe conexiuni",
             "E": "TCP este un protocol nesigur orientat pe conexiuni"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 17,
@@ -3185,11 +2737,7 @@
             "C": "serviciu confirmat fara conexiune",
             "D": "serviciu confirmat orientat-conexiune"
           },
-          "correct_answer": [
-            "A",
-            "C",
-            "D"
-          ]
+          "correct_answer": ["A", "C", "D"]
         },
         {
           "id": 18,
@@ -3200,9 +2748,7 @@
             "C": "controlul retransmisiilor",
             "D": "detectarea coliziunilor"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 19,
@@ -3213,10 +2759,7 @@
             "C": "nivelului fizic",
             "D": "nivelului legatura de date"
           },
-          "correct_answer": [
-            "A",
-            "D"
-          ]
+          "correct_answer": ["A", "D"]
         },
         {
           "id": 20,
@@ -3227,11 +2770,7 @@
             "C": "suma de control",
             "D": "port sursa"
           },
-          "correct_answer": [
-            "A",
-            "B",
-            "C"
-          ]
+          "correct_answer": ["A", "B", "C"]
         },
         {
           "id": 21,
@@ -3242,9 +2781,7 @@
             "C": "6 octeti",
             "D": "8 octeti"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 22,
@@ -3255,9 +2792,7 @@
             "C": "64 octeti",
             "D": "128 octeti"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 23,
@@ -3268,11 +2803,7 @@
             "C": "Daca LAN-ul destinatie nu este cunoscut, atunci foloseste inundarea",
             "D": "Daca LAN-ul destinatie nu este cunoscut, atunci abandoneaza cadrul"
           },
-          "correct_answer": [
-            "A",
-            "B",
-            "C"
-          ]
+          "correct_answer": ["A", "B", "C"]
         },
         {
           "id": 24,
@@ -3283,11 +2814,7 @@
             "C": "adresele de retea disponibile la nivelul transport trebuie sa foloseasca o schema \nde numerotare uniforma, chiar in cadrul retelelor LAN si WAN",
             "D": "serviciile trebuie sa asigure evitarea coliziunilor"
           },
-          "correct_answer": [
-            "A",
-            "B",
-            "C"
-          ]
+          "correct_answer": ["A", "B", "C"]
         },
         {
           "id": 25,
@@ -3298,11 +2825,7 @@
             "C": "port destinatie",
             "D": "timp de viata"
           },
-          "correct_answer": [
-            "A",
-            "B",
-            "D"
-          ]
+          "correct_answer": ["A", "B", "D"]
         },
         {
           "id": 26,
@@ -3313,9 +2836,7 @@
             "C": "1.0.0.0 - 127.255.255.255",
             "D": "1.0.0.0 – 127.0.0.1"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 27,
@@ -3326,9 +2847,7 @@
             "C": "127.255.255.255 – 191.255.255.255",
             "D": "127.0.0.1 – 192.0.0.0"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 28,
@@ -3339,9 +2858,7 @@
             "C": "191.255.255.255 – 224.0.0.0",
             "D": "192.0.0.0 - 223.255.255.255"
           },
-          "correct_answer": [
-            "D"
-          ]
+          "correct_answer": ["D"]
         },
         {
           "id": 29,
@@ -3352,9 +2869,7 @@
             "C": "223.255.255.255 – 240.0.0.0",
             "D": "224.0.0.0 – 240.0.0.0"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 30,
@@ -3365,9 +2880,7 @@
             "C": "240.0.0.0 – 255.0.0.0",
             "D": "239.255.255.255 – 255.0.0.0"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 31,
@@ -3378,9 +2891,7 @@
             "C": "01",
             "D": "10"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 32,
@@ -3391,9 +2902,7 @@
             "C": "01",
             "D": "11"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 33,
@@ -3404,9 +2913,7 @@
             "C": "100",
             "D": "10"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 34,
@@ -3417,9 +2924,7 @@
             "C": "01",
             "D": "10"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 35,
@@ -3430,9 +2935,7 @@
             "C": "C",
             "D": "D"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 36,
@@ -3443,9 +2946,7 @@
             "C": "C",
             "D": "D"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 37,
@@ -3456,9 +2957,7 @@
             "C": "C",
             "D": "D"
           },
-          "correct_answer": [
-            "D"
-          ]
+          "correct_answer": ["D"]
         },
         {
           "id": 38,
@@ -3469,9 +2968,7 @@
             "C": "adresa IP pe baza claselor de adrese",
             "D": "adresa IP destinatie pe baza algoritmilor de dirijare"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 39,
@@ -3482,11 +2979,7 @@
             "C": "posibilitatea ca un calculator gazda sa migreze fara a-si schimba adresa IP",
             "D": "asigurarea unei securitati sporite prin mecanisme de autentificare si confidentialitate"
           },
-          "correct_answer": [
-            "A",
-            "C",
-            "D"
-          ]
+          "correct_answer": ["A", "C", "D"]
         },
         {
           "id": 40,
@@ -3497,11 +2990,7 @@
             "C": "limita de salturi",
             "D": "tipul nodului: client sau server"
           },
-          "correct_answer": [
-            "A",
-            "B",
-            "C"
-          ]
+          "correct_answer": ["A", "B", "C"]
         }
       ]
     },
@@ -3518,9 +3007,7 @@
             "D": "Un aparat special de transformare a caracterelor",
             "E": "O metoda de codificare"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 2,
@@ -3532,9 +3019,7 @@
             "D": "un numar irational",
             "E": "doua numere"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 3,
@@ -3544,9 +3029,7 @@
             "B": "modul prin care expeditorul nu poate nega faptul ca a transmis mesajul",
             "C": "destinatarul unui mesaj trebuie sa dispuna de modalitati de a verifica \nidentitatea expeditorului si originea mesajului"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 4,
@@ -3556,9 +3039,7 @@
             "B": "dupa transmiterea unui mesaj, trebuie ca expeditorul sa nu il poata nega",
             "C": "dupa transmiterea unui mesaj trebuie ca destinatarul sa nu poata sa il refuze"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 5,
@@ -3570,9 +3051,7 @@
             "D": "un mod de decriptare",
             "E": "cumulul dintre criptare si analiza criptografica"
           },
-          "correct_answer": [
-            "E"
-          ]
+          "correct_answer": ["E"]
         },
         {
           "id": 6,
@@ -3582,9 +3061,7 @@
             "B": "un sistem de regasire a mesajelor in clar din mesaje criptate",
             "C": "stiinta matematica care asigura confidentialitatea datelor"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 7,
@@ -3595,9 +3072,7 @@
             "C": "o cheie la criptare si una la decriptare, identice",
             "D": "o singura cheie, pentru criptare, decriptarea fiind facuta de destinatar, fara cheie"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 8,
@@ -3609,9 +3084,7 @@
             "D": "este inversa criptarii de tip bloc",
             "E": "simetrica"
           },
-          "correct_answer": [
-            "E"
-          ]
+          "correct_answer": ["E"]
         },
         {
           "id": 9,
@@ -3623,9 +3096,7 @@
             "D": "un mod de semnare",
             "E": "o criptare simetrica"
           },
-          "correct_answer": [
-            "E"
-          ]
+          "correct_answer": ["E"]
         },
         {
           "id": 10,
@@ -3636,9 +3107,7 @@
             "C": "un mod de analiza a puterii unui algoritm criptografic",
             "D": "un mod de analiza a datelor transferate intr-o retea de calculatoare"
           },
-          "correct_answer": [
-            "D"
-          ]
+          "correct_answer": ["D"]
         },
         {
           "id": 11,
@@ -3648,9 +3117,7 @@
             "B": "doua protocoale criptografice pentru retele",
             "C": "doua modele de criptare locale, al doilea se bazeaza pe primul"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 12,
@@ -3662,9 +3129,7 @@
             "D": "datele de la computerelec are comunica in orice fel cu un computer care ares niffer instalat",
             "E": "datele din subreteaua primului switch de deasupra sa, in ierahia retelei"
           },
-          "correct_answer": [
-            "E"
-          ]
+          "correct_answer": ["E"]
         },
         {
           "id": 13,
@@ -3675,9 +3140,7 @@
             "C": "un algoritm asimetric de criptare, in care semnatarul foloseste cheia privata",
             "D": "o cheie pentru fiecare utilizator si fiecare mesaj"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 14,
@@ -3688,9 +3151,7 @@
             "C": "semnate de destinatar",
             "D": "in clar"
           },
-          "correct_answer": [
-            "D"
-          ]
+          "correct_answer": ["D"]
         }
       ]
     },
@@ -3707,11 +3168,7 @@
             "D": "integrarea in aceeasi structura a tuturor datelor pertinente ale unui sistem informatic",
             "E": "independenta datelor fata de programele de aplicatii"
           },
-          "correct_answer": [
-            "B",
-            "C",
-            "E"
-          ]
+          "correct_answer": ["B", "C", "E"]
         },
         {
           "id": 2,
@@ -3723,11 +3180,7 @@
             "D": "semnifica un obiect concret sau abstract, reprezentat prin proprietatile sale",
             "E": "semnifica o caracteristica a unui obiect concret"
           },
-          "correct_answer": [
-            "A",
-            "B",
-            "D"
-          ]
+          "correct_answer": ["A", "B", "D"]
         },
         {
           "id": 3,
@@ -3739,10 +3192,7 @@
             "D": "este intotdeauna legata de o alta entitate printr-o asociatie",
             "E": "este identificata unic prin ansamblul atributelor sale"
           },
-          "correct_answer": [
-            "C",
-            "E"
-          ]
+          "correct_answer": ["C", "E"]
         },
         {
           "id": 4,
@@ -3754,10 +3204,7 @@
             "D": "definirea strategiei de salvare si restaurare a bazei de date",
             "E": "crearea programelor de aplicatii"
           },
-          "correct_answer": [
-            "B",
-            "D"
-          ]
+          "correct_answer": ["B", "D"]
         },
         {
           "id": 5,
@@ -3769,9 +3216,7 @@
             "D": "SELECT COUNT(CodAngajat) AS Numar, Compartiment FROM ANGAJATI WHERE Compartiment like \"A*\" GROUP BY Compartiment;",
             "E": "Niciuna dintre cele de mai sus"
           },
-          "correct_answer": [
-            "D"
-          ]
+          "correct_answer": ["D"]
         },
         {
           "id": 6,
@@ -3783,11 +3228,7 @@
             "D": "R3=R1U R2 si R3= UNION(R1,R2);",
             "E": "R3=R1-(R1-R2) si AND(R1,R2);"
           },
-          "correct_answer": [
-            "C",
-            "D",
-            "E"
-          ]
+          "correct_answer": ["C", "D", "E"]
         },
         {
           "id": 7,
@@ -3799,9 +3240,7 @@
             "D": "SELECT COUNT(Data), COUNT(NrChitanta) FROM CHITANTE WHERE Data IS Unique;",
             "E": "SELECT Data FROM CHITANTE WHERE COUNT(NrChitanta) > 2;"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 8,
@@ -3813,9 +3252,7 @@
             "D": "UPDATE Angajati SET CodAngaj = Null WHERE DataAngajare < ”1/1/2006” AND profesia = ”profesor”;",
             "E": "niciuna"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 9,
@@ -3827,9 +3264,7 @@
             "D": "R1=(CodProiect,CodAng), R2=(CodProiect,functie)",
             "E": "Niciuna"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 10,
@@ -3841,9 +3276,7 @@
             "D": "R1=(R-Y), R2=(XX)",
             "E": "R1=KY, R2=(XX)"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 11,
@@ -3855,9 +3288,7 @@
             "D": "R1=XY, R2=(XZ)",
             "E": "R1=KX, R2=(XZ)"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 12,
@@ -3869,9 +3300,7 @@
             "D": "R1= NrLeg,Masina R2= NrLeg,LimbaStraina",
             "E": "R1= NrLeg,Masina R2= NrLeg,LimbaStraina,Masina"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 13,
@@ -3883,9 +3312,7 @@
             "D": "Coloanele din SELECT",
             "E": "Chei externe"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 14,
@@ -3897,9 +3324,7 @@
             "D": "σAn(πAn=2(studenti))",
             "E": "πNume(studenti)"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 15,
@@ -3911,12 +3336,7 @@
             "D": "Limbaj formal",
             "E": "Limbaj de interogare"
           },
-          "correct_answer": [
-            "A",
-            "B",
-            "D",
-            "E"
-          ]
+          "correct_answer": ["A", "B", "D", "E"]
         },
         {
           "id": 16,
@@ -3928,9 +3348,7 @@
             "D": "Algoritmul de sortare",
             "E": "Algoritmul de normalizare"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 17,
@@ -3942,10 +3360,7 @@
             "D": "Normalizarea schemei de relatie XY",
             "E": "Toate"
           },
-          "correct_answer": [
-            "A",
-            "C"
-          ]
+          "correct_answer": ["A", "C"]
         },
         {
           "id": 18,
@@ -3957,12 +3372,7 @@
             "D": "Inlaturarea atributelor eliminabile din X si Y",
             "E": "Niciuna"
           },
-          "correct_answer": [
-            "A",
-            "B",
-            "C",
-            "D"
-          ]
+          "correct_answer": ["A", "B", "C", "D"]
         },
         {
           "id": 19,
@@ -3974,10 +3384,7 @@
             "D": "Crearea procedurilor de interogare",
             "E": "Constructia algebrei relationale"
           },
-          "correct_answer": [
-            "A",
-            "B"
-          ]
+          "correct_answer": ["A", "B"]
         },
         {
           "id": 20,
@@ -3989,11 +3396,7 @@
             "D": "Calculul procedural",
             "E": "Calculul bazat pe tablouri"
           },
-          "correct_answer": [
-            "A",
-            "B",
-            "C"
-          ]
+          "correct_answer": ["A", "B", "C"]
         }
       ]
     },
@@ -4010,9 +3413,7 @@
             "D": "O colectie de fragmente mixte.",
             "E": "Niciuna."
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 2,
@@ -4024,9 +3425,7 @@
             "D": "O serie finita de opeartii de modificare a datelor dintr-o baza de date ORACLE",
             "E": "O multime finita de operatii coerente, executate de un SGBD, care\n manipuleaza datele unei baze de date."
           },
-          "correct_answer": [
-            "E"
-          ]
+          "correct_answer": ["E"]
         },
         {
           "id": 3,
@@ -4038,10 +3437,7 @@
             "D": "trebuie sa aparaa in instructiunea CREATE TABLE,",
             "E": "rebuie sa fie specificat a in instructiunea ALTER TABLE."
           },
-          "correct_answer": [
-            "A",
-            "D"
-          ]
+          "correct_answer": ["A", "D"]
         },
         {
           "id": 4,
@@ -4053,9 +3449,7 @@
             "D": "Blocheaza tabelul la care are acces,",
             "E": "Blocheaza accesul altor utilizatori la o baza de date."
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 5,
@@ -4067,9 +3461,7 @@
             "D": "Transparenta,",
             "E": "Durabilitate."
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 6,
@@ -4081,9 +3473,7 @@
             "D": "o colectie de randuri ale unei tabele,",
             "E": "Sun buffer care pastreaza rezultatul unei istructiuni SELECT."
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 7,
@@ -4095,9 +3485,7 @@
             "D": "Seriabilitatea tranzactiilor,",
             "E": "Toate."
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 8,
@@ -4109,9 +3497,7 @@
             "D": "Pe un Calculator client,",
             "E": "Pe un laptop."
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 9,
@@ -4123,9 +3509,7 @@
             "D": "Contin 2 faze de executie,",
             "E": "Contin 2 faze, una de definire a datelor, si alta de prelucrare a lor."
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 10,
@@ -4137,9 +3521,7 @@
             "D": "Veniturile angajatilorin ordine descrescatoare utilizand expresii tabela",
             "E": "Numele angajatului din fiecare compartiment cu venitul cel mai mare"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 11,
@@ -4151,10 +3533,7 @@
             "D": "Daca se executa de doua ori succesiv, nu produce rezultate",
             "E": "Daca se executa de doua ori succesiv, dubleazainregistrarile din tabela"
           },
-          "correct_answer": [
-            "B",
-            "D"
-          ]
+          "correct_answer": ["B", "D"]
         },
         {
           "id": 12,
@@ -4166,9 +3545,7 @@
             "D": "CREATE FORCE VIEW stud AS \nSELECT * FROM STUDENT WHERE Grupa IN (210,220);",
             "E": "CREATE FORCE VIEW stud AS \nSELECT * FROM STUDENT WHERE Grupa=210 OR GRUPA=220;"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 13,
@@ -4180,9 +3557,7 @@
             "D": "Ultimul UPDATE esueaza deoarece studentul cu CNP-ul 100 a fost sters",
             "E": "Tranzactia esueaza deoarece avem mai multe puncte de reluare"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 14,
@@ -4194,9 +3569,7 @@
             "D": "Intersectia, proiectia si join",
             "E": "Diferenta, intersectia si join"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 15,
@@ -4208,11 +3581,7 @@
             "D": "Declansatorul D1 poate viola restrictia de cheie primara",
             "E": "Cele doua declasatoare nu produc acelasi rezultat"
           },
-          "correct_answer": [
-            "A",
-            "B",
-            "C"
-          ]
+          "correct_answer": ["A", "B", "C"]
         },
         {
           "id": 16,
@@ -4224,12 +3593,7 @@
             "D": "Comanda UPDATE poate modifica mai multe linii din tabela ANGAJATI",
             "E": "Comanda UPDATE nu poate modifica mai multe linii din tabela ANGAJATI"
           },
-          "correct_answer": [
-            "A",
-            "B",
-            "C",
-            "D"
-          ]
+          "correct_answer": ["A", "B", "C", "D"]
         },
         {
           "id": 17,
@@ -4241,11 +3605,7 @@
             "D": "Pentru afisarea la ecran a mesajelor din bloc, trebuie lansata comanda SET SERVEROUTPUT",
             "E": "Blocul mareste cu 12 lei salariul orar al tuturor angajatilor"
           },
-          "correct_answer": [
-            "B",
-            "C",
-            "D"
-          ]
+          "correct_answer": ["B", "C", "D"]
         },
         {
           "id": 18,
@@ -4257,10 +3617,7 @@
             "D": "Apelul se face astfel: populare(07,2008);",
             "E": "Apelul se face astfel: populare(2008,07);"
           },
-          "correct_answer": [
-            "A",
-            "C"
-          ]
+          "correct_answer": ["A", "C"]
         },
         {
           "id": 19,
@@ -4272,10 +3629,7 @@
             "D": "Functia si interogarea sunt corecte",
             "E": "Interogarea produce mai multe valori"
           },
-          "correct_answer": [
-            "C",
-            "D"
-          ]
+          "correct_answer": ["C", "D"]
         },
         {
           "id": 20,
@@ -4287,9 +3641,7 @@
             "D": "1,3,2,4,5",
             "E": "2,1,3,4,5"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         }
       ]
     },
@@ -4306,9 +3658,7 @@
             "D": "“1” si 24",
             "E": "“1” si 6"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 2,
@@ -4320,9 +3670,7 @@
             "D": "“258”",
             "E": "258"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 3,
@@ -4334,10 +3682,7 @@
             "D": "operatorul este adevarat daca operatorii sunt egali dupa o conversie de tip",
             "E": "operatorul se foloseste doarin cazul string-urilor"
           },
-          "correct_answer": [
-            "B",
-            "C"
-          ]
+          "correct_answer": ["B", "C"]
         },
         {
           "id": 4,
@@ -4349,9 +3694,7 @@
             "D": "schimba culoarea fundaluluiin rosu",
             "E": "functia p are ca parametru culoarea rosu"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 5,
@@ -4363,9 +3706,7 @@
             "D": "cuvantul em din paragraful urmator este scris cu verde",
             "E": "regula este scrisa gresit"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 6,
@@ -4377,10 +3718,7 @@
             "D": "schimba culoarea de background a paginii din #EEEEEE in #FFFFFF cand se trece cu mouse-ul peste tabel",
             "E": "schimba culoarea de background a paginii din #FFFFFF in #EEEEEE cand se trece cu mouse-ul peste tabel"
           },
-          "correct_answer": [
-            "A",
-            "C"
-          ]
+          "correct_answer": ["A", "C"]
         },
         {
           "id": 7,
@@ -4392,10 +3730,7 @@
             "D": "creeaza un link catre o noua fereastra de browser",
             "E": "niciunul dintre raspunsurile de mai sus"
           },
-          "correct_answer": [
-            "A",
-            "C"
-          ]
+          "correct_answer": ["A", "C"]
         },
         {
           "id": 8,
@@ -4407,9 +3742,7 @@
             "D": "nu are niciun efect",
             "E": "niciunul dintre raspunsurile de mai sus"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 9,
@@ -4421,9 +3754,7 @@
             "D": "cu ajutorul cuvantului static",
             "E": "cu un Macro"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 10,
@@ -4435,10 +3766,7 @@
             "D": "<a href=” myform.submit();”>Submit Me</a>",
             "E": "nu se poate trimite"
           },
-          "correct_answer": [
-            "B",
-            "C"
-          ]
+          "correct_answer": ["B", "C"]
         },
         {
           "id": 11,
@@ -4450,10 +3778,7 @@
             "D": "lipseste directiva newLine();",
             "E": "lipseste directiva println();"
           },
-          "correct_answer": [
-            "A",
-            "C"
-          ]
+          "correct_answer": ["A", "C"]
         },
         {
           "id": 12,
@@ -4465,9 +3790,7 @@
             "D": "64 de caractere, baza de date: 64 de caractere, camp: 63 de caractere",
             "E": "nu exista limita de lungime"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 13,
@@ -4479,10 +3802,7 @@
             "D": "MD6()",
             "E": "ENCRYPT()"
           },
-          "correct_answer": [
-            "A",
-            "B"
-          ]
+          "correct_answer": ["A", "B"]
         },
         {
           "id": 14,
@@ -4494,9 +3814,7 @@
             "D": "afiseaza un dreptunghi cu textul THIS WILL DISAPPER",
             "E": "marcheaza textul THIS WILL DISAPPEAR"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 15,
@@ -4508,9 +3826,7 @@
             "D": "{body:color=black(body}",
             "E": "{body=color:black(body)}"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 16,
@@ -4522,9 +3838,7 @@
             "D": "h1 ={background-color:#FFFFFF}",
             "E": "h1 :{background-color:#FFFFFF"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 17,
@@ -4536,9 +3850,7 @@
             "D": "<bb>",
             "E": "B"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 18,
@@ -4550,9 +3862,7 @@
             "D": "<a name=”http://www.w3schools.com”>W3Schools.com</a>",
             "E": "<a href=”http://www.w3schools.com”>W3Schools<a>"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 19,
@@ -4564,9 +3874,7 @@
             "D": "<a href=\"mailto:aaa@yyy\">",
             "E": "<a href=”mailto:aaa@yyy”></a>"
           },
-          "correct_answer": [
-            "D"
-          ]
+          "correct_answer": ["D"]
         },
         {
           "id": 20,
@@ -4578,9 +3886,7 @@
             "D": "<list>",
             "E": "<numl>"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 21,
@@ -4592,9 +3898,7 @@
             "D": "<img src=\"image.gif\">",
             "E": "<image src=”image.gif”></image>"
           },
-          "correct_answer": [
-            "D"
-          ]
+          "correct_answer": ["D"]
         },
         {
           "id": 22,
@@ -4606,13 +3910,7 @@
             "D": "scrie variabila \\therePlace\"",
             "E": "cauta un anumit cuvant in string-ul \\Hello there\""
           },
-          "correct_answer": [
-            "A",
-            "B",
-            "C",
-            "D",
-            "E"
-          ]
+          "correct_answer": ["A", "B", "C", "D", "E"]
         },
         {
           "id": 23,
@@ -4624,9 +3922,7 @@
             "D": "<scripting>",
             "E": "<jscript>"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 24,
@@ -4638,9 +3934,7 @@
             "D": "response.write(”Hello World”)",
             "E": "document.write(Hello World”)"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 25,
@@ -4652,9 +3946,7 @@
             "D": "alert(\"Hello World\")",
             "E": "winalert(“Hello World”)"
           },
-          "correct_answer": [
-            "D"
-          ]
+          "correct_answer": ["D"]
         },
         {
           "id": 26,
@@ -4666,10 +3958,7 @@
             "D": "¡<?php>...</?>",
             "E": "<php>...</php>"
           },
-          "correct_answer": [
-            "A",
-            "B"
-          ]
+          "correct_answer": ["A", "B"]
         },
         {
           "id": 27,
@@ -4681,9 +3970,7 @@
             "D": "”Hello World”;",
             "E": "System.out.println(“Hello World”);"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 28,
@@ -4695,9 +3982,7 @@
             "D": "Nimic",
             "E": "%"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 29,
@@ -4709,9 +3994,7 @@
             "D": "Computer Style Sheets",
             "E": "Cascade Style Sheets"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 30,
@@ -4723,9 +4006,7 @@
             "D": "selector(proprietate) = valoare",
             "E": "{selector.proprietate = valoare}"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 31,
@@ -4737,11 +4018,7 @@
             "D": "a crea programe stand-alone",
             "E": "a face legatura cu o baza de date"
           },
-          "correct_answer": [
-            "A",
-            "B",
-            "C"
-          ]
+          "correct_answer": ["A", "B", "C"]
         },
         {
           "id": 32,
@@ -4753,9 +4030,7 @@
             "D": "regula este scrisa gresit",
             "E": "nu are niciun efect"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 33,
@@ -4767,9 +4042,7 @@
             "D": "scrie titlul imaginii cu albastru inchis",
             "E": "titlul imaginii esteincadrat de o margine de 2px"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 34,
@@ -4781,9 +4054,7 @@
             "D": "query_mysql",
             "E": "mysql_q"
           },
-          "correct_answer": [
-            "A"
-          ]
+          "correct_answer": ["A"]
         },
         {
           "id": 35,
@@ -4795,9 +4066,7 @@
             "D": "Personal Home Page",
             "E": "PHP: Private Hypertext Processor"
           },
-          "correct_answer": [
-            "B"
-          ]
+          "correct_answer": ["B"]
         },
         {
           "id": 36,
@@ -4809,9 +4078,7 @@
             "D": "dbopen(”localhost”);",
             "E": "dbconnetc(“localhost”);"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 37,
@@ -4823,9 +4090,7 @@
             "D": "count++;",
             "E": "$count==1"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 38,
@@ -4837,9 +4102,7 @@
             "D": "sectiunea title",
             "E": "sectiunea title si head"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 39,
@@ -4851,9 +4114,7 @@
             "D": "<script src = “aaa.java”",
             "E": "<script src = “aaa.javascript>"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         },
         {
           "id": 40,
@@ -4865,9 +4126,7 @@
             "D": "Acesta este un comentariu",
             "E": "nu se pot scrie comentariiin JavaScript"
           },
-          "correct_answer": [
-            "C"
-          ]
+          "correct_answer": ["C"]
         }
       ]
     }
