@@ -629,7 +629,7 @@
         },
         {
           "id": 13,
-          "text": "Analizand algoritmul de mai jos precizati ce timp de executie are.\n\npublic static int f1(int N){\nint x = 0;\nfor (int i = 0; i < N, i++)\nx++;\nreturn x;\n}",
+          "text": "Analizand algoritmul de mai jos precizati ce timp de executie are.\n\npublic static int f1(int N){\n    int x = 0;\n    for (int i = 0; i < N, i++)\n    x++;\n    return x;\n}",
           "options": {
             "A": "logN",
             "B": "N",
@@ -644,7 +644,7 @@
         },
         {
           "id": 14,
-          "text": "Analizand algoritmul de mai jos precizati ce timp de executie are.\n\npublic static int f2(int N){\nint x = 0;\nfor (int i = 0; i < N, i++)\nfor (int j = 0; j < i; j++)\nx++;\nreturn x;\n}",
+          "text": "Analizand algoritmul de mai jos precizati ce timp de executie are.\n\npublic static int f2(int N){\n    int x = 0;\n    for (int i = 0; i < N, i++)\n    for (int j = 0; j < i; j++)\n    x++;\n    return x;\n}",
           "options": {
             "A": "logN",
             "B": "N",
@@ -659,7 +659,7 @@
         },
         {
           "id": 15,
-          "text": "Analizand algoritmul de mai jos precizati ce timp de executie are.\n\npublic static int f3(int N){\nif (N==0) return 1;\nint x=0;\nfor (int i = 0; i < N; i++)\nx+=f3(N-1);\nreturn x;\n}",
+          "text": "Analizand algoritmul de mai jos precizati ce timp de executie are.\n\npublic static int f3(int N){\n    if (N==0) return 1;\n    int x=0;\n    for (int i = 0; i < N; i++)\n    x+=f3(N-1);\n    return x;\n}",
           "options": {
             "A": "logN",
             "B": "N",
@@ -674,7 +674,7 @@
         },
         {
           "id": 16,
-          "text": "Analizand algoritmul de mai jos precizati ce timp de executie are.\n\npublic static int f1(int N){\nint x = 0;\nfor (int i = 0; i < N, i++)\nx++;\nreturn x;\n}\npublic static int f4(int N){\n    if (N==0) return 0;\n    return f4(N/2) + f1(N) + f4(N/2);\n}",
+          "text": "Analizand algoritmul de mai jos precizati ce timp de executie are.\n\npublic static int f1(int N){\n    int x = 0;\n    for (int i = 0; i < N, i++)\n    x++;\n    return x;\n}\npublic static int f4(int N){\n    if (N==0) return 0;\n    return f4(N/2) + f1(N) + f4(N/2);\n}",
           "options": {
             "A": "logN",
             "B": "N",
@@ -689,7 +689,7 @@
         },
         {
           "id": 17,
-          "text": "Analizand algoritmul de mai jos precizati ce timp de executie are.\n\npublic static int f1(int N){\nint x = 0;\nfor (int i = 0; i < N, i++)\nx++;\nreturn x;\n}\npublic static int f5(int N){\n    int x = 0;\n    for (int i = N; i > 0; i = i/2)\n    x+=f1(i);\n    return x;\n}",
+          "text": "Analizand algoritmul de mai jos precizati ce timp de executie are.\n\npublic static int f1(int N){\n    int x = 0;\n    for (int i = 0; i < N, i++)\n    x++;\n    return x;\n}\npublic static int f5(int N){\n    int x = 0;\n    for (int i = N; i > 0; i = i/2)\n    x+=f1(i);\n    return x;\n}",
           "options": {
             "A": "logN",
             "B": "N",
@@ -704,7 +704,7 @@
         },
         {
           "id": 18,
-          "text": "Analizand algoritmul de mai jos precizati ce timp de executie are.\n\npublic static int f6(int N){\nif (N==0) return 1;\nreturn f6(N-1) + f6(N-1);\n}",
+          "text": "Analizand algoritmul de mai jos precizati ce timp de executie are.\n\npublic static int f6(int N){\n    if (N==0) return 1;\n    return f6(N-1) + f6(N-1);\n}",
           "options": {
             "A": "logN",
             "B": "N",
@@ -719,7 +719,7 @@
         },
         {
           "id": 19,
-          "text": "Analizand algoritmul de mai jos precizati ce timp de executie are.\n\npublic static int f7(int N){\nif (N==1) return 0;\nreturn 1+f7(N/2);\n}",
+          "text": "Analizand algoritmul de mai jos precizati ce timp de executie are.\n\npublic static int f7(int N){\n    if (N==1) return 0;\n    return 1+f7(N/2);\n}",
           "options": {
             "A": "logN",
             "B": "N",
@@ -1218,7 +1218,7 @@
         },
         {
           "id": 3,
-          "text": "Fie urmatorul program Java:\n\npublic class Program{\nstatic void f(int k){\nswitch(k){\ndefault: System.out.print(\"i \"); break;\ncase 1: System.out.print(\"1 \"); break;\ncase 2: case 3: System.out.print(\"23 \"); break;\ncase 4: case 5: System.out.print(\"45 \");\n}\n}\npublic static void main(String []args){\nfor(int i=0;i<6;i++)\nf(i);\n}\n}\n\nCare afirmatii sunt adevarate?",
+          "text": "Fie urmatorul program Java:\n\npublic class Program{\n    static void f(int k){\n        switch(k){\n            default: System.out.print(\"i \"); break;\n            case 1: System.out.print(\"1 \"); break;\n            case 2: case 3: System.out.print(\"23 \"); break;\n            case 4: case 5: System.out.print(\"45 \");\n        }\n}\npublic static void main(String []args){\n    for(int i=0;i<6;i++)\n    f(i);\n}\n}\n\nCare afirmatii sunt adevarate?",
           "options": {
             "A": "Programul produce eroare la compilare;",
             "B": "Programul se compileaza si la executie afiseaza\ni 1 23 23 45 45 ;",
@@ -1244,7 +1244,7 @@
         },
         {
           "id": 5,
-          "text": "Ce puteti afirma despre urmatorul program Java?\n\npublic class Static1{\npublic static void main(String []args){\nStatic2 a=new Static2();\nStatic2 b=new Static2();\nSystem.out.print(\"a.x= \"+ a.x);\na.x=100; b.x=200;\nSystem.out.print(\"a.x= \"+a.x);\n}\n}\nclass Static2{\n    static int x=0;\n    Static2()\n    {\n        x++;\n    };\n}",
+          "text": "Ce puteti afirma despre urmatorul program Java?\n\npublic class Static1{\n    public static void main(String []args){\n        Static2 a=new Static2();\n        Static2 b=new Static2();\n        System.out.print(\"a.x= \"+ a.x);\n        a.x=100; b.x=200;\n        System.out.print(\"a.x= \"+a.x);\n    }\n}\nclass Static2{\n    static int x=0;\n    Static2()\n    {\n        x++;\n    };\n}",
           "options": {
             "A": "Afiseaza: a.x=2 a.x=200;",
             "B": "Afiseaza: a.x=0 a.x=100;",
@@ -1257,7 +1257,7 @@
         },
         {
           "id": 6,
-          "text": "Ce se va afisa la executia urmatorului program Java?\n\ninterface I1{\nfloat x=2.3f;\n}\npublic class Test implements I1{\n    public static void main(String [] args){\n        System.out.print(x+\" \");\n        x=6.7f;\n        System.out.print(x);\n    }\n}",
+          "text": "Ce se va afisa la executia urmatorului program Java?\n\ninterface I1{\n    float x=2.3f;\n}\npublic class Test implements I1{\n    public static void main(String [] args){\n        System.out.print(x+\" \");\n        x=6.7f;\n        System.out.print(x);\n    }\n}",
           "options": {
             "A": "Va aparea eroare la compilare deoarece valoarea variabilei x nu se mai poate modifica;",
             "B": "La executie se va afisa:\n2.3f 6.7f;",
@@ -1283,7 +1283,7 @@
         },
         {
           "id": 8,
-          "text": "Ce puteti spune despre urmatorul program Java?\n\npublic class Test{\npublic static void main(String []args){\nC1 obiect =new C1();\nobiect.f(4,3);\n}\n}\nclass C1{\n    public void f(int xx, final int yy){\n        int a=xx+yy;\n        final int b=xx-yy;\n        class C2{\n            public void g(){\n                System.out.print(\"a= \"+a);\n                System.out.print(\", b= \"+b);\n            }\n    }\nC2 obiect2 = new C2();\nobiect2.g();\n}\n}",
+          "text": "Ce puteti spune despre urmatorul program Java?\n\npublic class Test{\n    public static void main(String []args){\n        C1 obiect =new C1();\n        obiect.f(4,3);\n    }\n}\nclass C1{\n    public void f(int xx, final int yy){\n        int a=xx+yy;\n        final int b=xx-yy;\n        class C2{\n            public void g(){\n                System.out.print(\"a= \"+a);\n                System.out.print(\", b= \"+b);\n            }\n    }\nC2 obiect2 = new C2();\nobiect2.g();\n}\n}",
           "options": {
             "A": "Programul este corect si va afisa la executie a=4, b=3;",
             "B": "Va aparea eroare la compilare, deoarece clasa C2 nu poate fi definita in metoda f() din clasa C1;",
@@ -1420,7 +1420,7 @@
         },
         {
           "id": 18,
-          "text": "Fie urmatorul program Java:\n\npublic class Afisare {\npublic static void main (String[] args) {\nfor (int i = 0; i < args.length; i++)\nSystem.out.println(args[i]);\n}\n}\n\nUn apel de genul java Afisare \"Hello Java\"; va produce urmatorul rezultat:",
+          "text": "Fie urmatorul program Java:\n\npublic class Afisare {\n    public static void main (String[] args) {\n        for (int i = 0; i < args.length; i++)\n        System.out.println(args[i]);\n    }\n}\n\nUn apel de genul java Afisare \"Hello Java\"; va produce urmatorul rezultat:",
           "options": {
             "A": "Hello Java;",
             "B": "Hello\nJava;",
@@ -1433,7 +1433,7 @@
         },
         {
           "id": 19,
-          "text": "Fie urmatorul program Java:\n\npublic class Program{\nstatic void f(int k){\nswitch(k){\ndefault: System.out.print(\"i \"); break;\ncase 1: System.out.print(\"1 \"); break;\ncase 2: case 3: System.out.print(\"21 \"); break;\ncase 4: case 5: System.out.print(\"26 \");\n}\n}\npublic static void main(String []args){\nfor(int i=0;i<6;i++)\nf(i);\n}\n}\n\nCare afirmatii sunt false?",
+          "text": "Fie urmatorul program Java:\n\npublic class Program{\n    static void f(int k){\n        switch(k){\n            default: System.out.print(\"i \"); break;\n            case 1: System.out.print(\"1 \"); break;\n            case 2: case 3: System.out.print(\"21 \"); break;\n            case 4: case 5: System.out.print(\"26 \");\n        }\n}\npublic static void main(String []args){\n    for(int i=0;i<6;i++)\n    f(i);\n}\n}\n\nCare afirmatii sunt false?",
           "options": {
             "A": "Eroare la compilare;",
             "B": "Programul se compileaza si la executie afiseaza\ni 1 21 21 26 26 ;",
@@ -2683,7 +2683,7 @@
           "text": "Exceptiile program sunt:",
           "options": {
             "A": "evenimente care se produc la nivelul dispozitivelor fizice tratate prin intermediul unor\nsecvente de program",
-            "B": "intreruperi ale masinii abstracte reprezentate prin programul care se executa \npe un sistem calculator real",
+            "B": "\nintreruperi ale masinii abstracte reprezentate prin programul care se executa\npe un sistem calculator real",
             "C": "mijloace de auto intrerupere a unui program pentru a solicita executarea unor \nfunctii de catre sistemul de operare",
             "D": "evenimente datorate executiei unei anume instructiuni din programul care ruleaza"
           },
@@ -4369,7 +4369,7 @@
         },
         {
           "id": 6,
-          "text": "Ce rezultat are urm˘atorul cod HTML?\n<TABLE BORDER=”2” CELLPADDING=”2” WIDTH=”100%”>\n<TR onMouseover=”this.bgColor=’#EEEEEE’”onMouseout=”this.bgColor=’#FFFFFF’”>\n<TD>Your Table Data</TD>\n</TR><TR onMouseover=”this.bgColor=’#EEEEEE’”onMouseout=”this.bgColor=’#FFFFFF’”>\n<TD>Your Table Data</TD></TR>\n<TR onMouseover=”this.bgColor=’#EEEEEE’”onMouseout=”this.bgColor=’#FFFFFF’”>\n<TD>Your Table Data</TD></TR></TABLE>",
+          "text": "Ce rezultat are urm˘atorul cod HTML?\n<TABLE BORDER=”2” CELLPADDING=”2” WIDTH=”100%”>\n    <TR onMouseover=”this.bgColor=’#EEEEEE’”onMouseout=”this.bgColor=’#FFFFFF’”>\n        <TD>Your Table Data</TD>\n        </TR><TR onMouseover=”this.bgColor=’#EEEEEE’”onMouseout=”this.bgColor=’#FFFFFF’”>\n    <TD>Your Table Data</TD></TR>\n        <TR onMouseover=”this.bgColor=’#EEEEEE’”onMouseout=”this.bgColor=’#FFFFFF’”>\n            <TD>Your Table Data</TD></TR></TABLE>",
           "options": {
             "A": "schimba culoare de background a tabelului cand se trece cu mouse-ul pe deasupra acestuia",
             "B": "creeaza un tabel cu 3 coloane",
@@ -4384,7 +4384,7 @@
         },
         {
           "id": 7,
-          "text": "Ce rezultat are urmatorul cod?\n <form> \n<inputtype=”button”value=”Clickme”onclick=”window.open(’http://www.domain.com’)”> \n</form>",
+          "text": "Ce rezultat are urmatorul cod?\n<form>\n    <inputtype=”button”value=”Clickme”onclick=”window.open(’http://www.domain.com’)”>\n    </form>",
           "options": {
             "A": "deschide o noua fereastra de browser cu ajutorul unui buton",
             "B": "nu face nimic, variabila onclick nu este declarata",
@@ -4399,7 +4399,7 @@
         },
         {
           "id": 8,
-          "text": "Ce rezultat are urmatorul cod JavaScript?\n <a href=”” onMouseOver=”alert(’Your Message’);return true;”>Linked Text</a>",
+          "text": "Ce rezultat are urmatorul cod JavaScript?\n<a href=”” onMouseOver=”alert(’Your Message’);return true;”>Linked Text</a>",
           "options": {
             "A": "in momentul in care se trece cu mouse-ul peste link sare o fereastra de alertare",
             "B": "in momentulin care se apasa link-ul sare o fereastra de alertare",
@@ -4442,7 +4442,7 @@
         },
         {
           "id": 11,
-          "text": "De ce urmatorul cod nu afiseaza o noua linie corect?\n <?php $str = ‘Hello, there.nnHow are you?nnThanks for visiting fyicenter’; print $str; ?>",
+          "text": "De ce urmatorul cod nu afiseaza o noua linie corect?\n<?php $str = ‘Hello, there.\\nHow are you?\\nThanks for visiting fyicenter’; print $str; ?>\n",
           "options": {
             "A": "pentru ca \\nn\" nu este interpretat ca o linie noua",
             "B": "afiseaza corect linia noua",
@@ -4486,7 +4486,7 @@
         },
         {
           "id": 14,
-          "text": "Ce efect are urmatoarea linie de cod:\n <marquee>THIS WILL DISAPPEAR</marquee>?",
+          "text": "Ce efect are urmatoarea linie de cod:\n<marquee>THIS WILL DISAPPEAR</marquee>?",
           "options": {
             "A": "textul disparein fundal",
             "B": "textul se plimba pe ecran de la stanga la dreapta",
@@ -4598,7 +4598,7 @@
         },
         {
           "id": 22,
-          "text": "Ce face urmatorul script JavaScript?\n<body>\n<script language=”JavaScript”>\n<!–\nvar myVariable = “Hello there”;\nvar therePlace = myVariable.search(“there”);\ndocument.write(therePlace);\n–>\n</script>\n</body>",
+          "text": "Ce face urmatorul script JavaScript?\n<body>\n    <script language=”JavaScript”>\n        <!–\n        var myVariable = “Hello there”;\n        var therePlace = myVariable.search(“there”);\n        document.write(therePlace);\n        –>\n    </script>\n</body>",
           "options": {
             "A": "cauta un anumit cuvant intr-un text",
             "B": "cauta cuvantul \\there\" in \\Hello there\"",
@@ -4673,7 +4673,7 @@
         },
         {
           "id": 27,
-          "text": "Cum se scrie “Hello World”in PHP?",
+          "text": "Cum se scrie “Hello World” in PHP?",
           "options": {
             "A": "Document.Write(”Hello World”);",
             "B": "document.write(”Hello World”);",
@@ -4687,7 +4687,7 @@
         },
         {
           "id": 28,
-          "text": "Variabilelein PHPincep cu:",
+          "text": "Variabilele in PHP incep cu:",
           "options": {
             "A": "$",
             "B": "&",
@@ -4701,7 +4701,7 @@
         },
         {
           "id": 29,
-          "text": "Ceinseamna CSS?",
+          "text": "Ce inseamna CSS?",
           "options": {
             "A": "Cascading Style Sheets",
             "B": "Colorful Style Sheets",
@@ -4759,7 +4759,7 @@
         },
         {
           "id": 33,
-          "text": "Ce efect are urmatoarea regula CSS? img [title] fborder: 2px solid blue;g <img src=”images/sunset.jpg” alt=”Lahina Sunset” title=”Lahina Sunset”>",
+          "text": "Ce efect are urmatoarea regula CSS? \nimg [title] fborder: 2px solid blue;g <img src=”images/sunset.jpg” alt=”Lahina Sunset” title=”Lahina Sunset”>",
           "options": {
             "A": "imaginea o sa aiba o margine de 2px",
             "B": "imaginea o sa aiba marimea de 2px",
@@ -4773,7 +4773,7 @@
         },
         {
           "id": 34,
-          "text": "Cum se trimitein PHP un query MySQL?",
+          "text": "Cum se trimite in PHP un query MySQL?",
           "options": {
             "A": "mysql_query",
             "B": "mysql.query",
@@ -4787,7 +4787,7 @@
         },
         {
           "id": 35,
-          "text": "Ceinseamna PHP?",
+          "text": "Ce inseamna PHP?",
           "options": {
             "A": "Personal Hypertext Processor",
             "B": "PHP: Hypertext Preprocessor",
@@ -4843,7 +4843,7 @@
         },
         {
           "id": 39,
-          "text": "Cum se poate introduce un script externin Javascript?",
+          "text": "Cum se poate introduce un script extern in Javascript?",
           "options": {
             "A": "<script href=”aaa.js”>",
             "B": "<script name=”aaa.js”>",
@@ -4857,7 +4857,7 @@
         },
         {
           "id": 40,
-          "text": "Cum se scriu comentariilein JavaScript?",
+          "text": "Cum se scriu comentariile in JavaScript?",
           "options": {
             "A": "’Acesta este un comentariu",
             "B": "<!–Acesta este un comentariu –>",
