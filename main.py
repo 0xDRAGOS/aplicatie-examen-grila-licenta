@@ -39,7 +39,13 @@ class LearningApp(tk.Tk):
     def __init__(self, json_path):
         super().__init__()
         self.title("Mediu de Invatare si Testare")
-        self.geometry("1280x720")
+
+        screen_width = self.winfo_screenwidth()
+        screen_height = self.winfo_screenheight()
+        width = int(screen_width * 0.8)
+        height = int(screen_height * 0.8)
+        self.geometry(f"{width}x{height}")
+
         self.configure(bg="#f0f2f5")
 
         style = ttk.Style(self)
