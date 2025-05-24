@@ -80,8 +80,7 @@ This is a desktop application built with Python and Tkinter (using `ttkbootstrap
 - `Pillow`
 - `PyMuPDF` (fitz)
 - `matplotlib`
-- `openai`
-- `python-dotenv`
+
 
 Install them via:
 
