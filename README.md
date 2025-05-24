@@ -71,7 +71,7 @@ pip install -r requirements.txt
 ## 🚀 Getting Started
 
 ```bash
-python ui/main.py
+python main.py
 ```
 
 ## ⚙️ Configuration
