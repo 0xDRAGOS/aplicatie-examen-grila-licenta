@@ -1,68 +1,89 @@
 # 🧠 Exam Preparation App – Multiple Choice Training Environment
 
-This is a desktop application built with Python and Tkinter (with ttkbootstrap) designed to help users study and test their knowledge using multiple choice questions. It is ideal for students preparing for exams that involve computer science, algorithms, or programming.
+This is a desktop application built with Python and Tkinter (using `ttkbootstrap`) designed to help users study and test their knowledge using multiple choice questions. It is ideal for students preparing for computer science-related exams.
 
 ## 📦 Features
 
-- **Learning Mode (Study Mode)**:  
-  - Browse questions by subject  
-  - Immediate feedback after each answer  
-  - Highlighting of correct and incorrect options  
+- **Learning Mode (Study Panel)**  
+  - Select questions by subject  
+  - Instant feedback  
+  - Highlights correct/incorrect options  
+  - View explanation for each answer  
 
-- **Test Mode**:  
-  - 30 randomly selected questions  
-  - Countdown timer  
+- **Test Mode (Test Panel)**  
+  - 30 randomized questions  
+  - 30-minute countdown timer  
   - Real-time scoring  
-  - Final score summary  
+  - Final score and performance summary  
 
-- **Score History & Analytics**:  
-  - View past scores in a chart  
-  - Differentiates between study and test modes  
+- **Explanation Window**  
+  - Click "See Explanation" after answering  
+  - Opens a separate window with detailed explanation  
 
-- **PDF Viewer**:  
-  - Browse and open related exam PDFs  
-  - Scrollable and readable inside the app  
+- **PDF Viewer**  
+  - View original PDF exams  
+  - Search functionality  
+  - Scrollable display  
 
-- **Responsive UI**:  
-  - Built with ttkbootstrap for modern look  
-  - Automatically resizes based on screen resolution
+- **Score Analytics**  
+  - Visual chart for score history  
+  - Tracks study vs. test results  
+
+- **Modern Interface**  
+  - Built with `ttkbootstrap`  
+  - Scrollable UI components  
+  - Auto resizing to screen resolution  
 
 ## 📁 Project Structure
 
 ```
 📂 assets/
-   ├── grile.json               # Main question set
-   ├── images/                  # Images used in questions
-   └── pdf/                     # Official exam PDFs
+   ├── grile.json, grile2.json, grile_fara_indentare.json
+   ├── scores.json
+   ├── images/                 # Question images
+   └── pdf/                    # PDF source files
 
 📂 core/
-   ├── data_loader.py          # Loads and parses JSON questions
-   ├── score_manager.py        # Saves & loads score history
-   └── constants.py            # Global app settings (e.g. TEST_DURATION)
-
-📂 ui/
-   ├── main_window.py          # Root UI layout and navigation
-   ├── study_panel.py          # Learning mode interface
-   ├── test_panel.py           # Testing mode interface
-   ├── pdf_selector.py         # Lists PDFs
-   ├── pdf_viewer.py           # PDF viewing window
-   ├── score_chart.py          # Score history graph
-   ├── style_utils.py          # Theme styling helpers
-   └── scrollable_frame.py     # Reusable scrollable container
+   ├── constants.py            # Constants like test time, question count
+   ├── data_loader.py          # Loads and parses questions
+   └── score_manager.py        # Score saving/loading
 
 📂 scripts/
-   └── creare_grile.py, indenteaza_cod.py  # Internal tools
+   ├── creare_grile.py         # Generate new question sets
+   ├── genereaza_explicatii.py # Generate explanations via OpenAI API
+   ├── tradu_explicatii.py     # Translate explanations to Romanian
+   ├── indenteaza_cod.py       # JSON code formatter
+   └── sterge_pyc.py           # Cleanup utility
+
+📂 ui/
+   ├── main_window.py          # Main UI container
+   ├── landing_page.py         # Starting panel
+   ├── study_panel.py          # Learning interface
+   ├── test_panel.py           # Testing interface
+   ├── explanation_window.py   # Explanation popup after answering
+   ├── scrollable_frame.py     # Scrollable frame wrapper
+   ├── pdf_selector.py         # PDF file list UI
+   ├── pdf_viewer.py           # PDF reader with search
+   ├── score_chart.py          # Graph view of scores
+   └── style_utils.py          # Theme and style utilities
+
+📄 main.py                     # App entry point
+📄 old_main.py                 # Legacy entry (backup)
+📄 requirements.txt            # Python dependencies
+📄 README.md                   # Project description
 ```
 
 ## ✅ Requirements
 
 - Python 3.10+
-- `Pillow`
 - `ttkbootstrap`
+- `Pillow`
 - `PyMuPDF` (fitz)
 - `matplotlib`
+- `openai`
+- `python-dotenv`
 
-You can install all dependencies using:
+Install them via:
 
 ```bash
 pip install -r requirements.txt
@@ -74,15 +95,28 @@ pip install -r requirements.txt
 python main.py
 ```
 
-## ⚙️ Configuration
+## 🔐 API Keys
 
-You can adjust test duration or score file location in `core/constants.py`:
+To generate explanations via OpenAI:
+1. Create a `.env` file in the `scripts/` folder.
+2. Add your key:
+
+```
+OPENAI_API_KEY=sk-...
+```
+
+3. Run `scripts/genereaza_explicatii.py` or `tradu_explicatii.py` for generation/translation.
+
+## ⚙️ Configurable Settings
+
+You can change test duration or number of questions in:
 
 ```python
-TEST_DURATION_SECONDS = 30 * 60  # 30 minutes
-SCORE_FILE = "assets/scores.json"
+# core/constants.py
+TEST_DURATION_SECONDS = 30 * 60
+NUM_TEST_QUESTIONS = 30
 ```
 
 ## 📚 License
 
-This project is created for educational use.
+This project is intended for educational use and academic exam preparation.

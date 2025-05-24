@@ -40,7 +40,8 @@ class LandingPage(tb.Frame):
             "✔️ Feedback instant la fiecare întrebare",
             "✔️ Teste cronometrate cu rezultate salvate",
             "✔️ Vizualizare evoluție scoruri în timp",
-            "✔️ Interfață prietenoasă"
+            "✔️ Interfață prietenoasă",
+            "✔️ Explicații pentru întrebări"
         ]:
             tb.Label(benefits, text=text, font=("Helvetica", 11)).pack(pady=2)
 

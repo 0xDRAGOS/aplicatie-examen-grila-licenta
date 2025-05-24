@@ -3,6 +3,7 @@ import ttkbootstrap as tb
 from tkinter import ttk
 from PIL import Image, ImageTk
 from ui.scrollable_frame import ScrollableFrame
+from ui.explanation_window import ExplanationWindow
 
 
 class StudyPanel(tb.Frame):
@@ -44,6 +45,8 @@ class StudyPanel(tb.Frame):
         self.answer_btn.pack(side='left', padx=5)
         self.next_btn = tb.Button(self.button_frame, text="Următoarea", command=self.next_question, state='disabled')
         self.next_btn.pack(side='left', padx=5)
+        self.explanation_btn = tb.Button(self.button_frame, text="Vezi Explicația", command=self.show_explanation, state='disabled')
+        self.explanation_btn.pack(side='left', padx=5)
 
     def on_subject_selected(self, event=None):
         subject_name = self.subject_var.get()
@@ -61,6 +64,7 @@ class StudyPanel(tb.Frame):
         self.feedback_label.config(text="")
         self.answer_btn.config(state='normal')
         self.next_btn.config(state='disabled')
+        self.explanation_btn.config(state='disabled')
         self.option_widgets = {}
 
         q = self.questions[self.current_question_index]
@@ -94,7 +98,7 @@ class StudyPanel(tb.Frame):
         else:
             self.single_answer = tb.StringVar()
             for key, val in q['options'].items():
-                rb = tb.Radiobutton(self.options_frame, text=f"{key}. {val}", value=k, variable=self.single_answer, style="Custom.TRadiobutton")
+                rb = tb.Radiobutton(self.options_frame, text=f"{key}. {val}", value=key, variable=self.single_answer, style="Custom.TRadiobutton")
                 rb.pack(anchor='w')
                 self.option_widgets[key] = rb
 
@@ -135,6 +139,7 @@ class StudyPanel(tb.Frame):
 
         self.answer_btn.config(state='disabled')
         self.next_btn.config(state='normal')
+        self.explanation_btn.config(state='normal')
 
     def update_progress(self):
         total = len(self.questions) if hasattr(self, 'questions') else 0
@@ -149,3 +154,9 @@ class StudyPanel(tb.Frame):
             self.progress_label.config(text=f"Progres: {len(self.questions)}/{len(self.questions)}")
             self.answer_btn.config(state='disabled')
             self.next_btn.config(state='disabled')
+            self.explanation_btn.config(state='disabled')
+
+    def show_explanation(self):
+        question = self.questions[self.current_question_index]
+        explanation = question.get("explanation", "(Nu există explicație pentru această întrebare.)")
+        ExplanationWindow(self, explanation)

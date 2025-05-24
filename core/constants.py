@@ -1,7 +1,7 @@
 TEST_DURATION_SECONDS = 30 * 60  # 30 minutes
 NUM_TEST_QUESTIONS = 30
 
-QUESTION_FILE_PATH = "assets/grile.json"
+QUESTION_FILE_PATH = "assets/grile_cu_explicatii_ro.json"
 PDF_DIR_PATH = "assets/pdf"
 IMAGES_DIR_PATH = "assets/images"
 

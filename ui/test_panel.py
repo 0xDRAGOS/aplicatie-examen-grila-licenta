@@ -6,6 +6,7 @@ from PIL import Image, ImageTk
 from core.score_manager import save_score
 from core.constants import TEST_DURATION_SECONDS, NUM_TEST_QUESTIONS
 from ui.scrollable_frame import ScrollableFrame
+from ui.explanation_window import ExplanationWindow
 
 
 class TestPanel(tb.Frame):
@@ -63,6 +64,9 @@ class TestPanel(tb.Frame):
         self.answer_btn.pack(side='left', padx=5)
         self.next_btn = tb.Button(self.button_frame, text="Următoarea", command=self.next_question, state='disabled')
         self.next_btn.pack(side='left', padx=5)
+        self.explanation_btn = tb.Button(self.button_frame, text="Vezi Explicația", command=self.show_explanation,
+                                         state='disabled')
+        self.explanation_btn.pack(side='left', padx=5)
 
     def update_score(self):
         self.score_label.config(
@@ -165,6 +169,7 @@ class TestPanel(tb.Frame):
         self.update_score()
         self.answer_btn.config(state='disabled')
         self.next_btn.config(state='normal')
+        self.explanation_btn.config(state='normal')
 
     def next_question(self):
         self.current_index += 1
@@ -186,3 +191,8 @@ class TestPanel(tb.Frame):
         )
         save_score(self.correct_count, len(self.questions), "test")
         self.update_score()
+
+    def show_explanation(self):
+        question = self.questions[self.current_index]
+        explanation = question.get("explanation", "(Nu există explicație pentru această întrebare.)")
+        ExplanationWindow(self, explanation)
