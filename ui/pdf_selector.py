@@ -1,9 +1,10 @@
 import os
 from ttkbootstrap import Toplevel, Button, Label
 from ui.pdf_viewer import PDFViewer
+from core.constants import PDF_DIR_PATH
 
 class PDFSelector(Toplevel):
-    def __init__(self, parent, pdf_folder="assets/pdf"):
+    def __init__(self, parent, pdf_folder=PDF_DIR_PATH):
         super().__init__(parent)
         self.title("Grile PDF")
         self.geometry("400x300")

@@ -26,7 +26,7 @@ class StudyPanel(tb.Frame):
         self.scroll_frame = ScrollableFrame(self)
         self.scroll_frame.pack(fill=tb.BOTH, expand=True, pady=10)
 
-        self.question_label = tb.Label(self.scroll_frame.scrollable_frame, text="", wraplength=1000, font=("Helvetica", 14, "bold"))
+        self.question_label = tb.Label(self.scroll_frame.scrollable_frame, text="", wraplength=1000, font=("Segoe UI Symbol", 14, "bold"))
         self.question_label.pack(anchor='w', padx=10, pady=(10, 5))
 
         self.image_label = tb.Label(self.scroll_frame.scrollable_frame)
@@ -87,14 +87,14 @@ class StudyPanel(tb.Frame):
         if isinstance(self.correct_answer, list):
             for key, val in q['options'].items():
                 var = tb.BooleanVar()
-                cb = ttk.Checkbutton(self.options_frame, text=f"{key}. {val}", variable=var)
+                cb = ttk.Checkbutton(self.options_frame, text=f"{key}. {val}", variable=var, style="Custom.TCheckbutton")
                 cb.pack(anchor='w')
                 self.answer_vars[key] = var
                 self.option_widgets[key] = cb
         else:
             self.single_answer = tb.StringVar()
             for key, val in q['options'].items():
-                rb = ttk.Radiobutton(self.options_frame, text=f"{key}. {val}", value=key, variable=self.single_answer)
+                rb = tb.Radiobutton(self.options_frame, text=f"{key}. {val}", value=k, variable=self.single_answer, style="Custom.TRadiobutton")
                 rb.pack(anchor='w')
                 self.option_widgets[key] = rb
 

@@ -1,4 +1,3 @@
-# ui/test_panel.py
 import os
 import random
 import ttkbootstrap as tb
@@ -20,22 +19,33 @@ class TestPanel(tb.Frame):
         self.remaining_seconds = TEST_DURATION_SECONDS
         self.option_widgets = {}
 
-        self.info_label = tb.Label(self, text=f"Test din {NUM_TEST_QUESTIONS} de întrăbări aleatorii", font=("Helvetica", 13))
-        self.info_label.pack(pady=10)
+        self.top_bar = tb.Frame(self)
+        self.top_bar.pack(fill="x", pady=(10, 0), padx=10)
 
-        self.timer_label = tb.Label(self, text="Timp rămas: 30:00", font=("Helvetica", 12, "bold"), foreground="blue")
-        self.timer_label.pack()
+        self.top_stats = tb.Frame(self.top_bar)
+        self.top_stats.pack(fill="x")
+        self.score_label = tb.Label(self.top_stats, text="📊 Scor: 0/0 - Parcurs: 0/0", font=("Helvetica", 0, "bold"))
+        self.score_label.pack(side="right")
 
-        self.score_label = tb.Label(self, text="Scor: 0/0", font=("Helvetica", 11, "bold"))
-        self.score_label.pack()
+        self.title_frame = tb.Frame(self)
+        self.title_frame.pack(pady=10)
 
-        self.start_btn = tb.Button(self, text="Înăcepe Testul", command=self.start_test)
+        self.test_info_label = tb.Label(self.title_frame, text=f"🧪 Test din {NUM_TEST_QUESTIONS} întrebări aleatorii",
+                                        font=("Helvetica", 13, "bold"))
+        self.test_info_label.pack()
+
+        self.timer_label = tb.Label(self.title_frame, text="⏳ Timp rămas: 30:00", font=("Helvetica", 11),
+                                    foreground="blue")
+        self.timer_label.pack(pady=2)
+
+        self.start_btn = tb.Button(self.title_frame, text="🚀 Începe Testul", command=self.start_test,
+                                   bootstyle="success")
         self.start_btn.pack(pady=5)
 
         self.scroll_frame = ScrollableFrame(self)
         self.scroll_frame.pack(fill=tb.BOTH, expand=True, pady=10)
 
-        self.q_label = tb.Label(self.scroll_frame.scrollable_frame, text="", wraplength=1000, font=("Helvetica", 14, "bold"))
+        self.q_label = tb.Label(self.scroll_frame.scrollable_frame, text="", wraplength=1000, font=("Segoe UI Symbol", 14, "bold"))
         self.q_label.pack(anchor='w', padx=10, pady=(10, 5))
 
         self.img_label = tb.Label(self.scroll_frame.scrollable_frame)
@@ -55,7 +65,8 @@ class TestPanel(tb.Frame):
         self.next_btn.pack(side='left', padx=5)
 
     def update_score(self):
-        self.score_label.config(text=f"Scor: {self.correct_count}/{len(self.questions)} - Parcurs: {self.current_index + 1}/{len(self.questions)}")
+        self.score_label.config(
+            text=f"📊 Scor: {self.correct_count}/{len(self.questions)} - Parcurs: {self.current_index + 1}/{len(self.questions)}")
 
     def start_test(self):
         all_questions = [q for s in self.subjects for q in s['questions']]
@@ -108,14 +119,14 @@ class TestPanel(tb.Frame):
         if isinstance(self.correct_answer, list):
             for k, v in q['options'].items():
                 var = tb.BooleanVar()
-                cb = tb.Checkbutton(self.options_frame, text=f"{k}. {v}", variable=var)
+                cb = tb.Checkbutton(self.options_frame, text=f"{k}. {v}", variable=var, style="Custom.TCheckbutton")
                 cb.pack(anchor='w')
                 self.answer_vars[k] = var
                 self.option_widgets[k] = cb
         else:
             self.single_answer = tb.StringVar()
             for k, v in q['options'].items():
-                rb = tb.Radiobutton(self.options_frame, text=f"{k}. {v}", value=k, variable=self.single_answer)
+                rb = tb.Radiobutton(self.options_frame, text=f"{k}. {v}", value=k, variable=self.single_answer, style="Custom.TRadiobutton")
                 rb.pack(anchor='w')
                 self.option_widgets[k] = rb
 

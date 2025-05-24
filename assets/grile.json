@@ -1676,11 +1676,11 @@
           "id": 6,
           "text": "Cate grafuri neorientate, distincte, cu 4 varfuri se pot construi? Doua grafuri se considera distincte \ndaca matricele lor de adiacenta sunt diferite.",
           "options": {
-            "A": "4 (la 6)",
-            "B": "2 (la 6)",
-            "C": "6 (la 4)",
+            "A": "4⁶",
+            "B": "2⁶",
+            "C": "6⁴",
             "D": "4",
-            "E": "2 (la 10)"
+            "E": "2¹⁰"
           },
           "correct_answer": [
             "B"
@@ -1877,8 +1877,8 @@
           "options": {
             "A": "15",
             "B": "31",
-            "C": "2 (la 5)",
-            "D": "2 (la 4)",
+            "C": "2⁵",
+            "D": "2⁴",
             "E": "14"
           },
           "correct_answer": [
@@ -2205,7 +2205,7 @@
         },
         {
           "id": 2,
-          "text": "Convertiti in zecimal numerele urmatoare (baza este indicata in indice): DA.C (baza 16), 27:4 (baza 8), 11011.101 (baza 2)",
+          "text": "Convertiti in zecimal numerele urmatoare (baza este indicata in indice): DA.C₁₆, 27:4₈, 11011.101₂",
           "options": {
             "A": "216.5; 17.5; 27.52;",
             "B": "218.75; 23.5; 27.625;",
@@ -2219,7 +2219,7 @@
         },
         {
           "id": 3,
-          "text": "Dati valoarea zecimala cu semn a numarului B7 (baza 16) codificat in complement fata de 1 (cod invers)",
+          "text": "Dati valoarea zecimala cu semn a numarului B7₁₆ codificat in complement fata de 1 (cod invers)",
           "options": {
             "A": "+7.2",
             "B": "71;",
@@ -2247,12 +2247,12 @@
         },
         {
           "id": 5,
-          "text": "Dati sub forma a x 2(la b) (a si b in sistemul zecimal) valoarea care corespunde reprezentarii in VMSP \n(virgula mobila simpla precizie, adica: 1 bit = semnul mantisei, 8 biti = exponentul decalat, \n23 biti = mantisa normalizata), 27660000000 (baza 8)",
+          "text": "Dati sub forma a x 2ᵇ (a si b in sistemul zecimal) valoarea care corespunde reprezentarii in VMSP \n(virgula mobila simpla precizie, adica: 1 bit = semnul mantisei, 8 biti = exponentul decalat, \n23 biti = mantisa normalizata), 27660000000₈",
           "options": {
-            "A": "0.8 x 2 (la 4);",
-            "B": "-0.5 x 2 (la -3);",
-            "C": "-8.8 x 2 (la 4);",
-            "D": "-8.8125 x 2 (la -4);",
+            "A": "0.8 x 2⁴;",
+            "B": "-0.5 x 2⁻³;",
+            "C": "-8.8 x 2⁴;",
+            "D": "-8.8125 x 2⁻⁴;",
             "E": "-100;"
           },
           "correct_answer": [
@@ -2275,7 +2275,7 @@
         },
         {
           "id": 7,
-          "text": "Fie o transmisie care utilizeaza codul lui Hamming cu paritate para. Gasiti mesajul transmis ( in octal) \nstiind ca reprezentarea datelor de transmis (pe 16 biti) este 7B (baza 16)",
+          "text": "Fie o transmisie care utilizeaza codul lui Hamming cu paritate para. Gasiti mesajul transmis ( in octal) \nstiind ca reprezentarea datelor de transmis (pe 16 biti) este 7B₁₆",
           "options": {
             "A": "3724",
             "B": "3723;",
@@ -2291,11 +2291,11 @@
           "id": 8,
           "text": "Fie o transmisie care utilizeaza codul lui Hamming cu paritate impara. Regasiti ( in octal) mesajul \ninitial (corectand eventualele erori daca mesajul primit (pe 21 biti) este 6130014 (in octal).",
           "options": {
-            "A": "140441 (baza 8);",
-            "B": "141441 (baza 8);",
-            "C": "142442 (baza 8);",
-            "D": "C522 (baza 16);",
-            "E": "C321 (baza 16);"
+            "A": "140441₈;",
+            "B": "141441₈;",
+            "C": "142442₈;",
+            "D": "C522₁₆;",
+            "E": "C321₁₆;"
           },
           "correct_answer": [
             "B",
@@ -2304,13 +2304,13 @@
         },
         {
           "id": 9,
-          "text": "Fie o transmisie care utilizeaza metoda codurilor polinomiale (CRC) prin intermediul polinomului \ngenerator G(x) = x(la 3) + x + 1. Daca se doreste transmiterea datelor (7 biti) cu reprezentarea octala \n131, care va fi mesajul trimis?",
+          "text": "Fie o transmisie care utilizeaza metoda codurilor polinomiale (CRC) prin intermediul polinomului \ngenerator G(x) = x³ + x + 1. Daca se doreste transmiterea datelor (7 biti) cu reprezentarea octala \n131, care va fi mesajul trimis?",
           "options": {
-            "A": "25DC (baza 16)",
-            "B": "1313 (baza 8);",
-            "C": "2CB (baza 16);",
-            "D": "22734 (baza 8);",
-            "E": "22735 (baza 10);"
+            "A": "25DC₁₆",
+            "B": "1313₈;",
+            "C": "2CB₁₆;",
+            "D": "22734₈;",
+            "E": "22735₁₀;"
           },
           "correct_answer": [
             "B",
@@ -2319,13 +2319,13 @@
         },
         {
           "id": 10,
-          "text": "Fie o transmisie care utilizeaza metoda codurilor polinomiale (CRC) prin intermediul polinomului \ngenerator G(x) = x² + x + 1. Daca s-a receptionat mesajul T = 2332 (baza 8) (11 biti) sa se stabileasca \ndaca a fost trimis corect, iar daca raspunsul este afirmativ sa se afle mesajul M initial.",
+          "text": "Fie o transmisie care utilizeaza metoda codurilor polinomiale (CRC) prin intermediul polinomului \ngenerator G(x) = x² + x + 1. Daca s-a receptionat mesajul T = 2332₈ (11 biti) sa se stabileasca \ndaca a fost trimis corect, iar daca raspunsul este afirmativ sa se afle mesajul M initial.",
           "options": {
-            "A": "132 (baza 10);",
-            "B": "464 (baza 8);",
-            "C": "134 (baza 16);",
-            "D": "136 (baza 16);",
-            "E": "466 (baza 8);"
+            "A": "132₁₀;",
+            "B": "464₈;",
+            "C": "134₁₆;",
+            "D": "136₁₆;",
+            "E": "466₈;"
           },
           "correct_answer": [
             "D",
@@ -2334,13 +2334,13 @@
         },
         {
           "id": 11,
-          "text": "Reduceti expresia formei normale disjunctive (cu mintermeni) a functiei logice \nf(a, b, c) = a¯bc + ab¯c + ab¯c¯ + abc¯ + abc",
+          "text": "Reduceti expresia formei normale disjunctive (cu mintermeni) a functiei logice \nf(a, b, c) = ābc + ab̄c + ab̄c̄ + abc̄ + abc",
           "options": {
-            "A": "a¯ + bc",
+            "A": "ā + bc",
             "B": "a + bc;",
-            "C": "a + b¯c;",
-            "D": "a¯ + b;",
-            "E": "a + b¯."
+            "C": "a + b̄c;",
+            "D": "ā + b;",
+            "E": "a + b̄."
           },
           "correct_answer": [
             "B"
@@ -2350,10 +2350,10 @@
           "id": 12,
           "text": "Reduceti expresia formei normale disjunctive (cu mintermeni) a functiei logice de 4 variabile care \nia valoarea 1 daca pqrs vazut ca numar binar are o valoare mai mica deca 10.",
           "options": {
-            "A": "p¯ + q¯r¯;",
-            "B": "p¯qr + pq¯ + pq;",
-            "C": "p + p¯q¯s;",
-            "D": "pqr + r¯;",
+            "A": "p\u0304 + q\u0304r\u0304;",
+            "B": "p̄qr + pq\u0304 + pq;",
+            "C": "p + p̄q̄s;",
+            "D": "pqr + r̄;",
             "E": "pq + qr + rs."
           },
           "correct_answer": [
